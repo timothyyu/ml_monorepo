@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/danieltan07/learning-to-reweight-examples.git
+	branch = master
+	commit = aad3a0824ee26a3f2300110fec82b7cd464b5f7f
+	parent = c457f8e14c2ba687afc2e94d6611eabfe75658eb
+	method = merge
+	cmdver = 0.4.0
