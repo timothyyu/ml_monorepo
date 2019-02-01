@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/MillionIntegrals/vel.git
+	branch = master
+	commit = 5b9897ab8d53c40dd4c0f5c71e3115977d4164b4
+	parent = 2ccbc91acf00f477f22eb856df5d8e142c21fa76
+	method = merge
+	cmdver = 0.4.0
