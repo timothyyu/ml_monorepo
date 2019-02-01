@@ -1,0 +1,3 @@
+notebook/.ipynb_checkpoints/
+*.pyc
+models/training_data_large/

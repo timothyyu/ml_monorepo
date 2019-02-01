@@ -1,0 +1,241 @@
+input_config:
+- dtype: !!python/unicode 'float'
+  input_shape: [null, 2]
+  name: !!python/unicode 'input'
+input_order: [!!python/unicode 'input']
+loss: {!!python/unicode 'output': !!python/unicode 'categorical_crossentropy'}
+loss_weights: {}
+name: Graph
+node_config:
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'input'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'input_padding'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'input_padding'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv1'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv1'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu1'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'relu1'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv2'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv2'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu2'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'relu2'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv3'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv3'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu3'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'relu3'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv4'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv4'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu4'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'relu4'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv5'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv5'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu5'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: null
+  inputs: [!!python/unicode 'relu3', !!python/unicode 'relu5']
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv6'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv6'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu6'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: null
+  inputs: [!!python/unicode 'relu2', !!python/unicode 'relu6']
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv7'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv7'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu7'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: null
+  inputs: [!!python/unicode 'relu1', !!python/unicode 'relu7']
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv8'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv8'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu8'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'relu8'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'conv9'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'conv9'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'relu10'
+- concat_axis: -1
+  create_output: false
+  dot_axes: -1
+  input: !!python/unicode 'relu10'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'activation'
+nodes:
+  !!python/unicode 'activation': {activation: softmax, cache_enabled: true, custom_name: !!python/unicode 'activation',
+    name: Activation, trainable: true}
+  !!python/unicode 'conv1':
+    W_constraint: null
+    W_regularizer: null
+    activation: linear
+    activity_regularizer: null
+    b_constraint: null
+    b_regularizer: null
+    border_mode: !!python/unicode 'valid'
+    cache_enabled: true
+    custom_name: !!python/unicode 'conv1'
+    filter_length: 5
+    init: lecun_uniform
+    input_dim: null
+    input_length: null
+    input_shape: !!python/tuple [500, 2]
+    name: Convolution1D
+    nb_filter: 150
+    subsample_length: 1
+    trainable: true
+  !!python/unicode 'conv2': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv2', filter_length: 5,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 150, subsample_length: 1, trainable: true}
+  !!python/unicode 'conv3': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv3', filter_length: 5,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 150, subsample_length: 1, trainable: true}
+  !!python/unicode 'conv4': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv4', filter_length: 5,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 150, subsample_length: 1, trainable: true}
+  !!python/unicode 'conv5': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv5', filter_length: 5,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 150, subsample_length: 1, trainable: true}
+  !!python/unicode 'conv6': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv6', filter_length: 5,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 150, subsample_length: 1, trainable: true}
+  !!python/unicode 'conv7': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv7', filter_length: 5,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 150, subsample_length: 1, trainable: true}
+  !!python/unicode 'conv8': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv8', filter_length: 5,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 150, subsample_length: 1, trainable: true}
+  !!python/unicode 'conv9': {W_constraint: null, W_regularizer: null, activation: linear,
+    activity_regularizer: null, b_constraint: null, b_regularizer: null, border_mode: !!python/unicode 'same',
+    cache_enabled: true, custom_name: !!python/unicode 'conv9', filter_length: 500,
+    init: lecun_uniform, input_dim: null, input_length: null, name: Convolution1D,
+    nb_filter: 3, subsample_length: 1, trainable: true}
+  !!python/unicode 'input_padding': {cache_enabled: true, custom_name: !!python/unicode 'input_padding',
+    name: ZeroPadding1D, padding: 2, trainable: true}
+  !!python/unicode 'relu1': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu1',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu10': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu10',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu2': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu2',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu3': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu3',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu4': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu4',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu5': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu5',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu6': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu6',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu7': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu7',
+    name: Activation, trainable: true}
+  !!python/unicode 'relu8': {activation: softplus, cache_enabled: true, custom_name: !!python/unicode 'relu8',
+    name: Activation, trainable: true}
+optimizer: {epsilon: 1.0e-06, lr: 0.0010000000474974513, name: RMSprop, rho: 0.8999999761581421}
+output_config:
+- concat_axis: -1
+  dot_axes: -1
+  input: !!python/unicode 'activation'
+  inputs: []
+  merge_mode: !!python/unicode 'concat'
+  name: !!python/unicode 'output'
+output_order: [!!python/unicode 'output']
+sample_weight_modes: {}

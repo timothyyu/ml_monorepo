@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/lukovkin/ufcnn-keras.git
+	branch = master
+	commit = 2fadaded9fcc3fc8b4216f95737f69e27d115694
+	parent = e5d9c102d6b4b6e5e18032c8740150703df272ac
+	method = merge
+	cmdver = 0.4.0

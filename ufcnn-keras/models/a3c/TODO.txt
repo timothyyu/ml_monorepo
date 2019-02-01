@@ -1,0 +1,15 @@
+1) Code Review
+2) Check the real_action conversion in game_state.
+3) Check that Action is in [0,1,2]
+4) is the trading buy/sell rules OK?
+5) test game_statte.py with test program
+6) visualize the sequence after renormailization, print min and max 
+7) Wie schaut sein netz aus?
+8) is randomize called after each terminal state
+
+999) a net that can predict the sine curve!!!
+
+1) Copy laptop code onto titanx
+2) Run longer sine curve with 16 threads
+3) mit / ohne LSTM testen.
+8) Speedup mit GPU?
