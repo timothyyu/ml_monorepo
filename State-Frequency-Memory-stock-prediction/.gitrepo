@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/z331565360/State-Frequency-Memory-stock-prediction.git
+	branch = master
+	commit = c733ebdbbc9f1aca889ea00b79718c5193c8cd7b
+	parent = bbac750b50170f1d53ae931033199dadf2f8696e
+	method = merge
+	cmdver = 0.4.0
