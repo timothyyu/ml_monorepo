@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/ermongroup/cs228-notes.git
+	branch = master
+	commit = 8c46ca5b0676e55634063c15c15f354eb1206540
+	parent = e07b10d5a53df566d379793c77dc577d77bf88d3
+	method = merge
+	cmdver = 0.4.0
