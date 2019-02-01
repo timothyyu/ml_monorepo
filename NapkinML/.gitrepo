@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/eriklindernoren/NapkinML.git
+	branch = master
+	commit = 68ff3e21d821511ecc8946bbdb620e2891be4a46
+	parent = 326048eb59c443a3dd8718744e5c5994dddf5c8f
+	method = merge
+	cmdver = 0.4.0
