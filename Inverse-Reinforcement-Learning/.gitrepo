@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/MatthewJA/Inverse-Reinforcement-Learning.git
+	branch = master
+	commit = d2c6d068a65467d7dd986855eb07a708b9c44503
+	parent = 481fa13375ba3cd38607562e8eef2fd5fc12a9fe
+	method = merge
+	cmdver = 0.4.0
