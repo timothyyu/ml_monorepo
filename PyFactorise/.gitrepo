@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/skollmann/PyFactorise.git
+	branch = master
+	commit = 7f884d5b70fd5cf421d925262612c50bbcdb67c7
+	parent = 861278b27a6eae4411807e4784786fa0f34868d8
+	method = merge
+	cmdver = 0.4.0
