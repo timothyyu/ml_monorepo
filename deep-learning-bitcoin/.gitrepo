@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/philipperemy/deep-learning-bitcoin.git
+	branch = master
+	commit = b04f115743915b74a0f77ee38f5f47bf8c1200c4
+	parent = 96232730df3002055212ecbf7754d6c5ee0715c8
+	method = merge
+	cmdver = 0.4.0
