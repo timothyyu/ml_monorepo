@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/zygmuntz/hyperband.git
+	branch = master
+	commit = a63220975182d275ba048eeda0746deb645b5fec
+	parent = 730bc07aabc0a4c88c3cb01c1ad273204f833935
+	method = merge
+	cmdver = 0.4.0
