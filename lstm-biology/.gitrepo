@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/jrieke/lstm-biology
+	branch = master
+	commit = 201f4206d0661ba1e4366bd4f8e1471861a4aca8
+	parent = 211469a9825721ad54fe157d351b96edc5f448cf
+	method = merge
+	cmdver = 0.4.0
