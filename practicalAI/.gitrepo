@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/GokuMohandas/practicalAI
+	branch = master
+	commit = 9b0b6a7d13af1880075b5a07ed6eeff5bcf75e08
+	parent = fa6d3ffe45a720f2592855c9d009cbc0c047ee45
+	method = merge
+	cmdver = 0.4.0
