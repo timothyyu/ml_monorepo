@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/rorysroes/SGX-Full-OrderBook-Tick-Data-Trading-Strategy.git
+	branch = master
+	commit = f1d729a83b00ad629d29517315b191dd712867ab
+	parent = e39e717e422083c2c972cf8c59233d6744d074a4
+	method = merge
+	cmdver = 0.4.0
