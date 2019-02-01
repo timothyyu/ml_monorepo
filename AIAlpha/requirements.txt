@@ -1,0 +1,17 @@
+bokeh 
+numpy 
+scipy 
+scikit-learn 
+Keras 
+pandas_datareader 
+pywt 
+fix_yahoo_finance 
+tensorflow 
+matplotlib 
+pandas 
+aylien_news_api 
+nltk 
+rpy2 
+textblob 
+vaderSentiment 
+pywavelets
