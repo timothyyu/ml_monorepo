@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/GarrettHoffman/lstm-oreilly.git
+	branch = master
+	commit = 0647085c318faad2dc664b79a266d9b8977117b4
+	parent = 9fe3a6be24ce4d30f7024cd5c9dc652b276b21de
+	method = merge
+	cmdver = 0.4.0
