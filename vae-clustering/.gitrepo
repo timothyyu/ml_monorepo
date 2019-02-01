@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/RuiShu/vae-clustering.git
+	branch = master
+	commit = 14525a9c8cad73b0f9df8ee638b8231253798b1f
+	parent = e92687fd3c3e78b1b22bdb26783e9929cf608a38
+	method = merge
+	cmdver = 0.4.0
