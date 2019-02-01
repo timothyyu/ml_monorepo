@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/zziz/kalman-filter
+	branch = master
+	commit = 02461ca38632c1364eea4cc615f68c0fb1bed544
+	parent = 31153345fb4f30d507a1c7bbd156d455f7ed8461
+	method = merge
+	cmdver = 0.4.0
