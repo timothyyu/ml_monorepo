@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/bbc/slayer.git
+	branch = master
+	commit = 4b0cdc5080f46f5940c89c081dbad16e2be4e021
+	parent = 2d5f6a20faff98f168e43d7ad6725a020ee2ad5a
+	method = merge
+	cmdver = 0.4.0

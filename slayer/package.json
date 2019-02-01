@@ -1,0 +1,51 @@
+{
+  "name": "slayer",
+  "version": "1.0.1",
+  "description": "JavaScript time series spike detection for Node.js; like the Octave findpeaks function.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha --reporter dot 'test/**/*.js'",
+    "posttest": "npm run lint",
+    "lint": "eslint index.js ./lib",
+    "benchmarks": "./bin/run-benchmarks.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbc/slayer.git"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ]
+  },
+  "keywords": [
+    "maths",
+    "spike",
+    "peak",
+    "matrix",
+    "valleys",
+    "detection",
+    "time",
+    "series",
+    "algorithm"
+  ],
+  "author": "Thomas Parisot <thomas.parisot@bbc.co.uk> (https://oncletom.io)",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "benchmark": "^1.0.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.7.1",
+    "mocha": "^3.1.0",
+    "nyc": "^8.3.0",
+    "sinon": "^1.9.1",
+    "sinon-chai": "^2.5.0",
+    "split": "^1.0.0"
+  },
+  "dependencies": {
+    "es6-promise": "^4.0.3",
+    "through2": "^2.0.1",
+    "xtend": "^4.0.1"
+  }
+}
