@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/crflynn/stochastic.git
+	branch = master
+	commit = 6fbc67d3c3a0f79c667f5e57a41a0fc247b611f1
+	parent = e73b87b8c175412cc9a8e96575943265203f8226
+	method = merge
+	cmdver = 0.4.0

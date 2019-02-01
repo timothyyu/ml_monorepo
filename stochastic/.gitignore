@@ -1,0 +1,28 @@
+# pytest
+.cache
+
+# coverage
+.coverage
+.coverage.*
+_cov
+
+# python
+__pycache__
+*.pyc
+
+# packaging
+*.egg-info
+build/
+dist/
+
+# tox
+.tox
+
+# pyenv
+.python-version
+
+# docs
+_build
+
+# macosx
+.DS_Store
