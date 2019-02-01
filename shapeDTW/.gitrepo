@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/jiapingz/shapeDTW.git
+	branch = master
+	commit = a8d150b7a2ffcebe99de65715f1b35221edd0062
+	parent = 5a9b910a82ddbdc947c6ce36998ae3ecaaf98fdd
+	method = merge
+	cmdver = 0.4.0
