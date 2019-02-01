@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/pmaji/crypto-whale-watching-app
+	branch = master
+	commit = b2e615bd7721faa54ebebd89b8cbf4e7864c6b6b
+	parent = e12dd880fcb8579ae147b605bd13baf6241e05ea
+	method = merge
+	cmdver = 0.4.0
