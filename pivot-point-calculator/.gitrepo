@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/nhsb1/pivot-point-calculator.git
+	branch = master
+	commit = 0bf7ec87ee32eb274eb3c88c4d4d7c20b92abbb0
+	parent = c85370b79012452a62d2d6541cf69f4c72ec64b9
+	method = merge
+	cmdver = 0.4.0
