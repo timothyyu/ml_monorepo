@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/shirosaidev/stocksight.git
+	branch = master
+	commit = 4572ce152b947f338a954f287c6b977c1b88d25e
+	parent = 6da1d1342698c0a38f3163a8a909ad1bc05bd708
+	method = merge
+	cmdver = 0.4.0
