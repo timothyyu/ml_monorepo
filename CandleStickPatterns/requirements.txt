@@ -1,0 +1,4 @@
+matplotlib==1.4.2
+pandas==0.20.3
+Quandl==3.1.0
+numpy==1.13.1

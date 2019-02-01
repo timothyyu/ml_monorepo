@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/npapapietro/CandleStickPatterns.git
+	branch = master
+	commit = 3cbe01e77f381fc39032c355f9782c92dc836f97
+	parent = dd628633df524e83a05dd43a1f613181657b61c0
+	method = merge
+	cmdver = 0.4.0
