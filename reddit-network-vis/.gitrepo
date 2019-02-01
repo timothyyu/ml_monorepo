@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/whichlight/reddit-network-vis.git
+	branch = master
+	commit = 6c84740caf0b5cc82fa4d55210655e036d69bfdd
+	parent = acf65f51dc27650a52cfdd4255c9295fc8255720
+	method = merge
+	cmdver = 0.4.0
