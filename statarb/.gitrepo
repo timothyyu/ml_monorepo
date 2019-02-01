@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/upresearch/statarb.git
+	branch = master
+	commit = f93e96f45b1be7f68fbc6522156b5e372b25895c
+	parent = 00880a6fc084f405e73580065644e90e56223ec3
+	method = merge
+	cmdver = 0.4.0

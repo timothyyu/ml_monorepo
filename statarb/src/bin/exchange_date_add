@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ "$ROOT_DIR" = "" ]; then
+    exit "Must set ROOT_DIR!"
+else
+    . $ROOT_DIR/src/bin/include.sh
+fi
+
+EXCH=$PRIMARY_EXCHANGE
+
+##default this to $PRIMARY_EXCHANGE
+EXCH=$1
+ADATE=$2
+OFFSET=$3
+
+$JAVA ase.data.Exchange tda $EXCH $ADATE $OFFSET
+
+exit $?

@@ -1,0 +1,84 @@
+(put 'narrow-to-region 'disabled nil)
+
+;;; Customizations go in emacs.d
+(add-to-list 'load-path "~/emacs.d")
+
+;; Tab using spaces
+(setq-default indent-tabs-mode nil)
+
+(setq default-tab-width 4)
+
+;;; Display column numbers
+(column-number-mode 1)
+
+;;; Better buffer switching
+(iswitchb-mode 1)
+
+;;; Use font-lock-mode
+(global-font-lock-mode 1)
+
+;; default to better frame titles
+(setq frame-title-format (concat  "%b - emacs@" system-name))
+
+;; Highlight marked region
+(transient-mark-mode t)
+
+;; Parenthesis matching
+(show-paren-mode 1)
+
+;;(set-default-font "-outline-Lucida Console-normal-r-normal-normal-13-78-120-120-c-*-iso10646-1")
+;;(set-background-color "black")
+;;(set-foreground-color "green")
+;;(set-cursor-color "green")
+;; Frames
+;;(add-to-list 'default-frame-alist '(font . "-outline-Lucida Console-normal-r-normal-normal-13-78-120-120-c-*-iso10646-1"))
+;;(add-to-list 'default-frame-alist '(background-color . "black"))
+;;(add-to-list 'default-frame-alist '(foreground-color . "green"))
+
+;;; Disable system beep
+(setq visual-bell t)
+
+(put 'erase-buffer 'disabled nil)
+
+(set-face-background 'region "yellow")
+
+;; comment line below the cursos
+(defun comment-line ()
+    (interactive)
+
+    (beginning-of-line)
+    (setq st (point))
+    (end-of-line)
+    (setq en (point))
+    (if (> en st)
+       (comment-region st en))
+    (next-line 1)
+    (beginning-of-line)
+    )
+
+;; uncomment line below the cursos
+(defun uncomment-line ()
+    (interactive)
+    (beginning-of-line)
+    (setq st (point))
+    (end-of-line)
+    (setq en (point))
+    (if (> en st)
+       (uncomment-region st en))
+     (next-line 1)
+     (beginning-of-line)
+    )
+
+
+(setenv "PAGER" "cat")
+
+;;packages
+(setq load-path (cons "~/emacs/" load-path))
+(load "~/emacs/ess-5.10/lisp/ess-site")
+
+(global-set-key (kbd "<f5>") 'erase-buffer)
+(global-set-key (kbd "<f6>") 'toggle-truncate-lines)
+(global-set-key (kbd "<f9>") 'goto-line)
+
+(global-set-key (kbd "C-f") 'comment-line)
+(global-set-key (kbd "C-d") 'uncomment-line)

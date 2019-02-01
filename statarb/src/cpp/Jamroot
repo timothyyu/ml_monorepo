@@ -1,0 +1,43 @@
+OBJ_DIR = [ modules.peek : OBJ_DIR ] ;
+
+project /ase 
+:
+: build-dir $(OBJ_DIR)/cpp/build/bars
+    ;
+
+use-project /ase/utils : utils ;
+
+exe superbars :
+    Bar.cpp BarWriters.cpp MasterDataSource.cpp bars.cpp :
+
+    <library>/compat//util
+    <library>/boost//thread
+    <library>/hyp2-client//client
+    #<library>/TraderStump/lib//traderstump
+    <library>/TraderStump//traderstump
+    <library>/boost//filesystem
+    <library>/boost//system
+    <library>/boost//program_options
+    <library>/boost//iostreams
+
+    <include>utils
+    <library>/ase/utils//mysql
+    <library>/ase/utils//gzstream
+    <threading>multi
+;
+
+#exe bars :
+#    Bar.cpp BarWriters.cpp bars.cpp :
+#
+#    <library>/hyp2/client/lib2//client2
+#
+#    <library>/boost//thread
+#    <library>/boost//filesystem
+#    <library>/boost//system
+#    <library>/boost//program_options
+#    <library>/boost//iostreams
+#
+#    <include>utils
+#    <library>/ase/utils//mysql
+#    <threading>multi
+#;

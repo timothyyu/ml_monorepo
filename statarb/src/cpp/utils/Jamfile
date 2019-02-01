@@ -1,0 +1,38 @@
+project /ase/mysql ;
+
+INSTALL_DIR = [ modules.peek : INSTALL_DIR ] ;
+
+lib mysql
+    : Mysql.cpp
+    : <threading>multi <library>/boost//thread <library>mysql_connector <library>mysql_client <library>propertyutil
+    :
+    : <library>mysql_connector <library>mysql_client <include>. 
+;
+
+lib propertyutil
+    : propertyutil.cpp
+    :
+    :
+    : <include>.
+;
+
+lib mysql_connector 
+    : 
+    : <library>/boost//thread <name>mysqlcppconn-static <search>$(INSTALL_DIR)/mysql-connector/lib
+    : 
+    : <include>$(INSTALL_DIR)/mysql-connector/include 
+;
+
+lib mysql_client 
+    : 
+    : <name>mysqlclient <search>$(INSTALL_DIR)/mysql/lib 
+    : 
+    : <linkflags>-ldl
+;
+
+lib gzstream 
+    : gzstream.cpp
+    : 
+    :
+    : <include>. <library>/system//z
+;

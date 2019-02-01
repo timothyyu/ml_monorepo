@@ -1,0 +1,4 @@
+BATS,RTSBATS,infradaemon7.jc,10045
+ISLD,RTSNASD,infradaemon6.jc,10145
+NYSE,RTSNYSE,infradaemon7.jc,10145
+ARCA,RTSARCA,infradaemon6.jc,10045

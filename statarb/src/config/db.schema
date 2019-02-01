@@ -1,0 +1,1178 @@
+-- MySQL dump 10.13  Distrib 5.5.9, for linux2.6 (x86_64)
+--
+-- Host: asedb1.newark    Database: ase
+-- ------------------------------------------------------
+-- Server version	5.5.9-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `attribute_type`
+--
+
+DROP TABLE IF EXISTS `attribute_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `attribute_type` (
+  `code` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `source` int(11) NOT NULL,
+  `datatype` int(11) NOT NULL,
+  `tableref` varchar(16) DEFAULT NULL,
+  PRIMARY KEY (`code`),
+  UNIQUE KEY `name` (`name`,`source`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `barra_n`
+--
+
+DROP TABLE IF EXISTS `barra_n`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `barra_n` (
+  `barraid` char(7) NOT NULL,
+  `type` smallint(5) unsigned NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`barraid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (1199145600000) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `barra_ref`
+--
+
+DROP TABLE IF EXISTS `barra_ref`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `barra_ref` (
+  `barraid` char(7) NOT NULL,
+  `secid` int(11) NOT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`barraid`,`born`),
+  KEY `secid_idx` (`secid`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `barra_ref_hist`
+--
+
+DROP TABLE IF EXISTS `barra_ref_hist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `barra_ref_hist` (
+  `barraid` char(7) NOT NULL,
+  `secid` int(11) NOT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`barraid`,`born`),
+  KEY `secid_idx` (`secid`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `barra_s`
+--
+
+DROP TABLE IF EXISTS `barra_s`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `barra_s` (
+  `barraid` char(7) NOT NULL,
+  `type` smallint(5) unsigned NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` varchar(32) DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`barraid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (1199145600000) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `barra_xref`
+--
+
+DROP TABLE IF EXISTS `barra_xref`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `barra_xref` (
+  `barraid` char(7) NOT NULL DEFAULT '',
+  `xref_type` int(11) NOT NULL,
+  `value` varchar(32) NOT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`barraid`,`xref_type`,`born`),
+  KEY `valueIdx` (`value`,`xref_type`,`born`,`died`,`barraid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `brokers`
+--
+
+DROP TABLE IF EXISTS `brokers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `brokers` (
+  `brokerid` int(11) NOT NULL,
+  `source` int(11) NOT NULL,
+  `source_brokerid` varchar(32) NOT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`brokerid`,`born`),
+  UNIQUE KEY `source` (`source`,`source_brokerid`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_actuals_d`
+--
+
+DROP TABLE IF EXISTS `co_actuals_d`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_actuals_d` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL,
+  `date` int(11) NOT NULL,
+  `value` bigint(20) DEFAULT NULL,
+  `currency` tinyint(3) unsigned NOT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) NOT NULL,
+  PRIMARY KEY (`rkd`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (20080101) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_actuals_n`
+--
+
+DROP TABLE IF EXISTS `co_actuals_n`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_actuals_n` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL,
+  `date` int(11) NOT NULL,
+  `value` double DEFAULT NULL,
+  `currency` tinyint(3) unsigned NOT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) NOT NULL,
+  PRIMARY KEY (`rkd`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (20080101) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_attr_d`
+--
+
+DROP TABLE IF EXISTS `co_attr_d`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_attr_d` (
+  `coid` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` bigint(20) DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`coid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_attr_n`
+--
+
+DROP TABLE IF EXISTS `co_attr_n`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_attr_n` (
+  `coid` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`coid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_attr_s`
+--
+
+DROP TABLE IF EXISTS `co_attr_s`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_attr_s` (
+  `coid` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` varchar(32) DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`coid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Temporary table structure for view `co_attr_sv`
+--
+
+DROP TABLE IF EXISTS `co_attr_sv`;
+/*!50001 DROP VIEW IF EXISTS `co_attr_sv`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `co_attr_sv` (
+  `coid` int(11),
+  `type` int(11),
+  `date` datetime,
+  `value` varchar(32),
+  `born` datetime,
+  `died` datetime,
+  `backfill` tinyint(4)
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `co_estimate_flags`
+--
+
+DROP TABLE IF EXISTS `co_estimate_flags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_estimate_flags` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL,
+  `date` int(11) NOT NULL,
+  `brokerid` smallint(6) NOT NULL,
+  `orig` bigint(20) NOT NULL,
+  `orig2` bigint(20) NOT NULL,
+  `flag` char(1) NOT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) NOT NULL,
+  PRIMARY KEY (`rkd`,`type`,`brokerid`,`date`,`orig`,`orig2`,`flag`,`born`) KEY_BLOCK_SIZE=4
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (20080101) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_estimates_b`
+--
+
+DROP TABLE IF EXISTS `co_estimates_b`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_estimates_b` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL,
+  `date` int(11) NOT NULL,
+  `brokerid` smallint(6) NOT NULL,
+  `orig` bigint(20) NOT NULL,
+  `value` varbinary(128) DEFAULT NULL,
+  `currency` tinyint(3) unsigned DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) NOT NULL,
+  PRIMARY KEY (`rkd`,`type`,`brokerid`,`date`,`orig`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (20080101) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_estimates_d`
+--
+
+DROP TABLE IF EXISTS `co_estimates_d`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_estimates_d` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL,
+  `date` int(11) NOT NULL,
+  `brokerid` smallint(6) NOT NULL,
+  `orig` bigint(20) NOT NULL,
+  `value` bigint(20) DEFAULT NULL,
+  `currency` tinyint(3) unsigned DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) NOT NULL,
+  PRIMARY KEY (`rkd`,`type`,`brokerid`,`date`,`orig`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (20080101) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `co_estimates_n`
+--
+
+DROP TABLE IF EXISTS `co_estimates_n`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `co_estimates_n` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL,
+  `date` int(11) NOT NULL,
+  `brokerid` smallint(6) NOT NULL,
+  `orig` bigint(20) NOT NULL,
+  `value` double DEFAULT NULL,
+  `currency` tinyint(3) unsigned DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) NOT NULL,
+  PRIMARY KEY (`rkd`,`type`,`brokerid`,`date`,`orig`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
+/*!50100 PARTITION BY RANGE (date)
+(PARTITION p0 VALUES LESS THAN (20080101) ENGINE = InnoDB,
+ PARTITION p1 VALUES LESS THAN MAXVALUE ENGINE = InnoDB) */;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `country`
+--
+
+DROP TABLE IF EXISTS `country`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `country` (
+  `code` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cs2barra`
+--
+
+DROP TABLE IF EXISTS `cs2barra`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cs2barra` (
+  `secid` int(11) NOT NULL DEFAULT '0',
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `barraid` char(7) NOT NULL DEFAULT '',
+  PRIMARY KEY (`secid`,`born`,`barraid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cs2barra_bkup`
+--
+
+DROP TABLE IF EXISTS `cs2barra_bkup`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cs2barra_bkup` (
+  `ts` bigint(20) NOT NULL DEFAULT '0',
+  `secid` int(11) NOT NULL DEFAULT '0',
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `barraid` char(7) NOT NULL DEFAULT '',
+  PRIMARY KEY (`ts`,`secid`,`born`,`barraid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cs2reuters`
+--
+
+DROP TABLE IF EXISTS `cs2reuters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cs2reuters` (
+  `secid` int(11) NOT NULL DEFAULT '0',
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `issueid` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`secid`,`born`,`rkd`,`issueid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cs2reuters_bkup`
+--
+
+DROP TABLE IF EXISTS `cs2reuters_bkup`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cs2reuters_bkup` (
+  `ts` bigint(20) NOT NULL DEFAULT '0',
+  `secid` int(11) NOT NULL DEFAULT '0',
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `issueid` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ts`,`secid`,`born`,`rkd`,`issueid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cs2rics`
+--
+
+DROP TABLE IF EXISTS `cs2rics`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cs2rics` (
+  `secid` int(11) NOT NULL DEFAULT '0',
+  `value` varchar(32) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `currency`
+--
+
+DROP TABLE IF EXISTS `currency`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `currency` (
+  `code` int(11) NOT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `dividend`
+--
+
+DROP TABLE IF EXISTS `dividend`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dividend` (
+  `secid` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `dividend` double DEFAULT NULL,
+  `casheq` double DEFAULT NULL,
+  `currency` tinyint(3) unsigned DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `exchange`
+--
+
+DROP TABLE IF EXISTS `exchange`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `exchange` (
+  `code` bigint(20) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `exrate`
+--
+
+DROP TABLE IF EXISTS `exrate`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `exrate` (
+  `currency` smallint(6) NOT NULL DEFAULT '0',
+  `date` int(11) NOT NULL,
+  `rate` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`currency`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `future_split`
+--
+
+DROP TABLE IF EXISTS `future_split`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `future_split` (
+  `secid` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `rate` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `mapping_failures`
+--
+
+DROP TABLE IF EXISTS `mapping_failures`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mapping_failures` (
+  `failure_timestamp` bigint(20) NOT NULL,
+  `source` smallint(6) NOT NULL,
+  `filepath` varchar(255) NOT NULL,
+  `xref` varchar(32) NOT NULL,
+  `old_id` int(11) NOT NULL,
+  `new_id` int(11) DEFAULT NULL,
+  `notes` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`failure_timestamp`,`source`,`filepath`,`xref`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `mus`
+--
+
+DROP TABLE IF EXISTS `mus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mus` (
+  `secid` int(11) NOT NULL DEFAULT '0',
+  `type` int(11) NOT NULL DEFAULT '0',
+  `date` bigint(20) NOT NULL DEFAULT '0',
+  `value` double DEFAULT NULL,
+  PRIMARY KEY (`secid`,`type`,`date`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `newsscope_attr`
+--
+
+DROP TABLE IF EXISTS `newsscope_attr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `newsscope_attr` (
+  `ric` varchar(100) NOT NULL DEFAULT '',
+  `storyid` varchar(100) NOT NULL DEFAULT '',
+  `date` bigint(20) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL DEFAULT '0',
+  `version` bigint(20) DEFAULT NULL,
+  `value` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(3) unsigned DEFAULT NULL,
+  PRIMARY KEY (`ric`,`storyid`,`date`,`type`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `newsscope_info`
+--
+
+DROP TABLE IF EXISTS `newsscope_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `newsscope_info` (
+  `storyid` varchar(100) NOT NULL DEFAULT '',
+  `version` bigint(20) NOT NULL DEFAULT '0',
+  `headline` varchar(255) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`storyid`,`version`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `price`
+--
+
+DROP TABLE IF EXISTS `price`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `price` (
+  `secid` int(11) DEFAULT NULL,
+  `date` int(11) DEFAULT NULL,
+  `open` float DEFAULT NULL,
+  `high` float DEFAULT NULL,
+  `low` float DEFAULT NULL,
+  `close` float DEFAULT NULL,
+  `currency` tinyint(4) DEFAULT NULL,
+  `volume` float DEFAULT NULL,
+  `adj` float DEFAULT NULL,
+  `adrrc` float DEFAULT NULL,
+  `cond` tinyint(4) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `price_full`
+--
+
+DROP TABLE IF EXISTS `price_full`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `price_full` (
+  `secid` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `open` float DEFAULT NULL,
+  `high` float DEFAULT NULL,
+  `low` float DEFAULT NULL,
+  `close` float DEFAULT NULL,
+  `currency` tinyint(3) unsigned DEFAULT NULL,
+  `volume` float DEFAULT NULL,
+  `adj` float DEFAULT NULL,
+  `adrrc` float DEFAULT NULL,
+  `cond` tinyint(4) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `process_lock`
+--
+
+DROP TABLE IF EXISTS `process_lock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `process_lock` (
+  `locked` int(11) NOT NULL,
+  PRIMARY KEY (`locked`)
+) ENGINE=MEMORY DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `processed_files`
+--
+
+DROP TABLE IF EXISTS `processed_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `processed_files` (
+  `source` int(11) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `ts` bigint(20) NOT NULL,
+  `processing_time` int(11) DEFAULT NULL,
+  `rows_selected` int(11) DEFAULT NULL,
+  `rows_inserted` int(11) DEFAULT NULL,
+  `rows_updated` int(11) DEFAULT NULL,
+  `rows_deleted` int(11) DEFAULT NULL,
+  `date_modified` bigint(20) DEFAULT NULL,
+  `really_processed` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`source`,`path`),
+  KEY `recent` (`source`,`ts`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `processed_files_att_stats`
+--
+
+DROP TABLE IF EXISTS `processed_files_att_stats`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `processed_files_att_stats` (
+  `source` smallint(6) NOT NULL DEFAULT '0',
+  `path` varchar(255) NOT NULL DEFAULT '',
+  `type` int(11) NOT NULL DEFAULT '0',
+  `inserted` int(11) DEFAULT NULL,
+  `killed` int(11) DEFAULT NULL,
+  PRIMARY KEY (`source`,`path`,`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_n`
+--
+
+DROP TABLE IF EXISTS `reuters_n`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_n` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `issueid` tinyint(4) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL DEFAULT '0',
+  `value` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`issueid`,`type`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_period`
+--
+
+DROP TABLE IF EXISTS `reuters_period`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_period` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL DEFAULT '0',
+  `offset` tinyint(4) NOT NULL DEFAULT '0',
+  `seq` tinyint(4) NOT NULL DEFAULT '0',
+  `perioddate` int(11) DEFAULT NULL,
+  `advdate` bigint(20) DEFAULT NULL,
+  `announced` tinyint(4) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `phase` tinyint(4) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`type`,`offset`,`seq`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_period2`
+--
+
+DROP TABLE IF EXISTS `reuters_period2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_period2` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL DEFAULT '0',
+  `offset` tinyint(4) NOT NULL DEFAULT '0',
+  `seq` tinyint(4) NOT NULL DEFAULT '0',
+  `perioddate` int(11) DEFAULT NULL,
+  `advdate` bigint(20) DEFAULT NULL,
+  `announced` tinyint(4) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `phase` tinyint(4) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`type`,`offset`,`seq`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_period_old`
+--
+
+DROP TABLE IF EXISTS `reuters_period_old`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_period_old` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL DEFAULT '0',
+  `offset` tinyint(4) NOT NULL DEFAULT '0',
+  `seq` tinyint(4) NOT NULL DEFAULT '0',
+  `perioddate` int(11) DEFAULT NULL,
+  `advdate` bigint(20) DEFAULT NULL,
+  `announced` tinyint(4) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`type`,`offset`,`seq`,`born`),
+  KEY `periodIdx` (`rkd`,`type`,`announced`,`perioddate`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_ref`
+--
+
+DROP TABLE IF EXISTS `reuters_ref`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_ref` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `coid` int(11) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`born`),
+  KEY `coid_idx` (`coid`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_s`
+--
+
+DROP TABLE IF EXISTS `reuters_s`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_s` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `issueid` tinyint(4) NOT NULL DEFAULT '0',
+  `type` smallint(6) NOT NULL DEFAULT '0',
+  `value` varchar(64) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`issueid`,`type`,`born`),
+  KEY `valueIdx` (`type`,`value`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_split`
+--
+
+DROP TABLE IF EXISTS `reuters_split`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_split` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `date` int(11) NOT NULL,
+  `rate` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reuters_xref`
+--
+
+DROP TABLE IF EXISTS `reuters_xref`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reuters_xref` (
+  `rkd` int(11) NOT NULL DEFAULT '0',
+  `issueid` tinyint(4) NOT NULL DEFAULT '0',
+  `xref_type` tinyint(4) NOT NULL DEFAULT '0',
+  `value` varchar(32) DEFAULT NULL,
+  `born` bigint(20) NOT NULL DEFAULT '0',
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`rkd`,`issueid`,`xref_type`,`born`),
+  KEY `valueIdx` (`value`,`xref_type`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `sec_attr_d`
+--
+
+DROP TABLE IF EXISTS `sec_attr_d`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sec_attr_d` (
+  `secid` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` bigint(20) DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `sec_attr_n`
+--
+
+DROP TABLE IF EXISTS `sec_attr_n`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sec_attr_n` (
+  `secid` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Temporary table structure for view `sec_attr_nv`
+--
+
+DROP TABLE IF EXISTS `sec_attr_nv`;
+/*!50001 DROP VIEW IF EXISTS `sec_attr_nv`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `sec_attr_nv` (
+  `secid` int(11),
+  `type` int(11),
+  `date` datetime,
+  `value` double,
+  `born` datetime,
+  `died` datetime,
+  `backfill` tinyint(4)
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `sec_attr_s`
+--
+
+DROP TABLE IF EXISTS `sec_attr_s`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sec_attr_s` (
+  `secid` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `date` bigint(20) NOT NULL,
+  `value` varchar(32) DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`type`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Temporary table structure for view `sec_attr_sv`
+--
+
+DROP TABLE IF EXISTS `sec_attr_sv`;
+/*!50001 DROP VIEW IF EXISTS `sec_attr_sv`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `sec_attr_sv` (
+  `secid` int(11),
+  `type` int(11),
+  `date` datetime,
+  `value` varchar(32),
+  `born` datetime,
+  `died` datetime,
+  `backfill` tinyint(4)
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `security`
+--
+
+DROP TABLE IF EXISTS `security`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `security` (
+  `secid` int(11) NOT NULL AUTO_INCREMENT,
+  `sectype` int(11) NOT NULL,
+  PRIMARY KEY (`secid`)
+) ENGINE=InnoDB AUTO_INCREMENT=265636 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `security_type`
+--
+
+DROP TABLE IF EXISTS `security_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `security_type` (
+  `code` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `source_type`
+--
+
+DROP TABLE IF EXISTS `source_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `source_type` (
+  `code` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `split`
+--
+
+DROP TABLE IF EXISTS `split`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `split` (
+  `secid` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `rate` double DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `backfill` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`date`,`born`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `stock`
+--
+
+DROP TABLE IF EXISTS `stock`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stock` (
+  `secid` int(11) NOT NULL,
+  `coid` int(11) NOT NULL,
+  `issueid` varchar(32) NOT NULL,
+  `country` int(11) NOT NULL,
+  `currency` int(11) NOT NULL,
+  `exchange` tinyint(3) unsigned DEFAULT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`secid`,`born`),
+  KEY `csIdx` (`coid`,`issueid`,`born`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tmp_files`
+--
+
+DROP TABLE IF EXISTS `tmp_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tmp_files` (
+  `path` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `xref`
+--
+
+DROP TABLE IF EXISTS `xref`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `xref` (
+  `secid` int(11) NOT NULL,
+  `xref_type` int(11) NOT NULL,
+  `value` varchar(32) NOT NULL,
+  `born` bigint(20) NOT NULL,
+  `died` bigint(20) DEFAULT NULL,
+  `source` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`secid`,`xref_type`,`source`,`born`),
+  KEY `valueIdx` (`value`,`xref_type`,`source`,`born`,`died`,`secid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `xref_type`
+--
+
+DROP TABLE IF EXISTS `xref_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `xref_type` (
+  `code` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`code`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Final view structure for view `co_attr_sv`
+--
+
+/*!50001 DROP TABLE IF EXISTS `co_attr_sv`*/;
+/*!50001 DROP VIEW IF EXISTS `co_attr_sv`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`aseprod`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `co_attr_sv` AS select `co_attr_s`.`coid` AS `coid`,`co_attr_s`.`type` AS `type`,`m2d`(`co_attr_s`.`date`) AS `date`,`co_attr_s`.`value` AS `value`,`m2d`(`co_attr_s`.`born`) AS `born`,`m2d`(`co_attr_s`.`died`) AS `died`,`co_attr_s`.`backfill` AS `backfill` from `co_attr_s` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `sec_attr_nv`
+--
+
+/*!50001 DROP TABLE IF EXISTS `sec_attr_nv`*/;
+/*!50001 DROP VIEW IF EXISTS `sec_attr_nv`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`aseprod`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `sec_attr_nv` AS select `sec_attr_n`.`secid` AS `secid`,`sec_attr_n`.`type` AS `type`,`m2d`(`sec_attr_n`.`date`) AS `date`,`sec_attr_n`.`value` AS `value`,`m2d`(`sec_attr_n`.`born`) AS `born`,`m2d`(`sec_attr_n`.`died`) AS `died`,`sec_attr_n`.`backfill` AS `backfill` from `sec_attr_n` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `sec_attr_sv`
+--
+
+/*!50001 DROP TABLE IF EXISTS `sec_attr_sv`*/;
+/*!50001 DROP VIEW IF EXISTS `sec_attr_sv`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`aseprod`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `sec_attr_sv` AS select `sec_attr_s`.`secid` AS `secid`,`sec_attr_s`.`type` AS `type`,`m2d`(`sec_attr_s`.`date`) AS `date`,`sec_attr_s`.`value` AS `value`,`m2d`(`sec_attr_s`.`born`) AS `born`,`m2d`(`sec_attr_s`.`died`) AS `died`,`sec_attr_s`.`backfill` AS `backfill` from `sec_attr_s` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-08-23 12:07:12

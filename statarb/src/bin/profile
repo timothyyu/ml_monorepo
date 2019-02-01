@@ -1,0 +1,87 @@
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+alias rs='Rscript'
+
+alias win='rdesktop -g 1500x1100 -d windows tsny1.windows'
+alias scn='screen -xUR'
+
+alias commit='git commit -m.'
+alias pull='git pull --stat'
+
+alias which='type -a'
+alias ..='cd ..'
+alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+alias print='/usr/bin/lp -o nobanner -d $LPDEST'
+            # Assumes LPDEST is defined (default printer)
+alias pjet='enscript -h -G -fCourier9 -d $LPDEST'
+            # Pretty-print using enscript
+
+alias du='du -kh'       # Makes a more readable output.
+alias df='df -kTh'
+alias finder='find ./ -name "*.[jchp]*" | xargs grep -i'
+
+#-------------------------------------------------------------
+# The 'ls' family (this assumes you use a recent GNU ls)
+#-------------------------------------------------------------
+alias ls='ls -htrF'  # add colors for filetype recognition
+alias la='ls -Al'          # show hidden files
+alias lx='ls -lXB'         # sort by extension
+alias lk='ls -lSr'         # sort by size, biggest last
+alias lc='ls -ltcr'        # sort by and show change time, most recent last
+alias lu='ls -ltur'        # sort by and show access time, most recent last
+alias lt='ls -ltr'         # sort by date, most recent last
+alias lm='ls -al |more'    # pipe through 'more'
+alias lr='ls -lR'          # recursive ls
+alias tree='tree -Csu'     # nice alternative to 'recursive ls'
+
+function sendhome() 
+{
+    scp $1 sslotterback@sslotterbacklinux:/apps/homefs1/sslotterback/tmp/
+}
+
+function extract()      # Handy Extract Program.
+{
+     if [ -f $1 ] ; then
+         case $1 in
+             *.tar.bz2)   tar xvjf $1     ;;
+             *.tar.gz)    tar xvzf $1     ;;
+             *.bz2)       bunzip2 $1      ;;
+             *.rar)       unrar x $1      ;;
+             *.gz)        gunzip $1       ;;
+             *.tar)       tar xvf $1      ;;
+             *.tbz2)      tar xvjf $1     ;;
+             *.tgz)       tar xvzf $1     ;;
+             *.zip)       unzip $1        ;;
+             *.Z)         uncompress $1   ;;
+             *.7z)        7z x $1         ;;
+             *)           echo "'$1' cannot be extracted via >extract<" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+function ii()   # Get current host related info.
+{
+    echo -e "\nYou are logged on ${RED}$HOST"
+    echo -e "\nAdditionnal information:$NC " ; uname -a
+    echo -e "\n${RED}Users logged on:$NC " ; w -h
+    echo -e "\n${RED}Current date :$NC " ; date
+    echo -e "\n${RED}Machine stats :$NC " ; uptime
+    echo -e "\n${RED}Memory stats :$NC " ; free
+    my_ip 2>&- ;
+    echo -e "\n${RED}Local IP Address :$NC" ; echo ${MY_IP:-"Not connected"}
+    echo -e "\n${RED}ISP Address :$NC" ; echo ${MY_ISP:-"Not connected"}
+    echo -e "\n${RED}Open connections :$NC "; netstat -pan --inet;
+    echo
+}
+
+export PS1='\u@\h:\w> '
+export R_HOME="~/R/"
+export PAGER=cat
+export EDITOR=emacsclient
+
