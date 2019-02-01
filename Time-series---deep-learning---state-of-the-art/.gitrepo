@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/FrancisArgnR/Time-series---deep-learning---state-of-the-art.git
+	branch = master
+	commit = 73170bda1ce6f68f8b05114f72abc6d6ea6d5c96
+	parent = f4e0acd201359383f6b62e74838062572247b62e
+	method = merge
+	cmdver = 0.4.0
