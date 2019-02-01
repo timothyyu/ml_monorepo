@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/kylejusticemagnuson/pyti.git
+	branch = master
+	commit = 2f78430dfd60a0d20f4e7fc0cb4588c03107c4b2
+	parent = a1295f31d7d393e5da425f8c322a9d954e5bda31
+	method = merge
+	cmdver = 0.4.0
