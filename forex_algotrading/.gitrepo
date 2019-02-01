@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/jonromero/forex_algotrading.git
+	branch = master
+	commit = 220f00ca0d034e166ad023d81788540da1486426
+	parent = a6bbcf55574963ad807178ff75806f8c462800c8
+	method = merge
+	cmdver = 0.4.0
