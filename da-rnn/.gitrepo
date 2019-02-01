@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Seanny123/da-rnn.git
+	branch = master
+	commit = 105e2e11e1027bc67758b92ab67748170a0ab092
+	parent = 2a5c3ef751add36c871b39bdbbe3222900b3a9fc
+	method = merge
+	cmdver = 0.4.0
