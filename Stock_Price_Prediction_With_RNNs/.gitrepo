@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/CanePunma/Stock_Price_Prediction_With_RNNs
+	branch = master
+	commit = 896327004c2cfbe7a102f61a952fd3fbeb3e03de
+	parent = b3122f578f66977d3250914197f67775e5d48a48
+	method = merge
+	cmdver = 0.4.0
