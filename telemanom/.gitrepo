@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/khundman/telemanom.git
+	branch = master
+	commit = 9e9865706aa33c8845da9960343ea88c32e984d5
+	parent = 5e27363a55885da89a042a2134a66424aa07216a
+	method = merge
+	cmdver = 0.4.0
