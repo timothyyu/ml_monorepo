@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/amicks/Speculator.git
+	branch = master
+	commit = f7d6590aded20b1e1b5df16a4b27228ee821c4ab
+	parent = 82daddab97f806578ac53e3ad77fed2099a2e3f1
+	method = merge
+	cmdver = 0.4.0
