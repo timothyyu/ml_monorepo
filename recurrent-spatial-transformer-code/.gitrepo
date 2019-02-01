@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/skaae/recurrent-spatial-transformer-code.git
+	branch = master
+	commit = d9174d5272159c4bbe2d8b546c8bba7633de1621
+	parent = 853651b429ef17667e8a6a13faa49f56da64c0f1
+	method = merge
+	cmdver = 0.4.0
