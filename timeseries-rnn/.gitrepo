@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/jrieke/timeseries-rnn.git
+	branch = master
+	commit = faa1ab2eff84ef70659a5624ee647bae12f674e6
+	parent = 758058af268b27d57cfbfb8e9db5061cadc6f866
+	method = merge
+	cmdver = 0.4.0
