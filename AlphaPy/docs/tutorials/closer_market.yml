@@ -1,0 +1,30 @@
+market:
+    create_model    : False
+    data_fractal    : 1d
+    data_history    : 500
+    forecast_period : 1
+    fractal         : 1d
+    lag_period      : 1
+    leaders         : []
+    predict_history : 50
+    schema          : quandl_wiki
+    subject         : stock
+    target_group    : faang
+
+system:
+    name       : 'closer'
+    holdperiod : 0
+    longentry  : hc
+    longexit   :
+    shortentry : lc
+    shortexit  :
+    scale      : False
+
+groups:
+    faang      : ['fb', 'aapl', 'amzn', 'nflx', 'googl']
+
+features       : ['hc', 'lc']
+
+aliases:
+    hc         : 'higher_close'
+    lc         : 'lower_close'

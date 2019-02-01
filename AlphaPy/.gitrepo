@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/ScottfreeLLC/AlphaPy.git
+	branch = master
+	commit = ed137af65263710f78e08f3b4661e97c23071992
+	parent = 9e470fb790ccb9ae8dd9d643ca133e3dfc04a532
+	method = merge
+	cmdver = 0.4.0
