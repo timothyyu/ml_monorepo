@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/niharikabalachandra/Stock-Market-Prediction-Using-Natural-Language-Processing.git
+	branch = master
+	commit = ce071609e999430a6071052f875f4297ef821db6
+	parent = c62d6ea9d8484c8e77882bff30951c613ccfd049
+	method = merge
+	cmdver = 0.4.0
