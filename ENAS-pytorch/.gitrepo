@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/carpedm20/ENAS-pytorch.git
+	branch = master
+	commit = ed2232d10ed08054138c60ac052e326505aadf9f
+	parent = c8abe0e3de7db3b76ea910c0aaf88c790196242e
+	method = merge
+	cmdver = 0.4.0

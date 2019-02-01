@@ -1,0 +1,6 @@
+ipdb
+tqdm
+scipy
+imageio
+pygraphviz
+tensorboardX
