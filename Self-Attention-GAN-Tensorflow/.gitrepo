@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/taki0112/Self-Attention-GAN-Tensorflow.git
+	branch = master
+	commit = c6e027cd71455d0bdd2c6f08809a831424be2eb1
+	parent = d62bfe10912ca3ca8bf0931d2078fe2c05c1d777
+	method = merge
+	cmdver = 0.4.0
