@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/flyyufelix/cnn_finetune.git
+	branch = master
+	commit = cba343987d8a1dc1dfae240afa298e11898e1a3f
+	parent = 342550e738e8677b0c207529b1028a97c1d5f212
+	method = merge
+	cmdver = 0.4.0
