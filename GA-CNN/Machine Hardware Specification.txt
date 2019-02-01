@@ -1,0 +1,3 @@
+CPU: Intel i5-8400 Generation 8 @ 2.80 GHz 6-cpu
+GPU: NVidia GeForce GTX 1060 6GB
+RAM: 16GB DDR4

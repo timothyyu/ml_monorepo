@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Legendnic/GA-CNN
+	branch = master
+	commit = 53ba35ebddf54b6820641f20caf33c5f13d9da79
+	parent = 430e1dae4068330b258ebb31f1f5350918df2224
+	method = merge
+	cmdver = 0.4.0
