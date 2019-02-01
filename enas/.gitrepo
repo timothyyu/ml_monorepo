@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/melodyguan/enas.git
+	branch = master
+	commit = d1a90ac915301198f2a30ce136e9040e6c4235ff
+	parent = 7d61401d2cefa28b560dc13e89c4318a963c4b71
+	method = merge
+	cmdver = 0.4.0
