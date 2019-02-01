@@ -1,0 +1,6 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000134, 1, 0.000134, sp-first-restart='100', sp-learned-size-factor='0.4', sp-rand-phase-dec-freq=''0.001'', sp-restart-inc='1.5', sp-var-dec-heur=''0'', sp-variable-decay='1.4'
+0.014992, 0.014992, 0.163207, 1, 0.148215, sp-first-restart='100', sp-learned-size-factor='0.4', sp-rand-phase-dec-freq=''0.001'', sp-restart-inc='1.5', sp-var-dec-heur=''0'', sp-variable-decay='1.4'
+0.048613, 0.011938, 1.270933, 2, 1.222320, sp-first-restart='404', sp-learned-size-factor='1.5389148819352396', sp-rand-phase-dec-freq=''0.001'', sp-restart-inc='1.8890910501041942', sp-var-dec-heur=''18'', sp-variable-decay='1.290960661611519'
+0.103653, 0.013024, 1.758250, 3, 1.654597, sp-first-restart='305', sp-learned-size-factor='1.3701670573841287', sp-rand-phase-dec-freq=''0.005'', sp-restart-inc='1.2535320094079347', sp-var-dec-heur=''12'', sp-variable-decay='1.2882492961105327'
+1.210501, 0.014880, 14.552709, 4, 13.342208, sp-first-restart='28', sp-learned-size-factor='0.13561353836313345', sp-rand-phase-dec-freq=''0.005'', sp-restart-inc='1.857833847232902', sp-var-dec-heur=''16'', sp-variable-decay='1.5043353409852858'

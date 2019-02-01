@@ -1,0 +1,38 @@
+language: python
+
+cache:
+  apt: true
+  directories:
+    - $HOME/.cache/pip
+  pip: true
+
+sudo: false
+
+before_cache:
+  - rm -f $HOME/.cache/pip/log/debug.log
+
+env:
+  matrix:
+    - DISTRIB='conda' COVERAGE="true" PYTHON_VERSION="3.5"
+    - DISTRIB="conda" COVERAGE="true" PYTHON_VERSION="3.6" DOCPUSH="true"
+
+install:
+  - source ci_scripts/install.sh
+
+# command to run tests, e.g. python setup.py test
+script:
+  - nosetests -sv --with-coverage --cover-package=cave
+
+after_success:
+  - source ci_scripts/create_doc.sh $TRAVIS_BRANCH "doc_result"
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $CAVE_TOKEN
+  keep-history: true
+  committer-from-gh: true
+  on:
+    all_branches: true
+    condition: $doc_result = "success"
+  local_dir: doc/$TRAVIS_BRANCH

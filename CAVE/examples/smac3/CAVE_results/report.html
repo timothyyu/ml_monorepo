@@ -1,0 +1,1492 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>CAVE</title>
+<link href="html/css/accordion.css" rel="stylesheet" />
+<link href="html/css/table.css" rel="stylesheet" />
+<link href="html/css/lightbox.min.css" rel="stylesheet" />
+<link href="html/css/help-tip.css" rel="stylesheet" />
+<link href="html/css/global.css" rel="stylesheet" />
+<link href="html/css/back-to-top.css" rel="stylesheet" />
+
+<link href="html/css/bokeh-0.12.14.min.css" rel="stylesheet" type="text/css">
+<link href="html/css/bokeh-widgets-0.12.14.min.css" rel="stylesheet" type="text/css">
+<link href="html/css/bokeh-tables-0.12.14.min.css" rel="stylesheet" type="text/css">
+
+<script src="html/js/bokeh-0.12.14.min.js"></script>
+<script src="html/js/bokeh-widgets-0.12.14.min.js"></script>
+<script src="html/js/bokeh-tables-0.12.14.min.js"></script>
+
+<!--Below here are the includes of scripts for the report (e.g. bokeh)-->
+<script src="content/js/InteractiveAlgorithmFootprint_script.js"></script>
+<script src="content/js/CostOverTime_script.js"></script>
+<script src="content/js/Interactive_script.js"></script>
+
+<!--Above here are the includes of scripts for the report (e.g. bokeh)-->
+
+</head>
+<body>
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="html/js/lightbox-plus-jquery.min.js"></script>
+<header>
+    <div class='l-wrapper'>
+        <img class='logo logo--smac3' src="html/images/SMAC3.png" />
+        <img class='logo logo--ml' src="html/images/ml4aad.png" />
+    </div>
+</header>
+<div class='l-wrapper'>
+<h1>CAVE</h1>
+<div class="accordion">Meta Data <div class="help-tip"><p>
+Meta data, i.e. number of instances and parameters as well as configuration budget.
+Statistics apply to the best run, if multiple configurator runs are compared.</p></div></div>
+<div class="panel">
+<div align="center">
+<table border="1" class="dataframe">
+  <tbody>
+    <tr>
+      <td><b>Run with best incumbent</b></td>
+      <td>run_1</td>
+      <td><b>Cutoff</b></td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td><b># Train instances</b></td>
+      <td>10</td>
+      <td><b>Walltime budget</b></td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td><b># Test instances</b></td>
+      <td>10</td>
+      <td><b>Runcount budget</b></td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <td><b># Parameters</b></td>
+      <td>26</td>
+      <td><b>CPU budget</b></td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <td><b># Features</b></td>
+      <td>138</td>
+      <td><b>Deterministic</b></td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td><b># Duplicate Feature vectors</b></td>
+      <td>0</td>
+      <td><b>&nbsp</b></td>
+      <td>&nbsp</td>
+    </tr>
+    <tr>
+      <td><b>&nbsp</b></td>
+      <td>&nbsp</td>
+      <td><b>&nbsp</b></td>
+      <td>&nbsp</td>
+    </tr>
+    <tr>
+      <td><b># Evaluated Configurations</b></td>
+      <td>71</td>
+      <td><b># Runs per Config (min)</b></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><b># Default evaluations</b></td>
+      <td>6</td>
+      <td><b># Runs per Config (mean)</b></td>
+      <td>6.49296</td>
+    </tr>
+    <tr>
+      <td><b># Incumbent evaluations</b></td>
+      <td>72</td>
+      <td><b># Runs per Config (max)</b></td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td><b>Budget spent evaluating configurations</b></td>
+      <td>1.42198</td>
+      <td><b>Total number of configuration runs</b></td>
+      <td>461</td>
+    </tr>
+    <tr>
+      <td><b># Changed parameters</b></td>
+      <td>24</td>
+      <td><b>&nbsp</b></td>
+      <td>&nbsp</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">Best Configuration </div>
+<div class="panel">
+<div align="center">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Default</th>
+      <th>Incumbent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>--------------- Changed parameters: ---------------</th>
+      <td>-----</td>
+      <td>-----</td>
+    </tr>
+    <tr>
+      <th>sp-clause-activity-inc</th>
+      <td>1</td>
+      <td>1.13317</td>
+    </tr>
+    <tr>
+      <th>sp-clause-decay</th>
+      <td>1.4</td>
+      <td>1.84706</td>
+    </tr>
+    <tr>
+      <th>sp-clause-del-heur</th>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>sp-first-restart</th>
+      <td>100</td>
+      <td>165</td>
+    </tr>
+    <tr>
+      <th>sp-learned-clause-sort-heur</th>
+      <td>0</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>sp-learned-clauses-inc</th>
+      <td>1.3</td>
+      <td>1.35772</td>
+    </tr>
+    <tr>
+      <th>sp-learned-size-factor</th>
+      <td>0.4</td>
+      <td>1.02009</td>
+    </tr>
+    <tr>
+      <th>sp-orig-clause-sort-heur</th>
+      <td>0</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>sp-phase-dec-heur</th>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>sp-rand-var-dec-freq</th>
+      <td>0.001</td>
+      <td>0.005</td>
+    </tr>
+    <tr>
+      <th>sp-resolution</th>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>sp-restart-inc</th>
+      <td>1.5</td>
+      <td>1.49357</td>
+    </tr>
+    <tr>
+      <th>sp-use-pure-literal-rule</th>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>sp-var-activity-inc</th>
+      <td>1</td>
+      <td>0.839499</td>
+    </tr>
+    <tr>
+      <th>sp-var-dec-heur</th>
+      <td>0</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>sp-variable-decay</th>
+      <td>1.4</td>
+      <td>1.32741</td>
+    </tr>
+    <tr>
+      <th>sp-max-res-lit-inc</th>
+      <td>1</td>
+      <td>inactive</td>
+    </tr>
+    <tr>
+      <th>sp-max-res-runs</th>
+      <td>4</td>
+      <td>inactive</td>
+    </tr>
+    <tr>
+      <th>sp-rand-phase-dec-freq</th>
+      <td>0.001</td>
+      <td>0.005</td>
+    </tr>
+    <tr>
+      <th>sp-rand-var-dec-scaling</th>
+      <td>1</td>
+      <td>0.731205</td>
+    </tr>
+    <tr>
+      <th>sp-res-cutoff-cls</th>
+      <td>8</td>
+      <td>inactive</td>
+    </tr>
+    <tr>
+      <th>sp-res-cutoff-lits</th>
+      <td>400</td>
+      <td>inactive</td>
+    </tr>
+    <tr>
+      <th>sp-res-order-heur</th>
+      <td>0</td>
+      <td>inactive</td>
+    </tr>
+    <tr>
+      <th>sp-rand-phase-scaling</th>
+      <td>1</td>
+      <td>0.850209</td>
+    </tr>
+    <tr>
+      <th>--------------- Unchanged parameters: ---------------</th>
+      <td>-----</td>
+      <td>-----</td>
+    </tr>
+    <tr>
+      <th>sp-update-dec-queue</th>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">Performance Analysis <div class="help-tip"><p>
+Contains different ways of analyzing
+the final incumbent and the performance of
+the algorithm's default parameter
+configuration.</p></div></div>
+<div class="panel">
+<div class="accordion">Performance Table <div class="help-tip"><p>
+*CAVE* uses three kinds of scores: PAR1, PAR10 and number of timeouts. PAR
+stands for Penalized Average Runtime. This is applicable on scenarios that
+optimize runtimes with a cutoff. Since it is not clear how long the algorithm
+would have run without the cutoff (or whether it would have terminated at all),
+the cutoff is multiplied by a factor. PAR1 does not penalize (multiplicator of
+1), while PAR10 penalized with factor 10.
+
+If there are multiple runs on the same configuration-instance pair (with
+different seeds), some resulting in timeouts and some not, the majority decides here.
+
+The resulting difference of default and incumbent is tested for significance
+using a paired permutation test with 10000 iterations
+and tests against the null-hypothesis that the mean
+of performance between default and incumbent is equal.</p></div></div>
+<div class="panel">
+<div align="center">
+<table border="3" class="dataframe">
+  <col>
+  <colgroup span="2"></colgroup>
+  <colgroup span="2"></colgroup>
+  <thead>
+    <tr>
+      <td rowspan="2"></td>
+      <th colspan="3" scope="colgroup">Train</th>
+      <th colspan="3" scope="colgroup">Test</th>
+      <th colspan="1" scope="colgroup">p-value</th>
+    </tr>
+    <tr>
+      <th scope="col">Default</th>
+      <th scope="col">Incumbent</th>
+      <th scope="col">Oracle</th>
+      <th scope="col">Default</th>
+      <th scope="col">Incumbent</th>
+      <th scope="col">Oracle</th>
+    </tr>
+</thead>
+
+  <tbody>
+    <tr>
+      <th>PAR10</th>
+      <td>0.02</td>
+      <td>0.014</td>
+      <td>0.013</td>
+      <td>0.015</td>
+      <td>0.011</td>
+      <td>N/A</td>
+      <td>0.00010</td>
+    </tr>
+    <tr>
+      <th>PAR1</th>
+      <td>0.02</td>
+      <td>0.014</td>
+      <td>0.013</td>
+      <td>0.015</td>
+      <td>0.011</td>
+      <td>N/A</td>
+      <td>0.00010</td>
+    </tr>
+    <tr>
+      <th>Timeouts</th>
+      <td>0/10</td>
+      <td>0/10</td>
+      <td>0/10</td>
+      <td>0/10</td>
+      <td>0/10</td>
+      <td>0/0</td>
+      <td>1.00000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">empirical Cumulative Distribution Function (eCDF) <div class="help-tip"><p>
+Depicts cost distributions over the set of instances.
+Since these are empirical distributions,
+the plots show step functions. These plots provide insights into
+how well configurations perform up to a certain threshold. For
+runtime scenarios this shows the probability of solving all
+instances from the set in a given timeframe. On the
+left side the training-data is scattered, on the
+right side the test-data is scattered.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="cdf_train.png" data-lightbox="['examples/smac3/CAVE_results/cdf_train.png', 'examples/smac3/CAVE_results/cdf_test.png']" data-title="cdf_train.png"><img src="cdf_train.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="cdf_test.png" data-lightbox="['examples/smac3/CAVE_results/cdf_train.png', 'examples/smac3/CAVE_results/cdf_test.png']" data-title="cdf_test.png"><img src="cdf_test.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<p style="clear: both;"></div>
+</div><div class="accordion">Scatterplot <div class="help-tip"><p>
+Scatter plots show the costs of the default and
+optimized parameter
+configuration on each instance. Since this
+looses detailed information about the individual
+cost on each instance by looking at aggregated cost
+values in tables, scatter plots provide a more
+detailed picture. They provide insights whether
+overall performance improvements can be explained
+only by some outliers or whether they are due to
+improvements on the entire instance set. On the
+left side the training-data is scattered, on the
+right side the test-data is scattered.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="scatter_train.png" data-lightbox="['examples/smac3/CAVE_results/scatter_train.png', 'examples/smac3/CAVE_results/scatter_test.png']" data-title="scatter_train.png"><img src="scatter_train.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="scatter_test.png" data-lightbox="['examples/smac3/CAVE_results/scatter_train.png', 'examples/smac3/CAVE_results/scatter_test.png']" data-title="scatter_test.png"><img src="scatter_test.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<p style="clear: both;"></div>
+</div><div class="accordion">Algorithm Footprints <div class="help-tip"><p>
+The instance features are projected into a
+two/three dimensional space using principal
+component analysis (PCA) and the footprint
+of each algorithm is plotted, i.e., on which
+instances the default or the optimized
+configuration performs well. In contrast
+to the other analysis methods in this
+section, these plots allow insights into
+which of the two configurations performs
+well on specific types or clusters of
+instances. Inspired by Smith-Miles.</p></div></div>
+<div class="panel">
+<div class="accordion">Interactive Algorithm Footprint </div>
+<div class="panel">
+<div align="center">
+
+<div class="bk-root">
+    <div class="bk-plotdiv" id="98998743-13d2-4d40-8abc-2e96c3f8a4ca"></div>
+</div>
+</div>
+</div><div class="accordion">Default 3d <div class="help-tip"><p>
+Projection of feature space into three dimensions, different viewpoints for
+enhanced explanation.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="footprint_default_3d_0.png" data-lightbox="['examples/smac3/CAVE_results/footprint_default_3d_0.png', 'examples/smac3/CAVE_results/footprint_default_3d_1.png', 'examples/smac3/CAVE_results/footprint_default_3d_2.png', 'examples/smac3/CAVE_results/footprint_default_3d_3.png']" data-title="footprint_default_3d_0.png"><img src="footprint_default_3d_0.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="footprint_default_3d_1.png" data-lightbox="['examples/smac3/CAVE_results/footprint_default_3d_0.png', 'examples/smac3/CAVE_results/footprint_default_3d_1.png', 'examples/smac3/CAVE_results/footprint_default_3d_2.png', 'examples/smac3/CAVE_results/footprint_default_3d_3.png']" data-title="footprint_default_3d_1.png"><img src="footprint_default_3d_1.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+ <br> <a href="footprint_default_3d_2.png" data-lightbox="['examples/smac3/CAVE_results/footprint_default_3d_0.png', 'examples/smac3/CAVE_results/footprint_default_3d_1.png', 'examples/smac3/CAVE_results/footprint_default_3d_2.png', 'examples/smac3/CAVE_results/footprint_default_3d_3.png']" data-title="footprint_default_3d_2.png"><img src="footprint_default_3d_2.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="footprint_default_3d_3.png" data-lightbox="['examples/smac3/CAVE_results/footprint_default_3d_0.png', 'examples/smac3/CAVE_results/footprint_default_3d_1.png', 'examples/smac3/CAVE_results/footprint_default_3d_2.png', 'examples/smac3/CAVE_results/footprint_default_3d_3.png']" data-title="footprint_default_3d_3.png"><img src="footprint_default_3d_3.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+ <br> <p style="clear: both;"></div>
+</div><div class="accordion">Incumbent 3d <div class="help-tip"><p>
+Projection of feature space into three dimensions,
+different viewpoints for enhanced explanation.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="footprint_incumbent_3d_0.png" data-lightbox="['examples/smac3/CAVE_results/footprint_incumbent_3d_0.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_1.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_2.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_3.png']" data-title="footprint_incumbent_3d_0.png"><img src="footprint_incumbent_3d_0.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="footprint_incumbent_3d_1.png" data-lightbox="['examples/smac3/CAVE_results/footprint_incumbent_3d_0.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_1.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_2.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_3.png']" data-title="footprint_incumbent_3d_1.png"><img src="footprint_incumbent_3d_1.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+ <br> <a href="footprint_incumbent_3d_2.png" data-lightbox="['examples/smac3/CAVE_results/footprint_incumbent_3d_0.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_1.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_2.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_3.png']" data-title="footprint_incumbent_3d_2.png"><img src="footprint_incumbent_3d_2.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="footprint_incumbent_3d_3.png" data-lightbox="['examples/smac3/CAVE_results/footprint_incumbent_3d_0.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_1.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_2.png', 'examples/smac3/CAVE_results/footprint_incumbent_3d_3.png']" data-title="footprint_incumbent_3d_3.png"><img src="footprint_incumbent_3d_3.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+ <br> <p style="clear: both;"></div>
+</div></div></div><div class="accordion">Parameter Importance <div class="help-tip"><p>
+Parameter Importance analysis to determine
+which of the parameters most influence the
+analysed algorithms performance.</p></div></div>
+<div class="panel">
+<div class="accordion">Importance Table <div class="help-tip"><p>Parameters are sorted by average. Note, that the values are not directly comparable, since the different techniques provide different metrics (see respective tooltips for details on the differences).</p></div></div>
+<div class="panel">
+Parameters are sorted by average. Note, that the values are not directly comparable, since the different techniques provide different metrics (see respective tooltips for details on the differences).<div align="center">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fANOVA</th>
+      <th>Ablation</th>
+      <th>Forward-Selection</th>
+      <th>LPI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>sp-phase-dec-heur</th>
+      <td>11.59</td>
+      <td>37.71</td>
+      <td>6.51</td>
+      <td>73.48</td>
+    </tr>
+    <tr>
+      <th>sp-orig-clause-sort-heur</th>
+      <td>15.46</td>
+      <td>47.46</td>
+      <td>-</td>
+      <td>22.35</td>
+    </tr>
+    <tr>
+      <th>sp-learned-clause-sort-heur</th>
+      <td>21.30</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>sp-var-dec-heur</th>
+      <td>10.07</td>
+      <td>-</td>
+      <td>-</td>
+      <td>2.76</td>
+    </tr>
+    <tr>
+      <th>sp-update-dec-queue</th>
+      <td>-</td>
+      <td>-</td>
+      <td>6.03</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>sp-resolution</th>
+      <td>-</td>
+      <td>2.99</td>
+      <td>6.16</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>sp-learned-size-factor</th>
+      <td>-</td>
+      <td>3.65</td>
+      <td>-</td>
+      <td>0.32</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">fANOVA <div class="help-tip"><p>
+fANOVA (functional analysis of variance) computes the
+fraction of the variance in the cost space explained by
+changing a parameter by marginalizing over
+all other parameters, for each parameter (or for pairs
+of parameters). Parameters with high importance scores
+will have a large impact on the performance.
+To this end, a random forest is trained as
+an empirical performance model on the
+available empirical data from the available runhistories.</p></div></div>
+<div class="panel">
+<div class="accordion">Importance </div>
+<div class="panel">
+<div align="center">
+<table border="1" class="dataframe">
+  <tbody>
+    <tr>
+      <th>-------------------- Single importance: --------------------</th>
+      <td>--------------------</td>
+    </tr>
+    <tr>
+      <th>sp-learned-clause-sort-heur</th>
+      <td>21.2958</td>
+    </tr>
+    <tr>
+      <th>sp-orig-clause-sort-heur</th>
+      <td>15.4562</td>
+    </tr>
+    <tr>
+      <th>sp-phase-dec-heur</th>
+      <td>11.5868</td>
+    </tr>
+    <tr>
+      <th>sp-var-dec-heur</th>
+      <td>10.0651</td>
+    </tr>
+    <tr>
+      <th>-------------------- Pairwise importance: --------------------</th>
+      <td>--------------------</td>
+    </tr>
+    <tr>
+      <th>sp-learned-clause-sort-heur & sp-orig-clause-sort-heur</th>
+      <td>6.7191</td>
+    </tr>
+    <tr>
+      <th>sp-orig-clause-sort-heur & sp-phase-dec-heur</th>
+      <td>6.54007</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">Marginals </div>
+<div class="panel">
+<div class="accordion">sp-phase-dec-heur </div>
+<div class="panel">
+<div align="center">
+<a href="fanova/sp-phase-dec-heur.png" data-lightbox="fanova/sp-phase-dec-heur.png" data-title="fanova/sp-phase-dec-heur.png"><img src="fanova/sp-phase-dec-heur.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">sp-var-dec-heur </div>
+<div class="panel">
+<div align="center">
+<a href="fanova/sp-var-dec-heur.png" data-lightbox="fanova/sp-var-dec-heur.png" data-title="fanova/sp-var-dec-heur.png"><img src="fanova/sp-var-dec-heur.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">sp-orig-clause-sort-heur </div>
+<div class="panel">
+<div align="center">
+<a href="fanova/sp-orig-clause-sort-heur.png" data-lightbox="fanova/sp-orig-clause-sort-heur.png" data-title="fanova/sp-orig-clause-sort-heur.png"><img src="fanova/sp-orig-clause-sort-heur.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">sp-learned-clause-sort-heur </div>
+<div class="panel">
+<div align="center">
+<a href="fanova/sp-learned-clause-sort-heur.png" data-lightbox="fanova/sp-learned-clause-sort-heur.png" data-title="fanova/sp-learned-clause-sort-heur.png"><img src="fanova/sp-learned-clause-sort-heur.png" alt="Plot" width="600px"></a>
+</div>
+</div></div></div><div class="accordion">Ablation <div class="help-tip"><p>
+Ablation Analysis is a method to determine parameter
+importance by comparing two parameter configurations,
+typically the default and the optimized configuration.
+It uses a greedy forward search to determine the order
+of flipping the parameter settings from default
+configuration to incumbent such that in each step
+the cost is maximally decreased.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="ablationpercentage.png" data-lightbox="['examples/smac3/CAVE_results/ablationpercentage.png', 'examples/smac3/CAVE_results/ablationperformance.png']" data-title="ablationpercentage.png"><img src="ablationpercentage.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="ablationperformance.png" data-lightbox="['examples/smac3/CAVE_results/ablationpercentage.png', 'examples/smac3/CAVE_results/ablationperformance.png']" data-title="ablationperformance.png"><img src="ablationperformance.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<p style="clear: both;"></div>
+</div><div class="accordion">Forward Selection <div class="help-tip"><p>"
+Forward Selection is a generic method to
+obtain a subset of parameters to achieve the
+same prediction error as with the
+full parameter set.
+Each parameter is scored by how much the
+out-of-bag-error of an empirical
+performance model based on a random
+forest is decreased.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="forward-selection-barplot.png" data-lightbox="['examples/smac3/CAVE_results/forward-selection-barplot.png', 'examples/smac3/CAVE_results/forward-selection-chng.png']" data-title="forward-selection-barplot.png"><img src="forward-selection-barplot.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="forward-selection-chng.png" data-lightbox="['examples/smac3/CAVE_results/forward-selection-barplot.png', 'examples/smac3/CAVE_results/forward-selection-chng.png']" data-title="forward-selection-chng.png"><img src="forward-selection-chng.png" alt="Plot" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<p style="clear: both;"></div>
+</div><div class="accordion">Local Parameter Importance (LPI) <div class="help-tip"><p>
+Using an empirical performance model, performance changes of a
+configuration along each parameter are calculated. To quantify
+the importance of a parameter value, the variance of
+all cost values by changing that parameter are predicted and then
+the fraction of all variances is computed. This analysis is
+inspired by the human behaviour to look for improvements in the
+neighborhood of individual parameters of a configuration.</p></div></div>
+<div class="panel">
+<div class="accordion">sp-phase-dec-heur </div>
+<div class="panel">
+<div align="center">
+<a href="lpi/sp-phase-dec-heur.png" data-lightbox="lpi/sp-phase-dec-heur.png" data-title="lpi/sp-phase-dec-heur.png"><img src="lpi/sp-phase-dec-heur.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">sp-orig-clause-sort-heur </div>
+<div class="panel">
+<div align="center">
+<a href="lpi/sp-orig-clause-sort-heur.png" data-lightbox="lpi/sp-orig-clause-sort-heur.png" data-title="lpi/sp-orig-clause-sort-heur.png"><img src="lpi/sp-orig-clause-sort-heur.png" alt="Plot" width="600px"></a>
+</div>
+</div></div></div><div class="accordion">Configurator's Behavior </div>
+<div class="panel">
+<div class="accordion">Cost Over Time </div>
+<div class="panel">
+<div align="center">
+
+<div class="bk-root">
+    <div class="bk-plotdiv" id="563abb8a-3b77-4bba-bfc5-2ec8c33f24e0"></div>
+</div>
+</div>
+</div><div class="accordion">Configurator Footprint <div class="help-tip"><p>
+Analysis of the iteratively sampled configurations during the optimization procedure.
+Multi-dimensional scaling (MDS) is used to reduce dimensionality of the
+search space and plot the distribution of evaluated configurations. The larger the
+dot, the more often the configuration was evaluated on instances from the set.
+Configurations that were incumbents at least once during optimization are marked as red squares.
+Configurations acquired through local search are marked with a 'x'.
+The downward triangle denotes the final incumbent, whereas the orange upward triangle
+denotes the default configuration.
+The heatmap and the colorbar correspond to the predicted performance
+in that part of the search space.</p></div></div>
+<div class="panel">
+<div class="accordion">Interactive </div>
+<div class="panel">
+<div align="center">
+
+<div class="bk-root">
+    <div class="bk-plotdiv" id="1cac2496-6c5d-49a9-952b-3659ad12690a"></div>
+</div>
+</div>
+</div><div class="accordion">Static </div>
+<div class="panel">
+<div align="center">
+<a href="content/images/cfp_over_time/configurator_footprint0.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint0.png"><img src="content/images/cfp_over_time/configurator_footprint0.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint1.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint1.png"><img src="content/images/cfp_over_time/configurator_footprint1.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint2.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint2.png"><img src="content/images/cfp_over_time/configurator_footprint2.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint3.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint3.png"><img src="content/images/cfp_over_time/configurator_footprint3.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint4.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint4.png"><img src="content/images/cfp_over_time/configurator_footprint4.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint5.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint5.png"><img src="content/images/cfp_over_time/configurator_footprint5.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint6.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint6.png"><img src="content/images/cfp_over_time/configurator_footprint6.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint7.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint7.png"><img src="content/images/cfp_over_time/configurator_footprint7.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint8.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint8.png"><img src="content/images/cfp_over_time/configurator_footprint8.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<a href="content/images/cfp_over_time/configurator_footprint9.png" data-lightbox="['examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint0.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint1.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint2.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint3.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint4.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint5.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint6.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint7.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint8.png', 'examples/smac3/CAVE_results/content/images/cfp_over_time/configurator_footprint9.png']" data-title="content/images/cfp_over_time/configurator_footprint9.png"><img src="content/images/cfp_over_time/configurator_footprint9.png" alt="Plot" style="float: left; width: 9%; margin-right: 1%; margin-bottom: 0.5em;"></a>
+<p style="clear: both;"></div>
+</div></div><div class="accordion">Parallel Coordinates <div class="help-tip"><p>
+Previously used by Golovin et al.
+to study the frequency of chosen parameter
+settings in black-box-optimization.
+Each line corresponds to one configuration in
+the runhistory and shows the
+parameter settings and the corresponding
+(estimated) average cost. To
+handle large configuration spaces with
+hundreds of parameters,
+the (at most) 10 most important parameters
+based on a fANOVA parameter
+importance analysis are plotted.
+To emphasize better
+configurations, the performance is encoded
+in the color of each line,
+ranging from blue to red. These plots provide
+insights into whether the configurator
+focused on specific parameter values and
+how these correlate to their costs.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="parallel_coordinates_log_cost71.png" data-lightbox="parallel_coordinates_log_cost71.png" data-title="parallel_coordinates_log_cost71.png"><img src="parallel_coordinates_log_cost71.png" alt="Plot" width="600px"></a>
+</div>
+</div></div><div class="accordion">Feature Analysis <div class="help-tip"><p>
+Analysis of the instance features to gain
+insights into the instance set that
+was used during the optimization.</p></div></div>
+<div class="panel">
+<div class="accordion">Feature Importance <div class="help-tip"><p>
+Reduction of the out-of-the-bag root
+mean squared error of the random
+forest empirical performance model
+by applying forward selection on the set of
+instance features. Using this method, we can
+identify a set of instance features that
+suffices to obtain prediction accuracy
+comparable to using the full set of
+features.</p></div></div>
+<div class="panel">
+<div class="accordion">Table </div>
+<div class="panel">
+<div align="center">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>None</th>
+      <td>0.387631</td>
+    </tr>
+    <tr>
+      <th>nvarsOrig</th>
+      <td>0.064956</td>
+    </tr>
+    <tr>
+      <th>nvars</th>
+      <td>0.063772</td>
+    </tr>
+    <tr>
+      <th>saps_FirstLocalMinStep_Mean</th>
+      <td>0.063497</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div><div class="accordion">forward-selection-barplot </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/importance/forward-selection-barplot.png" data-lightbox="feature_plots/importance/forward-selection-barplot.png" data-title="feature_plots/importance/forward-selection-barplot.png"><img src="feature_plots/importance/forward-selection-barplot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">forward-selection-chng </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/importance/forward-selection-chng.png" data-lightbox="feature_plots/importance/forward-selection-chng.png" data-title="feature_plots/importance/forward-selection-chng.png"><img src="feature_plots/importance/forward-selection-chng.png" alt="Plot" width="600px"></a>
+</div>
+</div></div><div class="accordion">Violin and Box Plots <div class="help-tip"><p>
+Box and Violin Plots show the distribution
+of each feature value across the instances.
+Box plots show the quantiles of
+the distribution and violin plots show the
+approximated probability density of the
+feature values. Such plots are useful to
+inspect the instances and to detect
+characteristics of the instances. For
+example, if the distributions have two or
+more modes, it could indicate that the
+instance set is heterogeneous which could
+cause problems in combination
+with racing strategies configurators
+typically use. NaN values
+are removed from the data.</p></div></div>
+<div class="panel">
+<div class="accordion">BINARYp </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_BINARYp_plot.png" data-lightbox="feature_plots/violin_box_BINARYp_plot.png" data-title="feature_plots/violin_box_BINARYp_plot.png"><img src="feature_plots/violin_box_BINARYp_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">Basic_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_Basic_featuretime_plot.png" data-lightbox="feature_plots/violin_box_Basic_featuretime_plot.png" data-title="feature_plots/violin_box_Basic_featuretime_plot.png"><img src="feature_plots/violin_box_Basic_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">CG_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_CG_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_CG_coeff_variation_plot.png" data-title="feature_plots/violin_box_CG_coeff_variation_plot.png"><img src="feature_plots/violin_box_CG_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">CG_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_CG_entropy_plot.png" data-lightbox="feature_plots/violin_box_CG_entropy_plot.png" data-title="feature_plots/violin_box_CG_entropy_plot.png"><img src="feature_plots/violin_box_CG_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">CG_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_CG_featuretime_plot.png" data-lightbox="feature_plots/violin_box_CG_featuretime_plot.png" data-title="feature_plots/violin_box_CG_featuretime_plot.png"><img src="feature_plots/violin_box_CG_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">CG_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_CG_max_plot.png" data-lightbox="feature_plots/violin_box_CG_max_plot.png" data-title="feature_plots/violin_box_CG_max_plot.png"><img src="feature_plots/violin_box_CG_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">CG_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_CG_mean_plot.png" data-lightbox="feature_plots/violin_box_CG_mean_plot.png" data-title="feature_plots/violin_box_CG_mean_plot.png"><img src="feature_plots/violin_box_CG_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">CG_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_CG_min_plot.png" data-lightbox="feature_plots/violin_box_CG_min_plot.png" data-title="feature_plots/violin_box_CG_min_plot.png"><img src="feature_plots/violin_box_CG_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">DIAMETER_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_DIAMETER_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_DIAMETER_coeff_variation_plot.png" data-title="feature_plots/violin_box_DIAMETER_coeff_variation_plot.png"><img src="feature_plots/violin_box_DIAMETER_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">DIAMETER_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_DIAMETER_entropy_plot.png" data-lightbox="feature_plots/violin_box_DIAMETER_entropy_plot.png" data-title="feature_plots/violin_box_DIAMETER_entropy_plot.png"><img src="feature_plots/violin_box_DIAMETER_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">DIAMETER_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_DIAMETER_featuretime_plot.png" data-lightbox="feature_plots/violin_box_DIAMETER_featuretime_plot.png" data-title="feature_plots/violin_box_DIAMETER_featuretime_plot.png"><img src="feature_plots/violin_box_DIAMETER_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">DIAMETER_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_DIAMETER_max_plot.png" data-lightbox="feature_plots/violin_box_DIAMETER_max_plot.png" data-title="feature_plots/violin_box_DIAMETER_max_plot.png"><img src="feature_plots/violin_box_DIAMETER_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">DIAMETER_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_DIAMETER_mean_plot.png" data-lightbox="feature_plots/violin_box_DIAMETER_mean_plot.png" data-title="feature_plots/violin_box_DIAMETER_mean_plot.png"><img src="feature_plots/violin_box_DIAMETER_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">DIAMETER_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_DIAMETER_min_plot.png" data-lightbox="feature_plots/violin_box_DIAMETER_min_plot.png" data-title="feature_plots/violin_box_DIAMETER_min_plot.png"><img src="feature_plots/violin_box_DIAMETER_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">HORNY_VAR_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_HORNY_VAR_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_HORNY_VAR_coeff_variation_plot.png" data-title="feature_plots/violin_box_HORNY_VAR_coeff_variation_plot.png"><img src="feature_plots/violin_box_HORNY_VAR_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">HORNY_VAR_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_HORNY_VAR_entropy_plot.png" data-lightbox="feature_plots/violin_box_HORNY_VAR_entropy_plot.png" data-title="feature_plots/violin_box_HORNY_VAR_entropy_plot.png"><img src="feature_plots/violin_box_HORNY_VAR_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">HORNY_VAR_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_HORNY_VAR_max_plot.png" data-lightbox="feature_plots/violin_box_HORNY_VAR_max_plot.png" data-title="feature_plots/violin_box_HORNY_VAR_max_plot.png"><img src="feature_plots/violin_box_HORNY_VAR_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">HORNY_VAR_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_HORNY_VAR_mean_plot.png" data-lightbox="feature_plots/violin_box_HORNY_VAR_mean_plot.png" data-title="feature_plots/violin_box_HORNY_VAR_mean_plot.png"><img src="feature_plots/violin_box_HORNY_VAR_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">HORNY_VAR_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_HORNY_VAR_min_plot.png" data-lightbox="feature_plots/violin_box_HORNY_VAR_min_plot.png" data-title="feature_plots/violin_box_HORNY_VAR_min_plot.png"><img src="feature_plots/violin_box_HORNY_VAR_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">KLB_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_KLB_featuretime_plot.png" data-lightbox="feature_plots/violin_box_KLB_featuretime_plot.png" data-title="feature_plots/violin_box_KLB_featuretime_plot.png"><img src="feature_plots/violin_box_KLB_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">LPSLack_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_LPSLack_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_LPSLack_coeff_variation_plot.png" data-title="feature_plots/violin_box_LPSLack_coeff_variation_plot.png"><img src="feature_plots/violin_box_LPSLack_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">LPSLack_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_LPSLack_max_plot.png" data-lightbox="feature_plots/violin_box_LPSLack_max_plot.png" data-title="feature_plots/violin_box_LPSLack_max_plot.png"><img src="feature_plots/violin_box_LPSLack_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">LPSLack_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_LPSLack_mean_plot.png" data-lightbox="feature_plots/violin_box_LPSLack_mean_plot.png" data-title="feature_plots/violin_box_LPSLack_mean_plot.png"><img src="feature_plots/violin_box_LPSLack_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">LPSLack_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_LPSLack_min_plot.png" data-lightbox="feature_plots/violin_box_LPSLack_min_plot.png" data-title="feature_plots/violin_box_LPSLack_min_plot.png"><img src="feature_plots/violin_box_LPSLack_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">LP_OBJ </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_LP_OBJ_plot.png" data-lightbox="feature_plots/violin_box_LP_OBJ_plot.png" data-title="feature_plots/violin_box_LP_OBJ_plot.png"><img src="feature_plots/violin_box_LP_OBJ_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_CLAUSE_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_coeff_variation_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_coeff_variation_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_CLAUSE_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_entropy_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_entropy_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_entropy_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_CLAUSE_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_max_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_max_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_max_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_CLAUSE_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_mean_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_mean_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_mean_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_CLAUSE_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_min_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_min_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_min_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_CLAUSE_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_VAR_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_VAR_entropy_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_VAR_entropy_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_VAR_entropy_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_VAR_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_VAR_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_VAR_max_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_VAR_max_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_VAR_max_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_VAR_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_VAR_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_VAR_mean_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_VAR_mean_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_VAR_mean_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_VAR_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_VAR_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_VAR_min_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_VAR_min_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_VAR_min_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_VAR_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">POSNEG_RATIO_VAR_stdev </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_POSNEG_RATIO_VAR_stdev_plot.png" data-lightbox="feature_plots/violin_box_POSNEG_RATIO_VAR_stdev_plot.png" data-title="feature_plots/violin_box_POSNEG_RATIO_VAR_stdev_plot.png"><img src="feature_plots/violin_box_POSNEG_RATIO_VAR_stdev_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">Pre_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_Pre_featuretime_plot.png" data-lightbox="feature_plots/violin_box_Pre_featuretime_plot.png" data-title="feature_plots/violin_box_Pre_featuretime_plot.png"><img src="feature_plots/violin_box_Pre_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_coeff_variation_plot.png" data-title="feature_plots/violin_box_SP_bias_coeff_variation_plot.png"><img src="feature_plots/violin_box_SP_bias_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_max_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_max_plot.png" data-title="feature_plots/violin_box_SP_bias_max_plot.png"><img src="feature_plots/violin_box_SP_bias_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_mean_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_mean_plot.png" data-title="feature_plots/violin_box_SP_bias_mean_plot.png"><img src="feature_plots/violin_box_SP_bias_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_min_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_min_plot.png" data-title="feature_plots/violin_box_SP_bias_min_plot.png"><img src="feature_plots/violin_box_SP_bias_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_q10 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_q10_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_q10_plot.png" data-title="feature_plots/violin_box_SP_bias_q10_plot.png"><img src="feature_plots/violin_box_SP_bias_q10_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_q25 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_q25_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_q25_plot.png" data-title="feature_plots/violin_box_SP_bias_q25_plot.png"><img src="feature_plots/violin_box_SP_bias_q25_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_q50 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_q50_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_q50_plot.png" data-title="feature_plots/violin_box_SP_bias_q50_plot.png"><img src="feature_plots/violin_box_SP_bias_q50_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_q75 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_q75_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_q75_plot.png" data-title="feature_plots/violin_box_SP_bias_q75_plot.png"><img src="feature_plots/violin_box_SP_bias_q75_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_bias_q90 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_bias_q90_plot.png" data-lightbox="feature_plots/violin_box_SP_bias_q90_plot.png" data-title="feature_plots/violin_box_SP_bias_q90_plot.png"><img src="feature_plots/violin_box_SP_bias_q90_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_coeff_variation_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_coeff_variation_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_max_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_max_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_max_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_mean_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_mean_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_mean_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_min_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_min_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_min_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_q10 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_q10_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_q10_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_q10_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_q10_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_q25 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_q25_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_q25_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_q25_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_q25_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_q50 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_q50_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_q50_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_q50_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_q50_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_q75 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_q75_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_q75_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_q75_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_q75_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">SP_unconstraint_q90 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_SP_unconstraint_q90_plot.png" data-lightbox="feature_plots/violin_box_SP_unconstraint_q90_plot.png" data-title="feature_plots/violin_box_SP_unconstraint_q90_plot.png"><img src="feature_plots/violin_box_SP_unconstraint_q90_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">TRINARYp </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_TRINARYp_plot.png" data-lightbox="feature_plots/violin_box_TRINARYp_plot.png" data-title="feature_plots/violin_box_TRINARYp_plot.png"><img src="feature_plots/violin_box_TRINARYp_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">UNARY </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_UNARY_plot.png" data-lightbox="feature_plots/violin_box_UNARY_plot.png" data-title="feature_plots/violin_box_UNARY_plot.png"><img src="feature_plots/violin_box_UNARY_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_CLAUSE_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_CLAUSE_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_VCG_CLAUSE_coeff_variation_plot.png" data-title="feature_plots/violin_box_VCG_CLAUSE_coeff_variation_plot.png"><img src="feature_plots/violin_box_VCG_CLAUSE_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_CLAUSE_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_CLAUSE_entropy_plot.png" data-lightbox="feature_plots/violin_box_VCG_CLAUSE_entropy_plot.png" data-title="feature_plots/violin_box_VCG_CLAUSE_entropy_plot.png"><img src="feature_plots/violin_box_VCG_CLAUSE_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_CLAUSE_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_CLAUSE_max_plot.png" data-lightbox="feature_plots/violin_box_VCG_CLAUSE_max_plot.png" data-title="feature_plots/violin_box_VCG_CLAUSE_max_plot.png"><img src="feature_plots/violin_box_VCG_CLAUSE_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_CLAUSE_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_CLAUSE_mean_plot.png" data-lightbox="feature_plots/violin_box_VCG_CLAUSE_mean_plot.png" data-title="feature_plots/violin_box_VCG_CLAUSE_mean_plot.png"><img src="feature_plots/violin_box_VCG_CLAUSE_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_CLAUSE_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_CLAUSE_min_plot.png" data-lightbox="feature_plots/violin_box_VCG_CLAUSE_min_plot.png" data-title="feature_plots/violin_box_VCG_CLAUSE_min_plot.png"><img src="feature_plots/violin_box_VCG_CLAUSE_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_VAR_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_VAR_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_VCG_VAR_coeff_variation_plot.png" data-title="feature_plots/violin_box_VCG_VAR_coeff_variation_plot.png"><img src="feature_plots/violin_box_VCG_VAR_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_VAR_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_VAR_entropy_plot.png" data-lightbox="feature_plots/violin_box_VCG_VAR_entropy_plot.png" data-title="feature_plots/violin_box_VCG_VAR_entropy_plot.png"><img src="feature_plots/violin_box_VCG_VAR_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_VAR_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_VAR_max_plot.png" data-lightbox="feature_plots/violin_box_VCG_VAR_max_plot.png" data-title="feature_plots/violin_box_VCG_VAR_max_plot.png"><img src="feature_plots/violin_box_VCG_VAR_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_VAR_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_VAR_mean_plot.png" data-lightbox="feature_plots/violin_box_VCG_VAR_mean_plot.png" data-title="feature_plots/violin_box_VCG_VAR_mean_plot.png"><img src="feature_plots/violin_box_VCG_VAR_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VCG_VAR_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VCG_VAR_min_plot.png" data-lightbox="feature_plots/violin_box_VCG_VAR_min_plot.png" data-title="feature_plots/violin_box_VCG_VAR_min_plot.png"><img src="feature_plots/violin_box_VCG_VAR_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VG_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VG_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_VG_coeff_variation_plot.png" data-title="feature_plots/violin_box_VG_coeff_variation_plot.png"><img src="feature_plots/violin_box_VG_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VG_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VG_max_plot.png" data-lightbox="feature_plots/violin_box_VG_max_plot.png" data-title="feature_plots/violin_box_VG_max_plot.png"><img src="feature_plots/violin_box_VG_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VG_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VG_mean_plot.png" data-lightbox="feature_plots/violin_box_VG_mean_plot.png" data-title="feature_plots/violin_box_VG_mean_plot.png"><img src="feature_plots/violin_box_VG_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">VG_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_VG_min_plot.png" data-lightbox="feature_plots/violin_box_VG_min_plot.png" data-title="feature_plots/violin_box_VG_min_plot.png"><img src="feature_plots/violin_box_VG_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_featuretime_plot.png" data-lightbox="feature_plots/violin_box_cl_featuretime_plot.png" data-title="feature_plots/violin_box_cl_featuretime_plot.png"><img src="feature_plots/violin_box_cl_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_cl_num_coeff_variation_plot.png" data-title="feature_plots/violin_box_cl_num_coeff_variation_plot.png"><img src="feature_plots/violin_box_cl_num_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_max_plot.png" data-lightbox="feature_plots/violin_box_cl_num_max_plot.png" data-title="feature_plots/violin_box_cl_num_max_plot.png"><img src="feature_plots/violin_box_cl_num_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_mean_plot.png" data-lightbox="feature_plots/violin_box_cl_num_mean_plot.png" data-title="feature_plots/violin_box_cl_num_mean_plot.png"><img src="feature_plots/violin_box_cl_num_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_min_plot.png" data-lightbox="feature_plots/violin_box_cl_num_min_plot.png" data-title="feature_plots/violin_box_cl_num_min_plot.png"><img src="feature_plots/violin_box_cl_num_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_q10 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_q10_plot.png" data-lightbox="feature_plots/violin_box_cl_num_q10_plot.png" data-title="feature_plots/violin_box_cl_num_q10_plot.png"><img src="feature_plots/violin_box_cl_num_q10_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_q25 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_q25_plot.png" data-lightbox="feature_plots/violin_box_cl_num_q25_plot.png" data-title="feature_plots/violin_box_cl_num_q25_plot.png"><img src="feature_plots/violin_box_cl_num_q25_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_q50 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_q50_plot.png" data-lightbox="feature_plots/violin_box_cl_num_q50_plot.png" data-title="feature_plots/violin_box_cl_num_q50_plot.png"><img src="feature_plots/violin_box_cl_num_q50_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_q75 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_q75_plot.png" data-lightbox="feature_plots/violin_box_cl_num_q75_plot.png" data-title="feature_plots/violin_box_cl_num_q75_plot.png"><img src="feature_plots/violin_box_cl_num_q75_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_num_q90 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_num_q90_plot.png" data-lightbox="feature_plots/violin_box_cl_num_q90_plot.png" data-title="feature_plots/violin_box_cl_num_q90_plot.png"><img src="feature_plots/violin_box_cl_num_q90_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_cl_size_coeff_variation_plot.png" data-title="feature_plots/violin_box_cl_size_coeff_variation_plot.png"><img src="feature_plots/violin_box_cl_size_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_max_plot.png" data-lightbox="feature_plots/violin_box_cl_size_max_plot.png" data-title="feature_plots/violin_box_cl_size_max_plot.png"><img src="feature_plots/violin_box_cl_size_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_mean_plot.png" data-lightbox="feature_plots/violin_box_cl_size_mean_plot.png" data-title="feature_plots/violin_box_cl_size_mean_plot.png"><img src="feature_plots/violin_box_cl_size_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_min_plot.png" data-lightbox="feature_plots/violin_box_cl_size_min_plot.png" data-title="feature_plots/violin_box_cl_size_min_plot.png"><img src="feature_plots/violin_box_cl_size_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_q10 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_q10_plot.png" data-lightbox="feature_plots/violin_box_cl_size_q10_plot.png" data-title="feature_plots/violin_box_cl_size_q10_plot.png"><img src="feature_plots/violin_box_cl_size_q10_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_q25 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_q25_plot.png" data-lightbox="feature_plots/violin_box_cl_size_q25_plot.png" data-title="feature_plots/violin_box_cl_size_q25_plot.png"><img src="feature_plots/violin_box_cl_size_q25_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_q50 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_q50_plot.png" data-lightbox="feature_plots/violin_box_cl_size_q50_plot.png" data-title="feature_plots/violin_box_cl_size_q50_plot.png"><img src="feature_plots/violin_box_cl_size_q50_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_q75 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_q75_plot.png" data-lightbox="feature_plots/violin_box_cl_size_q75_plot.png" data-title="feature_plots/violin_box_cl_size_q75_plot.png"><img src="feature_plots/violin_box_cl_size_q75_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cl_size_q90 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cl_size_q90_plot.png" data-lightbox="feature_plots/violin_box_cl_size_q90_plot.png" data-title="feature_plots/violin_box_cl_size_q90_plot.png"><img src="feature_plots/violin_box_cl_size_q90_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cluster_coeff_coeff_variation </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cluster_coeff_coeff_variation_plot.png" data-lightbox="feature_plots/violin_box_cluster_coeff_coeff_variation_plot.png" data-title="feature_plots/violin_box_cluster_coeff_coeff_variation_plot.png"><img src="feature_plots/violin_box_cluster_coeff_coeff_variation_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cluster_coeff_entropy </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cluster_coeff_entropy_plot.png" data-lightbox="feature_plots/violin_box_cluster_coeff_entropy_plot.png" data-title="feature_plots/violin_box_cluster_coeff_entropy_plot.png"><img src="feature_plots/violin_box_cluster_coeff_entropy_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cluster_coeff_max </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cluster_coeff_max_plot.png" data-lightbox="feature_plots/violin_box_cluster_coeff_max_plot.png" data-title="feature_plots/violin_box_cluster_coeff_max_plot.png"><img src="feature_plots/violin_box_cluster_coeff_max_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cluster_coeff_mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cluster_coeff_mean_plot.png" data-lightbox="feature_plots/violin_box_cluster_coeff_mean_plot.png" data-title="feature_plots/violin_box_cluster_coeff_mean_plot.png"><img src="feature_plots/violin_box_cluster_coeff_mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">cluster_coeff_min </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_cluster_coeff_min_plot.png" data-lightbox="feature_plots/violin_box_cluster_coeff_min_plot.png" data-title="feature_plots/violin_box_cluster_coeff_min_plot.png"><img src="feature_plots/violin_box_cluster_coeff_min_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_BestAvgImprovement_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_BestAvgImprovement_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_gsat_BestAvgImprovement_CoeffVariance_plot.png" data-title="feature_plots/violin_box_gsat_BestAvgImprovement_CoeffVariance_plot.png"><img src="feature_plots/violin_box_gsat_BestAvgImprovement_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_BestAvgImprovement_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_BestAvgImprovement_Mean_plot.png" data-lightbox="feature_plots/violin_box_gsat_BestAvgImprovement_Mean_plot.png" data-title="feature_plots/violin_box_gsat_BestAvgImprovement_Mean_plot.png"><img src="feature_plots/violin_box_gsat_BestAvgImprovement_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_BestSolution_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_BestSolution_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_gsat_BestSolution_CoeffVariance_plot.png" data-title="feature_plots/violin_box_gsat_BestSolution_CoeffVariance_plot.png"><img src="feature_plots/violin_box_gsat_BestSolution_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_BestSolution_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_BestSolution_Mean_plot.png" data-lightbox="feature_plots/violin_box_gsat_BestSolution_Mean_plot.png" data-title="feature_plots/violin_box_gsat_BestSolution_Mean_plot.png"><img src="feature_plots/violin_box_gsat_BestSolution_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_FirstLocalMinRatio_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_FirstLocalMinRatio_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_gsat_FirstLocalMinRatio_CoeffVariance_plot.png" data-title="feature_plots/violin_box_gsat_FirstLocalMinRatio_CoeffVariance_plot.png"><img src="feature_plots/violin_box_gsat_FirstLocalMinRatio_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_FirstLocalMinRatio_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_FirstLocalMinRatio_Mean_plot.png" data-lightbox="feature_plots/violin_box_gsat_FirstLocalMinRatio_Mean_plot.png" data-title="feature_plots/violin_box_gsat_FirstLocalMinRatio_Mean_plot.png"><img src="feature_plots/violin_box_gsat_FirstLocalMinRatio_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_FirstLocalMinStep_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_FirstLocalMinStep_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_gsat_FirstLocalMinStep_CoeffVariance_plot.png" data-title="feature_plots/violin_box_gsat_FirstLocalMinStep_CoeffVariance_plot.png"><img src="feature_plots/violin_box_gsat_FirstLocalMinStep_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_FirstLocalMinStep_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_FirstLocalMinStep_Mean_plot.png" data-lightbox="feature_plots/violin_box_gsat_FirstLocalMinStep_Mean_plot.png" data-title="feature_plots/violin_box_gsat_FirstLocalMinStep_Mean_plot.png"><img src="feature_plots/violin_box_gsat_FirstLocalMinStep_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_FirstLocalMinStep_Median </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_FirstLocalMinStep_Median_plot.png" data-lightbox="feature_plots/violin_box_gsat_FirstLocalMinStep_Median_plot.png" data-title="feature_plots/violin_box_gsat_FirstLocalMinStep_Median_plot.png"><img src="feature_plots/violin_box_gsat_FirstLocalMinStep_Median_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_FirstLocalMinStep_Q10 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_FirstLocalMinStep_Q10_plot.png" data-lightbox="feature_plots/violin_box_gsat_FirstLocalMinStep_Q10_plot.png" data-title="feature_plots/violin_box_gsat_FirstLocalMinStep_Q10_plot.png"><img src="feature_plots/violin_box_gsat_FirstLocalMinStep_Q10_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">gsat_FirstLocalMinStep_Q90 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_gsat_FirstLocalMinStep_Q90_plot.png" data-lightbox="feature_plots/violin_box_gsat_FirstLocalMinStep_Q90_plot.png" data-title="feature_plots/violin_box_gsat_FirstLocalMinStep_Q90_plot.png"><img src="feature_plots/violin_box_gsat_FirstLocalMinStep_Q90_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">horn_clauses_fraction </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_horn_clauses_fraction_plot.png" data-lightbox="feature_plots/violin_box_horn_clauses_fraction_plot.png" data-title="feature_plots/violin_box_horn_clauses_fraction_plot.png"><img src="feature_plots/violin_box_horn_clauses_fraction_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">lobjois_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_lobjois_featuretime_plot.png" data-lightbox="feature_plots/violin_box_lobjois_featuretime_plot.png" data-title="feature_plots/violin_box_lobjois_featuretime_plot.png"><img src="feature_plots/violin_box_lobjois_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">lobjois_log_num_nodes_over_vars </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_lobjois_log_num_nodes_over_vars_plot.png" data-lightbox="feature_plots/violin_box_lobjois_log_num_nodes_over_vars_plot.png" data-title="feature_plots/violin_box_lobjois_log_num_nodes_over_vars_plot.png"><img src="feature_plots/violin_box_lobjois_log_num_nodes_over_vars_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">lobjois_mean_depth_over_vars </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_lobjois_mean_depth_over_vars_plot.png" data-lightbox="feature_plots/violin_box_lobjois_mean_depth_over_vars_plot.png" data-title="feature_plots/violin_box_lobjois_mean_depth_over_vars_plot.png"><img src="feature_plots/violin_box_lobjois_mean_depth_over_vars_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">lpIntRatio </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_lpIntRatio_plot.png" data-lightbox="feature_plots/violin_box_lpIntRatio_plot.png" data-title="feature_plots/violin_box_lpIntRatio_plot.png"><img src="feature_plots/violin_box_lpIntRatio_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">lpTIME </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_lpTIME_plot.png" data-lightbox="feature_plots/violin_box_lpTIME_plot.png" data-title="feature_plots/violin_box_lpTIME_plot.png"><img src="feature_plots/violin_box_lpTIME_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">ls_gsat_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_ls_gsat_featuretime_plot.png" data-lightbox="feature_plots/violin_box_ls_gsat_featuretime_plot.png" data-title="feature_plots/violin_box_ls_gsat_featuretime_plot.png"><img src="feature_plots/violin_box_ls_gsat_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">ls_saps_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_ls_saps_featuretime_plot.png" data-lightbox="feature_plots/violin_box_ls_saps_featuretime_plot.png" data-title="feature_plots/violin_box_ls_saps_featuretime_plot.png"><img src="feature_plots/violin_box_ls_saps_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">nclauses </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_nclauses_plot.png" data-lightbox="feature_plots/violin_box_nclauses_plot.png" data-title="feature_plots/violin_box_nclauses_plot.png"><img src="feature_plots/violin_box_nclauses_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">nclausesOrig </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_nclausesOrig_plot.png" data-lightbox="feature_plots/violin_box_nclausesOrig_plot.png" data-title="feature_plots/violin_box_nclausesOrig_plot.png"><img src="feature_plots/violin_box_nclausesOrig_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">nvars </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_nvars_plot.png" data-lightbox="feature_plots/violin_box_nvars_plot.png" data-title="feature_plots/violin_box_nvars_plot.png"><img src="feature_plots/violin_box_nvars_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">nvarsOrig </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_nvarsOrig_plot.png" data-lightbox="feature_plots/violin_box_nvarsOrig_plot.png" data-title="feature_plots/violin_box_nvarsOrig_plot.png"><img src="feature_plots/violin_box_nvarsOrig_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">reducedClauses </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_reducedClauses_plot.png" data-lightbox="feature_plots/violin_box_reducedClauses_plot.png" data-title="feature_plots/violin_box_reducedClauses_plot.png"><img src="feature_plots/violin_box_reducedClauses_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">reducedVars </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_reducedVars_plot.png" data-lightbox="feature_plots/violin_box_reducedVars_plot.png" data-title="feature_plots/violin_box_reducedVars_plot.png"><img src="feature_plots/violin_box_reducedVars_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_BestAvgImprovement_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_BestAvgImprovement_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_saps_BestAvgImprovement_CoeffVariance_plot.png" data-title="feature_plots/violin_box_saps_BestAvgImprovement_CoeffVariance_plot.png"><img src="feature_plots/violin_box_saps_BestAvgImprovement_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_BestAvgImprovement_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_BestAvgImprovement_Mean_plot.png" data-lightbox="feature_plots/violin_box_saps_BestAvgImprovement_Mean_plot.png" data-title="feature_plots/violin_box_saps_BestAvgImprovement_Mean_plot.png"><img src="feature_plots/violin_box_saps_BestAvgImprovement_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_BestSolution_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_BestSolution_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_saps_BestSolution_CoeffVariance_plot.png" data-title="feature_plots/violin_box_saps_BestSolution_CoeffVariance_plot.png"><img src="feature_plots/violin_box_saps_BestSolution_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_BestSolution_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_BestSolution_Mean_plot.png" data-lightbox="feature_plots/violin_box_saps_BestSolution_Mean_plot.png" data-title="feature_plots/violin_box_saps_BestSolution_Mean_plot.png"><img src="feature_plots/violin_box_saps_BestSolution_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_FirstLocalMinRatio_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_FirstLocalMinRatio_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_saps_FirstLocalMinRatio_CoeffVariance_plot.png" data-title="feature_plots/violin_box_saps_FirstLocalMinRatio_CoeffVariance_plot.png"><img src="feature_plots/violin_box_saps_FirstLocalMinRatio_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_FirstLocalMinRatio_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_FirstLocalMinRatio_Mean_plot.png" data-lightbox="feature_plots/violin_box_saps_FirstLocalMinRatio_Mean_plot.png" data-title="feature_plots/violin_box_saps_FirstLocalMinRatio_Mean_plot.png"><img src="feature_plots/violin_box_saps_FirstLocalMinRatio_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_FirstLocalMinStep_CoeffVariance </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_FirstLocalMinStep_CoeffVariance_plot.png" data-lightbox="feature_plots/violin_box_saps_FirstLocalMinStep_CoeffVariance_plot.png" data-title="feature_plots/violin_box_saps_FirstLocalMinStep_CoeffVariance_plot.png"><img src="feature_plots/violin_box_saps_FirstLocalMinStep_CoeffVariance_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_FirstLocalMinStep_Mean </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_FirstLocalMinStep_Mean_plot.png" data-lightbox="feature_plots/violin_box_saps_FirstLocalMinStep_Mean_plot.png" data-title="feature_plots/violin_box_saps_FirstLocalMinStep_Mean_plot.png"><img src="feature_plots/violin_box_saps_FirstLocalMinStep_Mean_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_FirstLocalMinStep_Median </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_FirstLocalMinStep_Median_plot.png" data-lightbox="feature_plots/violin_box_saps_FirstLocalMinStep_Median_plot.png" data-title="feature_plots/violin_box_saps_FirstLocalMinStep_Median_plot.png"><img src="feature_plots/violin_box_saps_FirstLocalMinStep_Median_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_FirstLocalMinStep_Q10 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_FirstLocalMinStep_Q10_plot.png" data-lightbox="feature_plots/violin_box_saps_FirstLocalMinStep_Q10_plot.png" data-title="feature_plots/violin_box_saps_FirstLocalMinStep_Q10_plot.png"><img src="feature_plots/violin_box_saps_FirstLocalMinStep_Q10_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">saps_FirstLocalMinStep_Q90 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_saps_FirstLocalMinStep_Q90_plot.png" data-lightbox="feature_plots/violin_box_saps_FirstLocalMinStep_Q90_plot.png" data-title="feature_plots/violin_box_saps_FirstLocalMinStep_Q90_plot.png"><img src="feature_plots/violin_box_saps_FirstLocalMinStep_Q90_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">sp_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_sp_featuretime_plot.png" data-lightbox="feature_plots/violin_box_sp_featuretime_plot.png" data-title="feature_plots/violin_box_sp_featuretime_plot.png"><img src="feature_plots/violin_box_sp_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">unit_featuretime </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_unit_featuretime_plot.png" data-lightbox="feature_plots/violin_box_unit_featuretime_plot.png" data-title="feature_plots/violin_box_unit_featuretime_plot.png"><img src="feature_plots/violin_box_unit_featuretime_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">vars_clauses_ratio </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_vars_clauses_ratio_plot.png" data-lightbox="feature_plots/violin_box_vars_clauses_ratio_plot.png" data-title="feature_plots/violin_box_vars_clauses_ratio_plot.png"><img src="feature_plots/violin_box_vars_clauses_ratio_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">vars_reduced_depth_1 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_vars_reduced_depth_1_plot.png" data-lightbox="feature_plots/violin_box_vars_reduced_depth_1_plot.png" data-title="feature_plots/violin_box_vars_reduced_depth_1_plot.png"><img src="feature_plots/violin_box_vars_reduced_depth_1_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">vars_reduced_depth_16 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_vars_reduced_depth_16_plot.png" data-lightbox="feature_plots/violin_box_vars_reduced_depth_16_plot.png" data-title="feature_plots/violin_box_vars_reduced_depth_16_plot.png"><img src="feature_plots/violin_box_vars_reduced_depth_16_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">vars_reduced_depth_256 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_vars_reduced_depth_256_plot.png" data-lightbox="feature_plots/violin_box_vars_reduced_depth_256_plot.png" data-title="feature_plots/violin_box_vars_reduced_depth_256_plot.png"><img src="feature_plots/violin_box_vars_reduced_depth_256_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">vars_reduced_depth_4 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_vars_reduced_depth_4_plot.png" data-lightbox="feature_plots/violin_box_vars_reduced_depth_4_plot.png" data-title="feature_plots/violin_box_vars_reduced_depth_4_plot.png"><img src="feature_plots/violin_box_vars_reduced_depth_4_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">vars_reduced_depth_64 </div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/violin_box_vars_reduced_depth_64_plot.png" data-lightbox="feature_plots/violin_box_vars_reduced_depth_64_plot.png" data-title="feature_plots/violin_box_vars_reduced_depth_64_plot.png"><img src="feature_plots/violin_box_vars_reduced_depth_64_plot.png" alt="Plot" width="600px"></a>
+</div>
+</div></div><div class="accordion">Correlation <div class="help-tip"><p>
+Correlation of features based on the Pearson
+product-moment correlation. Since instance
+features are used to train an empirical
+performance model in model-based
+configurators, it can
+be important to remove correlated features in a
+pre-processing step
+depending on the machine-learning algorithm.
+Darker fields
+corresponds to a larger correlation
+between the features.</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/correlation_plot_features.png" data-lightbox="feature_plots/correlation_plot_features.png" data-title="feature_plots/correlation_plot_features.png"><img src="feature_plots/correlation_plot_features.png" alt="Plot" width="600px"></a>
+</div>
+</div><div class="accordion">Clustering <div class="help-tip"><p>
+Clustering instances in 2d; the color encodes the
+cluster assigned to each cluster. Similar to ISAC, we
+use a k-means to cluster the instances in the feature
+space. As pre-processing, we use standard scaling and
+a PCA to 2 dimensions. To guess the number of
+clusters, we use the silhouette score on the
+range of 2 to 12 in the number of clusters</p></div></div>
+<div class="panel">
+<div align="center">
+<a href="feature_plots/feature_clusters.png" data-lightbox="feature_plots/feature_clusters.png" data-title="feature_plots/feature_clusters.png"><img src="feature_plots/feature_clusters.png" alt="Plot" width="600px"></a>
+</div>
+</div></div>
+</div>
+<footer>
+    <div class='l-wrapper'>
+        Generated by <a href="https://github.com/automl/CAVE">CAVE v1.1.0</a> and developed by
+        <a href="http://www.ml4aad.org">ML4AAD</a> | Optimized for Chrome and Firefox
+    </div>
+</footer>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+<script src="html/js/back-to-top.js"></script>
+</body>
+</html>

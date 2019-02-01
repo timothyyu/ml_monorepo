@@ -1,0 +1,77 @@
+/* basic color:
+primary-green: rgb(65, 166, 42)
+green-bright: rgb(145, 205, 63)
+green-dark: rgb(26, 96, 28)
+
+secondary-brown: rgb(103, 84, 18)
+secondary-bright: rgb(171, 139, 31)
+secondary-dark: rgb(68, 55, 13)
+*/
+
+/**
+* Fonts
+*/
+@import 'https://fonts.googleapis.com/css?family=Yatra+One';
+@import 'https://fonts.googleapis.com/css?family=Ubuntu';
+
+/**
+* Body
+*/
+ body {
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0;
+	background: rgb(248,255,232);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	min-height: 100vh;
+	padding-bottom: 100px; /*make space for footer*/
+	position: relative;
+ }
+
+.l-wrapper {
+    margin: auto;
+    max-width: 1200px;
+}
+
+/**
+* Header
+*/
+header {
+	text-align: center;
+	padding: 25px 0 50px;
+}
+.logo {
+	width: 200px;
+}
+.logo--smac3 {
+	float: left;
+	padding-top: 45px;
+}
+.logo--ml {
+	float: right;
+	padding-top: 25px;
+}
+h1 {
+	font-size: 3em;
+	font-family: 'Yatra One', cursive;
+	text-align: center;
+}
+
+/**
+* Footer
+*/
+footer {
+	background: rgb(65, 166, 42);
+	padding: 25px 0px;
+	bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+footer a {
+}
+footer a:hover,
+footer a:focus,
+footer a:visited {
+	color: rgb(145, 205, 63);
+}

@@ -1,0 +1,8 @@
+algo = test/test_files/svm.py
+run_obj = quality      # we optimize quality (alternatively runtime)
+runcount-limit = 250   # maximum function evaluations
+pcs_fn = test/test_files/svm.pcs
+deterministic = 1
+output_dir = test/test_files/svm_output
+instance_file = test/test_files/svm_train.txt
+test_instance_file = test/test_files/svm_test.txt

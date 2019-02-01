@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/automl/CAVE.git
+	branch = master
+	commit = 73d77c2ffffe4c6c2e17d725436c2180bdddd8d2
+	parent = 7fde611a104fb2eecb90cb6fe2a18c2f12600b8f
+	method = merge
+	cmdver = 0.4.0

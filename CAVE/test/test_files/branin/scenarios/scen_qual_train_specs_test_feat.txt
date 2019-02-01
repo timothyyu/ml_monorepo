@@ -1,0 +1,9 @@
+algo = python branin_cmdline.py
+paramfile = branin_pcs.pcs
+run_obj = quality
+runcount_limit = 500
+deterministic = 1
+instance_file = instancefiles/train_with_specifics.txt
+test_instance_file = instancefiles/test_with_specifics.txt
+feature_file = instancefiles/features_train_and_test.csv
+output_dir = qual_train_specs_test_feat

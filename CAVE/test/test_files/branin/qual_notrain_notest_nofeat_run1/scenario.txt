@@ -1,0 +1,17 @@
+intensification_percentage = 0.5
+shared_model = False
+runcount_limit = 500.0
+abort_on_first_run_crash = True
+run_obj = quality
+initial_incumbent = DEFAULT
+tuner-timeout = inf
+cost_for_crash = 2147483647.0
+execdir = .
+deterministic = True
+minR = 1
+overall_obj = par10
+wallclock_limit = inf
+always_race_default = False
+maxR = 2000
+paramfile = qual_notrain_notest_nofeat_run1/branin_pcs.pcs
+algo = python branin_cmdline.py

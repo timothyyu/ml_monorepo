@@ -1,0 +1,25 @@
+\begin{table}
+\begin{tabular}{r|r|r|r|r}
+\toprule
+                            &      fANOVA       &     Ablation      & Forward-Selection &        LPI       \\
+\hline
+sp-learned-clause-sort-heur & $         21.296$ &                 - &                 - &                 -\\
+sp-orig-clause-sort-heur    & $         15.456$ & $         47.457$ &                 - & $         22.345$\\
+sp-phase-dec-heur           & $         11.587$ & $         37.714$ & $          0.065$ & $         73.480$\\
+sp-var-dec-heur             & $         10.065$ &                 - &                 - & $          2.763$\\
+sp-learned-size-factor      &                 - & $          3.649$ &                 - & $          0.319$\\
+sp-resolution               &                 - & $          2.986$ & $          0.062$ &                 -\\
+None                        &                 - &                 - & $          0.073$ &                 -\\
+sp-update-dec-queue         &                 - &                 - & $          0.060$ &                 -\\
+\bottomrule
+\end{tabular}
+\caption{Parameter Importance values, obtained using the PIMP package. Ablation values are percentages of improvement a single parameter change obtained between the default and an incumbent configuration.
+fANOVA values are percentages that show how much variance across the whole ConfigSpace can be explained by that parameter.
+Forward Selection values are RMSE values obtained using only a subset of parameters for prediction.
+fANOVA and Forward Selection try to estimate the importances across the whole parameter space, while ablation tries to estimate them between two given configurations.
+Only the top 4 parameters of each method are listed.
+                    "-" represent that this parameter was not evaluated
+                     using the given method but with another.
+                    }
+\label{tab:pimp}
+\end{table}

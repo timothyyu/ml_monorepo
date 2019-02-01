@@ -1,0 +1,16 @@
+{
+    "forward-selection": {
+        "imp": {
+            "None": 0.3876312205629036,
+            "nvars": 0.06377166623932007,
+            "nvarsOrig": 0.06495620294675361,
+            "saps_FirstLocalMinStep_Mean": 0.06349723197649555
+        },
+        "order": [
+            "None",
+            "nvarsOrig",
+            "nvars",
+            "saps_FirstLocalMinStep_Mean"
+        ]
+    }
+}

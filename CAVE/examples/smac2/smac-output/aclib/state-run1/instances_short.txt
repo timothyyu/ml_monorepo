@@ -1,0 +1,11 @@
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.022.b122.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.099.b60.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.092.b180.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.274.b67.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.241.b162.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.485.b93.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.209.b79.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.275.b182.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.163.b748.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.315.b89.000000.prune2.lp
+instances/mip/data/COR-LAT/cor-lat-2f+r-u-10-10-10-5-100-3.286.b132.000000.prune2.lp

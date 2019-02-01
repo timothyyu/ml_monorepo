@@ -1,0 +1,42 @@
+{
+    "lpi": {
+        "imp": {
+            "sp-learned-size-factor": 0.003190310140643171,
+            "sp-orig-clause-sort-heur": 0.22345375622315472,
+            "sp-phase-dec-heur": 0.7348042404732171,
+            "sp-var-dec-heur": 0.02762892936808636
+        },
+        "order": [
+            "sp-phase-dec-heur",
+            "sp-orig-clause-sort-heur",
+            "sp-var-dec-heur",
+            "sp-learned-size-factor"
+        ]
+    }
+}        "sp-learned-size-factor",
+            "sp-resolution",
+            "-target-"
+        ],
+        "perf": {
+            "-source-": 0.02024923983730159,
+            "-target-": 0.014007222953526865,
+            "sp-learned-size-factor": 0.014705098738519651,
+            "sp-orig-clause-sort-heur": 0.014932854706773618,
+            "sp-phase-dec-heur": 0.017895102913122823,
+            "sp-resolution": 0.014518720762329174
+        },
+        "var": {
+            "-source-": 1.2301793512568292e-05,
+            "-target-": 1e-05,
+            "sp-learned-size-factor": 1e-05,
+            "sp-orig-clause-sort-heur": 1e-05,
+            "sp-phase-dec-heur": 1.219335807614108e-05,
+            "sp-resolution": 1e-05
+        }
+    }
+}'sp-orig-clause-sort-heur', 'sp-var-dec-heur']",
+            "['sp-learned-clause-sort-heur', 'sp-phase-dec-heur']",
+            "['sp-phase-dec-heur', 'sp-var-dec-heur']"
+        ]
+    }
+}

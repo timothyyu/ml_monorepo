@@ -1,0 +1,11 @@
+algo = python -u ./target_algorithm/scripts/SATCSSCWrapper.py --mem-limit 1024 --script ./target_algorithm/spear-python/spearCSSCWrapper.py 
+paramfile = test/test_files/spear-params-mixed.pcs
+execdir = .
+deterministic = 0
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 5
+wallclock-limit = 10
+instance_file = examples/spear_qcp_small/SWV-GZIP-train.txt
+test_instance_file = examples/spear_qcp_small/SWV-GZIP-test.txt
+output_dir = test/test_files/output

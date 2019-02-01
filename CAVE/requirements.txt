@@ -1,0 +1,15 @@
+tqdm
+Cython
+numpy
+pandas
+matplotlib
+scipy
+sklearn
+bokeh==1.0.1
+smac>=0.10.0
+configspace>=0.4.6
+fanova>=2.0.11
+pyimp>=1.0.5
+orange3
+selenium
+nose

@@ -1,0 +1,4 @@
+[[0, 0, 0], {"activation": 7, "learning_rate_init": 2.4650707102293865e-05, "randombool": true, "solver": "adam", "beta_1": 0.48801539876929967, "beta_2": 0.420086601277593}, {"model_based_pick": false}]
+[[0, 0, 1], {"activation": 8, "learning_rate_init": 0.0004570315132003172, "randombool": true, "solver": "adam", "beta_1": 0.7628153297626671, "beta_2": 0.7448921486926401}, {"model_based_pick": false}]
+[[1, 0, 0], {"activation": 9, "learning_rate_init": 0.0010959846759177304, "randombool": false, "solver": "sgd"}, {"model_based_pick": false}]
+[[1, 0, 1], {"activation": 7, "learning_rate_init": 8.430623545333616e-06, "randombool": false, "solver": "adam", "beta_1": 0.33723634175071693, "beta_2": 0.011366953102729394}, {"model_based_pick": false}]

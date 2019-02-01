@@ -1,0 +1,10 @@
+instances/gzip_vc1012.cnf SATISFIABLE
+instances/gzip_vc1013.cnf SATISFIABLE
+instances/gzip_vc1018.cnf SATISFIABLE
+instances/gzip_vc1020.cnf SATISFIABLE
+instances/gzip_vc1021.cnf SATISFIABLE
+instances/gzip_vc1027.cnf SATISFIABLE
+instances/gzip_vc1031.cnf UNSATISFIABLE
+instances/gzip_vc1038.cnf SATISFIABLE
+instances/gzip_vc1041.cnf SATISFIABLE
+instances/gzip_vc1044.cnf SATISFIABLE

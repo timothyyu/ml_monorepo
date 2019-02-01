@@ -1,0 +1,6 @@
+config_id,seed,cost,i_feat1,i_feat2
+configname1,1,2,0,0
+configname1,2,2,0,0
+configname1,2,2,0,1
+configname1,2,2,0,1
+configname2,1,3,0,0

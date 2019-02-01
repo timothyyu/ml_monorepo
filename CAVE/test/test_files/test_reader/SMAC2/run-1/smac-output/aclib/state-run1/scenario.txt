@@ -1,0 +1,9 @@
+algo = python -u ./target_algorithms/asp/clasp-3.1.4/wrapper.py --mem-limit 3096
+execdir = .
+deterministic = 0
+run_obj = runtime
+cutoff_time = 300
+wallclock_limit = 86400
+paramfile =  ./param.pcs
+instance_file = ./train.txt
+feature_file = ./instance-features.txt

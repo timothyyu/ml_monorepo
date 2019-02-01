@@ -1,0 +1,13 @@
+algo = python -u ./target_algorithm/scripts/SATCSSCWrapper.py --mem-limit 1024 --script ./target_algorithm/spear-python/spearCSSCWrapper.py
+paramfile = ./target_algorithm/spear-python/spear-params-mixed.pcs
+always_race_default = 1
+execdir = . 
+deterministic = 0
+run_obj = runtime
+overall_obj = mean10
+cutoff_time = 5
+wallclock-limit = 50
+instance_file = SWV-GZIP-train.txt
+test_instance_file = SWV-GZIP-test.txt
+feature_file = SWV-features.csv
+output_dir = example_output

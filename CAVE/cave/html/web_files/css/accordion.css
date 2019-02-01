@@ -1,0 +1,52 @@
+.accordion {
+    background-color: rgb(103, 84, 18);
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+	font-family: 'Ubuntu', sans-serif;
+    transition: 0.4s;
+    position:relative;
+	border-bottom: 2px solid #333;
+	
+	background-color: #999;
+}
+
+.accordion.active, .accordion:hover {
+    background-color: rgb(171, 139, 31);
+	background: #666;
+}
+
+.accordion:before {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: left;
+    margin-left: 5px;
+    padding-right: 5px;
+}
+
+.accordion.active:before {
+    content: "\2796";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 50000px;
+    overflow: visible;
+}
+
+

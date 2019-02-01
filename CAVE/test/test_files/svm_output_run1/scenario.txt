@@ -1,0 +1,14 @@
+abort_on_first_run_crash = True
+overall_obj = par10
+intensification_percentage = 0.5
+runcount_limit = 250.0
+wallclock_limit = inf
+cost_for_crash = 2147483647.0
+shared_model = False
+execdir = .
+maxR = 2000
+instance_file = test/test_files/svm_output_run1/svm_train.txt
+minR = 1
+run_obj = quality
+tuner-timeout = inf
+algo = test/test_files/svm.py
