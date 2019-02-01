@@ -1,0 +1,1 @@
+job create daily_stock_job --definition "filejdbc --maxActive=1 --resources=file:///home/jianbo/Data/stock_data/*.1 --names='code,date,open,high,low,close,price_change,volume,money,traded_market_value,market_value,turnover,adjust_price,report_type,report_date,PE_TTM,PS_TTM,PC_TTM,PB' --tableName=Stock_Price_Daily --initializeDatabase=false" --deploy

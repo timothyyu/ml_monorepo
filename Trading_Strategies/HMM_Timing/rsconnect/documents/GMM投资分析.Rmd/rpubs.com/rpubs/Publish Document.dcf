@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+bundleId:
+        https://api.rpubs.com/api/v1/document/115918/cb44ebbceff74677afc28490948ec421
+url: http://rpubs.com/jianboxue/115918
+when: 1444152504.91959

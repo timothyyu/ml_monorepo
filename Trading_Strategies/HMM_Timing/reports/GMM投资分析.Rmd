@@ -1,0 +1,75 @@
+---
+title: "机器学习投资分析－GMM+HMM (高斯混合模型＋隐形马尔可夫模型）"
+author: "薛剑波"
+date: "2015.10.06"
+output: html_document
+---
+
+1.市场状态 
+----------------------------------------------
+金融市场通常会呈现2，3种市场状态（牛市， 熊市，震荡市）。每种市场状态分别代表的市场指数不同的特性：
+
+- 牛市状态下，上涨的幅度和天数要超过下跌的幅度和天数。
+- 熊市状态下则正好相反， 下跌的幅度和天数要高于上涨。
+- 震动市状态，则是一个无方向性的状态， 上涨和下跌的天数和幅度不相上下。 
+
+
+我们可以将中证500从2013年7月至2015年9月的净值曲线分为如上几个状态：
+
+![中证500指数的市场状态](figure/market_regime_zz500.png)
+
+```{r}
+source("../gmmhmm.R")
+data <- read.csv("")
+```
+
+如果我们将市场指数（如沪深300）日回报（daily return），划分为如上所述的3个市场状态的3组数据， 则它们会整体呈现出如下特征：
+
+－牛市状态下， 平均回报率高（rate of return > 0), 波动性小， positive skewness
+－熊市状态下， 平均回报率低， 波动性大， negative skewness
+－震荡市状态下， 平均回报率趋近零， 波动性和skewness不定
+
+
+2. 通过ji
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r}
+source("gmmhmm.R")
+
+
+```
+```{r}
+data <- read.csv("index_szsh.csv")
+benchmark <- as.xts(data[, 2:3], order.by=strptime(data[,1], format="%m/%d/%y", tz=""))
+
+# 日和周回报率
+ret_benchmark <- na.omit(Return.calculate(benchmark, method="discrete"))
+ret_benchmark_weeklys <- na.omit(Return.calculate(benchmark[endpoints(benchmark,on =  "weeks")]), method="discrete")
+# 5日和10日回报率， 5日回报率与周回报率不同（5日回报率为当日与5日前回报率， 每日均有）
+ret_benchmark_5d <- na.omit(benchmark / lag(benchmark, 5) - 1) 
+ret_benchmark_10d <- na.omit(benchmark / lag(benchmark, 10) - 1)
+
+# 测试1: 准备训练GMM的数据, 使用上海指数
+dataset_full_case1 <- na.omit(cbind(ret_benchmark[, 1], lag(ret_benchmark[, 1], 1), 
+               lag(ret_benchmark[, 1], 2), ret_benchmark_5d[, 1],
+               lag(ret_benchmark_5d[,1], 1)))
+
+start_nr <- 4000;
+end_nr <- nrow(dataset_full_case1);
+dataset_train_case1 <- dataset_full_case1[start_nr:end_nr]
+benchmark_train_case1 <- benchmark[,1][start_nr:end_nr]
+ret_train_case1 <- ret_benchmark[,1][start_nr:end_nr]
+gmm_insample_test(dataset_train_case1, benchmark_train_case1, ret_train_case1)
+
+```
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

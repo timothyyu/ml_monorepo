@@ -1,0 +1,17 @@
+{
+    "contents" : "source(\"gmmhmm.R\")\n\n\n## 测试中证500\n########################################################################\n## 0. 读取指数数据\nload_data <- function()\n{\n  data <- read.csv(\"data/Index_3.csv\")\n  benchmark <- as.xts(data[, 2:4], order.by=strptime(data[,1], format=\"%Y/%m/%d\", tz=\"\"))\n  benchmark_ret <- na.omit(Return.calculate(benchmark, method = \"discrete\"))\n  \n  return (benchmark);\n}\n\n\n###########################################################################\n### casd2: 5个市场状态\nbenchmark <- load_data()\nbenchmark_ret <- Return.calculate(benchmark, method=\"discrete\")\n\ndata_case2 <- benchmark_ret\ndata_case2 <- na.omit(data_case2)\n\ngmm <- gmm_training(data_training = data_case2, nstate = 0)\nhmm <- hmm_training(gmm, data_case2, data_case2, data_case2[, 1])\n\nret_regimes <- cbind.xts(hmm$hmm_ret_regime, data_case2)\ncharts.PerformanceSummary(ret_regimes)\ntable.Stats(ret_regimes)\nrbind(table.AnnualizedReturns(ret_regimes), table.Distributions(ret_regimes), maxDrawdown(ret_regimes))\n\n\n#################################################################################\n\n\nsource('gmmhmm.R')\nsource('mysql.R')\n\n#fund_codes <- c(160119)\nfund_codes <- c(000051, 160119)\nstart_date <- '2010-01-01'\nend_date <- '2015-10-13'\nres <- mysql_fund_values(fund_codes, start_date, end_date) \n#res <- res[1:1404]\n\n\nres_weekly <- res[endpoints(res, on = \"weeks\")]\n#ret_weekly <- TTR::ROC(res_weekly, 1)\nhmm <- regime_gmmhmm(res, 1, 3)\n\nres_total <- na.omit(cbind.xts(hmm$hmm_ret_regime, ROC(res_weekly, 1)))\ncharts.PerformanceSummary(res_total)\n \n\n\n",
+    "created" : 1446529183990.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3443248469",
+    "id" : "7C1C175E",
+    "lastKnownWriteTime" : 1446551282,
+    "path" : "~/Documents/Research_Projects/Trading_Strategies/HMM_Timing/test_regime_determining.R",
+    "project_path" : "test_regime_determining.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

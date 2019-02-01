@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/darwinsys/Trading_Strategies.git
+	branch = master
+	commit = bfaa07f202bf33e5def615a4c9204f00b64031da
+	parent = 8083a1d69bf66dee848281526f119fae2db35abe
+	method = merge
+	cmdver = 0.4.0

@@ -1,0 +1,17 @@
+{
+    "contents" : "source(\"gmmhmm.R\")\n\n### GMM In-sample Test Case\n##################################################################################\n# 读取数据\ndata <- read.csv(\"index_szsh.csv\")\nbenchmark <- as.xts(data[, 2:3], order.by=strptime(data[,1], format = \"%m/%d/%y\", tz = \"\"))\n\n# 日和周回报率\nret_benchmark <- na.omit(Return.calculate(benchmark, method = \"discrete\"))\nret_benchmark_weeklys <- na.omit(Return.calculate(benchmark[endpoints(benchmark,on =  \"weeks\")]), method = \"discrete\")\n# 5日和10日回报率， 5日回报率与周回报率不同（5日回报率为当日与5日前回报率， 每日均有）\nret_benchmark_5d <- na.omit(benchmark / lag(benchmark, 5) - 1) \nret_benchmark_10d <- na.omit(benchmark / lag(benchmark, 10) - 1)\n\n# 测试1: 准备训练GMM的数据, 使用上海指数\ndataset_full_case1 <- na.omit(cbind(ret_benchmark[, 1], lag(ret_benchmark[, 1], 1), \n                                    lag(ret_benchmark[, 1], 2), ret_benchmark_5d[, 1],\n                                    lag(ret_benchmark_5d[,1], 1)))\n\nstart_nr <- 4000;\nend_nr <- nrow(dataset_full_case1);\ndataset_train_case1 <- dataset_full_case1[start_nr:end_nr]\nbenchmark_train_case1 <- benchmark[,1][start_nr:end_nr]\nret_train_case1 <- ret_benchmark[,1][start_nr:end_nr]\ngmm_insample_test(dataset_train_case1, benchmark_train_case1, ret_train_case1)\n\n### DataAdapter\n#########################################################\nrequire(RMySQL)\nDBConnector <- function(){\n  db <- list();\n  db$host <- \"127.0.0.1\"\n  db$username <- \"root\"\n  \n  return(dbConnect(RMySQL::MySQL(), host = db$host, \n                    user = db$username))\n  \n}\n\nGmmStrategy_DataAdapter <- function(){\n  dbcon <- DBConnector();\n  strategy_db <- list();\n  strategy_db$db_name <- \"stocks\"\n  strategy_db$db_table <- \"strategy_position\"\n  \n  \n  \n  \n}\n",
+    "created" : 1446512155555.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2491519881",
+    "id" : "C380D43F",
+    "lastKnownWriteTime" : 1444131073,
+    "path" : "~/Documents/Research_Projects/Trading_Strategies/HMM_Timing/gmmhmm_test.R",
+    "project_path" : "gmmhmm_test.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
