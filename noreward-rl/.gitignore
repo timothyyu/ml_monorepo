@@ -1,0 +1,10 @@
+**/__pycache__
+**pyc
+**npy
+tmp/
+curiosity
+src/vizdoom.ini
+models/*.tar.gz
+models/output
+models/doom
+models/mario

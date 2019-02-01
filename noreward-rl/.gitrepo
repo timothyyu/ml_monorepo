@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/pathak22/noreward-rl.git
+	branch = master
+	commit = 3e220c2177fc253916f12d980957fc40579d577a
+	parent = 8eba03d423e05a4b4017b087722d1378a3505c43
+	method = merge
+	cmdver = 0.4.0
