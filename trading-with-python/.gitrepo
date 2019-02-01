@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/fraka6/trading-with-python.git
+	branch = master
+	commit = 69daa28b430d91c819810aadc9f1523c7fac1f08
+	parent = 891643e4b5ed31803eb419a9fd12b604f821ee69
+	method = merge
+	cmdver = 0.4.0
