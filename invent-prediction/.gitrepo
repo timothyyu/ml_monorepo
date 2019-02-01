@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tinkerdeep/invent-prediction.git
+	branch = master
+	commit = efad16adb75d563035586ca256460fca478ada27
+	parent = fd7362cda1b48fa90ef10b5949a5cc9d946e20e4
+	method = merge
+	cmdver = 0.4.0
