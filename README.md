@@ -1,2 +1,4 @@
 # ml_monorepo
-super-monorepo for machine learning and algorithmic trading 
+Super-monorepo for machine learning and algorithmic trading.
+
+All Sub-repositories retain and inherit the copyright of their respective license and author (MIT, Apache, BSD, etc.).
