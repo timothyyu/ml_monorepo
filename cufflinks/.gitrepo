@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/santosjorge/cufflinks.git
+	branch = master
+	commit = 8482e879fe722865eae84eec09ca7c0e794798e1
+	parent = ec2808798b8a7785a1e5c35064c4362c2c368fda
+	method = merge
+	cmdver = 0.4.0
