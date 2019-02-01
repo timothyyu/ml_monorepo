@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/nakulnayyar/SupResGenerator
+	branch = master
+	commit = f2d7c7ea3c98016c5bfb75ee6c801bba3a3a0ec9
+	parent = 687a61e9ea62b410b7aa1a850b990bcd332c31d0
+	method = merge
+	cmdver = 0.4.0
