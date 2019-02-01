@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Crypto-toolbox/HFT-Orderbook.git
+	branch = master
+	commit = 904726bb2cac61c71799d066538a4e0a6208a094
+	parent = 29c487e61576cf25ff0ba1427d46bad4373c5401
+	method = merge
+	cmdver = 0.4.0
