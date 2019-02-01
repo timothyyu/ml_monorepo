@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/taoshen58/BiBloSA.git
+	branch = master
+	commit = ec67cbdc411278dd29e8888e9fd6451695efc26c
+	parent = b591f60794c1e95d73c6ab71ba722c64720b6e62
+	method = merge
+	cmdver = 0.4.0
