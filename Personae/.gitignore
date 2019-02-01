@@ -1,0 +1,5 @@
+# Dirs.
+.idea
+*.log
+*.ipynb_checkpoints
+*.local

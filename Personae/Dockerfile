@@ -1,0 +1,14 @@
+FROM ceruleanwang/quant-base:latest
+
+ENV PROJECT_DIR   /app/Personae
+ENV PYTHONPATH $PYTHONPATH:/app
+
+WORKDIR $PROJECT_DIR
+
+ENTRYPOINT ["python3.5"]
+
+EXPOSE 80
+EXPOSE 8998
+EXPOSE 8999
+EXPOSE 9000
+

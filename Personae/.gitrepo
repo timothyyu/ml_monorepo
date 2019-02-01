@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Ceruleanacg/Personae.git
+	branch = master
+	commit = b87c5b8745bab45439b5b0f394b96fdcbc2b0dc3
+	parent = 1bfe4bd22699cf718eddadf322d18d3b66568914
+	method = merge
+	cmdver = 0.4.0
