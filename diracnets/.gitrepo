@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/szagoruyko/diracnets.git
+	branch = master
+	commit = 3c6f9863e983fdd56db2372617d9fd0d2c838125
+	parent = 3707230dcd184c31a7ece2bf812fdc474e9eb778
+	method = merge
+	cmdver = 0.4.0
