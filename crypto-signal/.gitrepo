@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/CryptoSignal/crypto-signal.git
+	branch = master
+	commit = 7ea9255ed5c3dd9b3212a43bd489e85271792670
+	parent = 8a8f8b2c9825a9861188fa630896cca0c5019b00
+	method = merge
+	cmdver = 0.4.0
