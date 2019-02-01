@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/philipxjm/Deep-Convolution-Stock-Technical-Analysis.git
+	branch = master
+	commit = fcb81b15c28cb22e4c49aa08fdfd67b8ef787194
+	parent = 8dfd7ca868c1a574b75ea0d8f53868321cc6a7c3
+	method = merge
+	cmdver = 0.4.0
