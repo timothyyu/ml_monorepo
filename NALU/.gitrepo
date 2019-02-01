@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/kgrm/NALU.git
+	branch = master
+	commit = ba12771428d792f75339feb1932e8dc89ddf7b98
+	parent = 83dc8a9aec2bafa4cb4fb8e1b2b44b830443f932
+	method = merge
+	cmdver = 0.4.0
