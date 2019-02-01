@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Yunbo426/predrnn-pp.git
+	branch = master
+	commit = 40764c52f433290aa02414b5f25c09c72b98e0af
+	parent = be1e2b98b804c1016d33e338a0be9124aef6a9c8
+	method = merge
+	cmdver = 0.4.0
