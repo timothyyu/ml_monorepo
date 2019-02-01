@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/scikit-learn-contrib/categorical-encoding.git
+	branch = master
+	commit = ee691c6ce0eb4bb437934513d472fa05ae0b287f
+	parent = a25f84e91c1081e74637289720dca06c2f7d8499
+	method = merge
+	cmdver = 0.4.0
