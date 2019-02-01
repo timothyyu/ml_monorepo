@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/automl/SMAC3.git
+	branch = master
+	commit = b5c398655a5ff4e15ecfd3e23afda5303cdcbc06
+	parent = 8451fd845cbfa8d6bf409ac8cb54e304a8f1a145
+	method = merge
+	cmdver = 0.4.0
