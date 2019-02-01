@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tcoyze/stochastic-blockmodel
+	branch = master
+	commit = a29af9a78cda5dc153d0ef7a935d5f3cc0fa4382
+	parent = 27bdb4a457ae02edfea60ce6f0a90e6becbc8d7c
+	method = merge
+	cmdver = 0.4.0
