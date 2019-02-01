@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tattooday/quant-trading.git
+	branch = master
+	commit = e7bcdc749882dd2105061df7cd0c96af0c5292ec
+	parent = b64751ff2cedb9eb5377ca0db20a9eec4c4150f1
+	method = merge
+	cmdver = 0.4.0
