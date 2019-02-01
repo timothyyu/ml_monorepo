@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Kaixhin/Rainbow.git
+	branch = master
+	commit = 41b781f4ad6e8219443d23eded1a62bab3afd8c9
+	parent = a5be0e0206291273cfc73fc3d8b543b9662cc0c0
+	method = merge
+	cmdver = 0.4.0
