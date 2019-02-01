@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/EthanZhu90/ZSL_GAN_CVPR18.git
+	branch = master
+	commit = 53b2670362388e5027e97a0a6d9d7ea59bdf5ccd
+	parent = 124c0a90619b58ef6f2c84e5838fe6d907e56f64
+	method = merge
+	cmdver = 0.4.0
