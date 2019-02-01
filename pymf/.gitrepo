@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/cthurau/pymf.git
+	branch = master
+	commit = c908970d04712cfdfd67a21c2846385d83a65a05
+	parent = 7ca8c973ca80fd4a74d78500060e00232ba387bf
+	method = merge
+	cmdver = 0.4.0
