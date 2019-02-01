@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/ufoym/imbalanced-dataset-sampler
+	branch = master
+	commit = a14e7cbf3a712f280fc02615c6b690bd51a3a8a8
+	parent = fa0a19dfd9e90016664bd96d8bfb5095222c4f22
+	method = merge
+	cmdver = 0.4.0
