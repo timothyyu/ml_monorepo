@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/alirezamika/evostra.git
+	branch = master
+	commit = 8514e247cbaa824980f459476013ba8e406fb73d
+	parent = 07bbdf4adc5cd7e993874c1894aa33b8627fb805
+	method = merge
+	cmdver = 0.4.0
