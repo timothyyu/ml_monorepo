@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/blue-yonder/tsfresh.git
+	branch = master
+	commit = 17c340715bc0cafb4d2b2b13b52e714303b1f671
+	parent = ab99f8d7f31c4f9a6194d7dadfd1ccec6939877c
+	method = merge
+	cmdver = 0.4.0
