@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/EpistasisLab/tpot
+	branch = master
+	commit = 507b45db01e8f88651f4ce8e03b607a5b50146f5
+	parent = d3b137567c3817d98591ec504fb56dadd9c5d95a
+	method = merge
+	cmdver = 0.4.0
