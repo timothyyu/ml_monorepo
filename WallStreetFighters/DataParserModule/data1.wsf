@@ -1,0 +1,41 @@
+indices,2012-03-01
+^DJA,Dow Jones Composite Average,Yahoo
+^DJI,Dow Jones Industrial Average,Yahoo
+^DJT,Dow Jones Transportation Average,Yahoo
+^DJU,Dow Jones Utility Average,Yahoo
+^NYA,NYSE COMPOSITE INDEX,Yahoo
+^NYI,NYSE International 100,Yahoo
+^NYY,NYSE TMT,Yahoo
+^NY,NYSE US 100,Yahoo
+^NYL,NYSE World Leaders,Yahoo
+^IXBK,NASDAQ Bank,Yahoo
+^NBI,NASDAQ Biotechnology,Yahoo
+^IXIC,NASDAQ Composite,Yahoo
+^IXK,NASDAQ Computer,Yahoo
+^IXF,NASDAQ Financial 100,Yahoo
+^IXID,NASDAQ Industrial,Yahoo
+^IXIS,NASDAQ Insurance,Yahoo
+^IXFN,NASDAQ Other Finance,Yahoo
+^IXUT,NASDAQ Telecommunications,Yahoo
+^IXTR,NASDAQ Transportation,Yahoo
+^NDX,NASDAQ-100,Yahoo
+^OEX,S&P 100 INDEX,Yahoo
+^MID,S&P 400 MIDCAP INDEX,Yahoo
+^GSPC,S&P 500,Yahoo
+^SPSUPX,S&P COMPOSITE 1500 INDEX,Yahoo
+^SML,S&P SMALLCAP 600 INDEX,Yahoo
+^XAX,AMEX COMPOSITE INDEX,Yahoo
+^IIX,AMEX INTERACTIVE WEEK INTERNET,Yahoo
+^NWX,AMEX NETWORKING INDEX,Yahoo
+^DWC,DJUS Market Index (full-cap),Yahoo
+^XMI,MAJOR MARKET INDEX,Yahoo
+^PSE,NYSE Arca Tech 100 Index,Yahoo
+^SOX,PHLX Semiconductor,Yahoo
+^RUI,Russell 1000,Yahoo
+^RUT,Russell 2000,Yahoo
+^RUA,Russell 3000,Yahoo
+^IRX,13-WEEK TREASURY BILL,Yahoo
+^TNX,CBOE Interest Rate 10-Year T-No,Yahoo
+^TYX,Treasury Yield 30 Years,Yahoo
+^FVX,Treasury Yield 5 Years,Yahoo
+^XAU,PHLX Gold/Silver Sector,Yahoo

@@ -1,0 +1,41 @@
+PROJEKT ZESPOLOWY WPPT INFORMATYKA
+
+Sposób obchodzenia się z gitem:
+
+branch master -> główna gałąź programu, na niej znajduje się już przetestowana i działająca część kodu, dość rzadkie updaty (przykładowo raz na 2 tygodnie mergujemy z development)
+
+branch development -> tutaj znajduje się działający kod zmergowany z pozostałych branchy, mogą zdażać się jakieś bugi, dlatego testujemy zanim zmergujemy z masterem, update umiarkowanie częste (zrobiliśmy znaczący postęp w pozostałych branchach i według nas już to co napisaliśmy działa, mergujemy z development, szczególnie istotne by na początku często mergować  swoje branche, jeśli od tego zależą pozostałe)
+
+branch GUI -> tutaj robimy GUI, każda większa funkcjonalność to powinien być osobny branch, który będzie mergowany z GUI, gdy tylko coś zacznie działać, gdy praca nad modułem zostanie skończona, usuwamy poboczne branche.
+
+reszta branchy analogicznie,
+
+dataAPI - pobieranie danych
+database - baza danych, zalezy od pobierania danych
+chart - wykresy
+techAnalysis - glowna branch dla wszystkich modułów do analizy technicznej
+movingAverage -> srednie kroczace podbranch branchy techAnalysis
+
+Commitujemy jak tylko napiszemy jakas czesc kodu. WAŻNE: zawsze dodawać sensowną, krótką informacje o commicie. To potem znacząco ułatwi ogarnianie projektu, szczególnie dla osoby mergującej z masterem, gdy coś przestanie działać.
+
+ Używamy polecenia git commit -m "tresc wiadomosci"
+
+Po każdym commicie obowiązkowo robimy pulla, powinno nam automatycznie zmergować zmiany. Po poprawnym zmergowaniu robimy pusha. 
+
+
+Baaardzo krótki kurs gita:
+
+git branch -> aktualna branch
+git checkout nazwa -> przechodzimy do branchy nazwa
+git add . -> dodajemy do scommitowania wszystkie pliki
+git add nazwa_pliku -> jak wyżej ale tylko plik nazwa_pliku
+git stash -> usuwamy wszystkie zmiany od poprzedniego commita
+git commit -m "tresc commita" -> było wyżej
+git branch nazwa_branchy -> tworzymy nową branch o nazwie nazwa_branchy
+git status -> dostajemy podglad zmian od ostatniego commita
+git merge nazwa_branchy -> mergujemy aktualna branch z brancha nazwa_branchy
+Polecam krótki kurs gita: -> http://ilabs.pwr.wroc.pl/publikacje/
+
+
+
+

@@ -1,0 +1,14 @@
+futures, 13-04-2012
+FBUX.F,BUX FUTURE,Stooq,futures
+FCE.F,CAC40 FUTURE,Stooq,futures
+FDX.F,DAX FUTURE,Stooq,futures
+STXE.F,DJ EURO STOXX50 FUTURE,Stooq,futures
+DJ.F,DJ.F,DOW JONES FUTURE,Stooq,futures
+FFI.F,FTSE100 FUTURE,Stooq,futures
+FHSI.F,HANG SENG FUTURE,Stooq,futures
+NQ.F,NASDAQ100 FUTURE,Stooq,futures
+NK.F,NIKKEI225 FUTURE,Stooq,futures
+EZ.F,RUSSELL2000 FUTURE,Stooq,futures
+ES.F,S&P500 FUTURE,Stooq,futures
+FSMI.F,SMI FUTURE,Stooq,futures
+FW20,WIG20 FUTURE,Stooq,futures

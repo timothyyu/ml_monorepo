@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/WallStreetFighters/WallStreetFighters
+	branch = master
+	commit = 4eb4bb0f3b584682b0727741d3495389e6997e19
+	parent = ef6550d0ed30ad90ee44a05f54c48255906bb12c
+	method = merge
+	cmdver = 0.4.0

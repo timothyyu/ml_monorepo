@@ -1,0 +1,116 @@
+forex,2012-03-12
+AUDCAD,Australian Dollar / Canadian Dollar,Stooq,1:1  
+AUDCHF,Australian Dollar / Swiss Franc,Stooq,1:1 
+AUDJPY,Australian Dollar / Yen,Stooq,1:1  
+AUDPLN,Australian Dollar / Polish Zloty,Stooq,1:1
+AUDUSD,Australian Dollar / U.S. Dollar,Stooq,1:1
+BRLPLN,Brazilian Real / Polish Zloty,Stooq,1:1  
+CADCHF,Canadian Dollar / Swiss Franc,Stooq,1:1  
+CADJPY,Canadian Dollar / Yen,Stooq,1:1 
+CADPLN,Canadian Dollar / Polish Zloty,Stooq,1:1
+CHF_I,CHF INDEX,Stooq,forex_index
+CHFEUR,Swiss Franc / Euro,Stooq,1:1  
+CHFGBP,Swiss Franc / British Pounds,Stooq,1:1
+CHFJPY,Swiss Franc / Yen,Stooq,1:1 
+CHFNOK,Swiss Franc / Norwegian Krone,Stooq,1:1
+CHFPLN,Swiss Franc / Polish Zloty,Stooq,1:1
+CHFSEK,Swiss Franc / Sweden Krone,Stooq,1:1  
+CHFUSD,Swiss Franc / U.S. Dollar,Stooq,1:1 
+CNYPLN,Chinese Yuan / Polish Zloty,Stooq,1:1
+CZKPLN,Czech Koruna / Polish Zloty,Stooq,100:1
+EUR_I,EUR INDEX,Stooq,forex_index
+EURAUD,Euro / Australian Dollar,Stooq,1:1 
+EURBRL,Euro / Brazilian Real,Stooq,1:1 
+EURCAD,Euro / Canadian Dollar,Stooq,1:1 
+EURCHF,Euro / Swiss Franc,Stooq,1:1
+EURCNY,Euro / Chinese Yuan,Stooq,1:1 
+EURCZK,Euro / Czech Koruna,Stooq,1:1 
+EURGBP,Euro / British Pounds,Stooq,1:1 
+EURHUF,Euro / Hungarian Forint,Stooq,1:1
+EURINR,Euro / Indian Rupee,Stooq,1:1
+EURJPY,Euro / Yen,Stooq,1:1 
+EURKRW,Euro / Korean Won,Stooq,1:1 
+EURMXN,Euro / Mexican Peso,Stooq,1:1 
+EURNOK,Euro / Norwegian Krone,Stooq,1:1 
+EURNZD,Euro / New Zealand Dollar,Stooq,1:1  
+EURPLN,Euro / Polish Zloty,Stooq,1:1  
+EURRON,Euro / Romanian Leu,Stooq,1:1  
+EURRUB,Euro / Russian Ruble,Stooq,1:1 
+EURSEK,Euro / Sweden Krone,Stooq,1:1 
+EURSGD,Euro / Singapore Dollar,Stooq,1:1 
+EURTRY,Euro / Turkish Lira,Stooq,1:1 
+EURUSD,Euro / U.S. Dollar,Stooq,1:1 
+EURZAR,Euro / South African Rand,Stooq,1:1 
+GBP_I,GBP INDEX,Stooq,forex_index
+GBPAUD,British Pounds / Australian Dollar,Stooq,1:1
+GBPCAD,British Pounds / Canadian Dollar,Stooq,1:1
+GBPCHF,British Pounds / Swiss Franc,Stooq,1:1
+GBPEUR,British Pounds / Euro,Stooq,1:1
+GBPJPY,British Pounds / Yen,Stooq,1:1  
+GBPNOK,British Pounds / Norwegian Krone,Stooq,1:1
+GBPPLN,British Pounds / Polish Zloty,Stooq,1:1
+GBPSEK,British Pounds / Sweden Krone,Stooq,1:1
+GBPSGD,British Pounds / Singapore Dollar,Stooq,1:1
+GBPUSD,British Pounds / U.S. Dollar,Stooq,1:1
+HUFPLN,Hungarian Forint / Polish Zloty,Stooq,100:1
+INRPLN,Indian Rupee / Polish Zloty,Stooq,100:1
+JPY_B,JPY BASKET,Stooq,forex_index
+JPY_I,JPY INDEX,Stooq,forex_index
+JPYCHF,Yen / Swiss Franc,Stooq,100:1
+JPYEUR,Yen / Euro,Stooq,100:1
+JPYGBP,Yen / British Pounds,Stooq,100:1
+JPYNOK,Yen / Norwegian Krone,Stooq,100:1
+JPYPLN,Yen / Polish Zloty,Stooq,100:1
+JPYSEK,Yen / Sweden Krone,Stooq,100:1
+JPYUSD,Yen / U.S. Dollar,Stooq,100:1
+KRWPLN,Korean Won / Polish Zloty,Stooq,100:1
+MXNPLN,Mexican Peso / Polish Zloty,Stooq,1:1
+NOKCHF,Norwegian Krone / Swiss Franc,Stooq,100:1
+NOKEUR,Norwegian Krone / Euro,Stooq,100:1
+NOKGBP,Norwegian Krone / British Pounds,Stooq,100:1
+NOKJPY,Norwegian Krone / Yen,Stooq,1:1
+NOKPLN,Norwegian Krone / Polish Zloty,Stooq,1:1
+NOKSEK,Norwegian Krone / Sweden Krone,Stooq,1:1  
+NOKUSD,Norwegian Krone / U.S. Dollar,Stooq,100:1
+NZDGBP,New Zealand Dollar / British Pounds,Stooq,1:1
+NZDJPY,New Zealand Dollar / Yen,Stooq,1:1
+NZDPLN,New Zealand Dollar / Polish Zloty,Stooq,1:1
+NZDUSD,New Zealand Dollar / U.S. Dollar,Stooq,1:1
+PLN_B,PLN BASKET,Stooq,forex_index
+PLN_B50,PLN BASKET50,Stooq,forex_index
+PLN_I,PLN INDEX,Stooq,forex_index
+RONPLN,Romanian Leu / Polish Zloty,Stooq,1:1
+RUBPLN,Russian Ruble / Polish Zloty,Stooq,1:1
+SEKCHF,Sweden Krone / Swiss Franc,Stooq,100:1
+SEKEUR,Sweden Krone / Euro,Stooq,100:1
+SEKGBP,Sweden Krone / British Pounds,Stooq,100:1
+SEKJPY,Sweden Krone / Yen,Stooq,1:1
+SEKNOK,Sweden Krone / Norwegian Krone,Stooq,1:1  
+SEKPLN,Sweden Krone / Polish Zloty,Stooq,1:1
+SEKUSD,Sweden Krone / U.S. Dollar,Stooq,100:1
+SGDPLN,Singapore Dollar / Polish Zloty,Stooq,1:1
+TRYPLN,Turkish Lira / Polish Zloty,Stooq,1:1
+USD_I,USD INDEX,Stooq,forex_index
+USDAUD,U.S. Dollar / Australian Dollar,Stooq,1:1
+USDBRL,U.S. Dollar / Brazilian Real,Stooq,1:1
+USDCAD,U.S. Dollar / Canadian Dollar,Stooq,1:1
+USDCHF,U.S. Dollar / Swiss Franc,Stooq,1:1
+USDCNY,U.S. Dollar / Chinese Yuan,Stooq,1:1
+USDCZK,U.S. Dollar / Czech Koruna,Stooq,1:1
+USDEUR,U.S. Dollar / Euro,Stooq,1:1
+USDGBP,U.S. Dollar / British Pounds,Stooq,1:1
+USDHUF,U.S. Dollar / Hungarian Forint,Stooq,1:1
+USDINR,U.S. Dollar / Indian Rupee,Stooq,1:1
+USDJPY,U.S. Dollar / Yen,Stooq,1:1
+USDKRW,U.S. Dollar / Korean Won,Stooq,1:1
+USDMXN,U.S. Dollar / Mexican Peso,Stooq,1:1
+USDNOK,U.S. Dollar / Norwegian Krone,Stooq,1:1
+USDNZD,U.S. Dollar / New Zealand Dollar,Stooq,1:1
+USDPLN,U.S. Dollar / Polish Zloty,Stooq,1:1
+USDRON,U.S. Dollar / Romanian Leu,Stooq,1:1
+USDRUB,U.S. Dollar / Russian Ruble,Stooq,1:1
+USDSEK,U.S. Dollar / Sweden Krone,Stooq,1:1
+USDSGD,U.S. Dollar / Singapore Dollar,Stooq,1:1
+USDTRY,U.S. Dollar / Turkish Lira,Stooq,1:1
+USDZAR,U.S. Dollar / South African Rand,Stooq,1:1
+ZARPLN,South African Rand / Polish Zloty,Stooq,1:1
