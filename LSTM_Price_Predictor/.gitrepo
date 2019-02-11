@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/nife8975/LSTM_Price_Predictor
+	branch = master
+	commit = 8e6664b348591fcbf5487c5c3b1f2cd33b9dd8dd
+	parent = 1eda789fb4ff780517611f47f80e5f2670577d86
+	method = merge
+	cmdver = 0.4.0
