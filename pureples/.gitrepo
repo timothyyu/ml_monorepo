@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/nickwilliamsnewby/pureples
+	branch = master
+	commit = b33f6220a5275d6488b1753b7f56f7c38caaf267
+	parent = 464c4d0d64d8379d0d6b37a56aec486dab35b919
+	method = merge
+	cmdver = 0.4.0

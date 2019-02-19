@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/dcmocanu/sparse-evolutionary-artificial-neural-networks
+	branch = master
+	commit = acef7efd5037e0e3e93ebf6d6df8a91d755b654d
+	parent = 2d8ca931b651a1c1fb1e972cfacd6f6a7affc9be
+	method = merge
+	cmdver = 0.4.0

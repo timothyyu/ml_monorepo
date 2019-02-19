@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/mounirlabaied/EnergyCycle.git
+	branch = master
+	commit = 3def9be1de5a09fefec14693d451039e2e6cbfb8
+	parent = da77f4b7b82cdc3a36feb1ed1e49a906fea19dc2
+	method = merge
+	cmdver = 0.4.0

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Kulbear/deep-learning-coursera.git
+	branch = master
+	commit = 997fdb2e2db67acd45d29ae418212463a54be06d
+	parent = 1ac21648cd236513e2acbf171162bc23fa5b6193
+	method = merge
+	cmdver = 0.4.0

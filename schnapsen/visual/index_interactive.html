@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/deck.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/example.css') }}">
+	    <link href="{{ url_for('static', filename='css/font.css') }}" rel="stylesheet" type="text/css">
+	    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	</head>
+
+	<body>
+		<div id="container"></div>
+		<div id="topbar">
+			<div id="scoreboard1">Player 1: <div id="p1_points">0 points</div></div>
+			<button id="reset">Reset move</button>
+			<button id="submit">Submit move</button>
+			<button id="marriage">Marriage</button>
+			<button id="exchange">Trump Exchange</button>
+			<div id="scoreboard2">Player 2: <div id="p2_points">0 points</div></div>
+		</div>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/index_interactive.js') }}"></script>
+	</body>
+
+</html>

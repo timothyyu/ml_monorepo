@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/HIPS/autograd.git
 	branch = master
-	commit = 7b27cb1afd5fc666bae84c46fba46ae38d31dd9d
-	parent = 1bf517a43eda98d73f4ad33290bc83d9318fe826
+	commit = 96a03f44da43cd7044c61ac945c483955deba957
+	parent = dbff05a2efc10daa699d729bc1ff7804e1fc8d24
 	method = merge
 	cmdver = 0.4.0

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/CodeReclaimers/neat-python
+	branch = master
+	commit = e3dbe77c0d776eae41d598e6439e6ac02ab90b18
+	parent = d3d29c26b5e481ca1c411fc20401938fcdb5afaf
+	method = merge
+	cmdver = 0.4.0

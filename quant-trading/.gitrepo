@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/tattooday/quant-trading.git
 	branch = master
-	commit = e7bcdc749882dd2105061df7cd0c96af0c5292ec
-	parent = b64751ff2cedb9eb5377ca0db20a9eec4c4150f1
+	commit = b8df9c4cebc11ea148cb3d242d4dc41177b727e5
+	parent = 9683286ac1e28127706df73828b7c1569f388a26
 	method = merge
 	cmdver = 0.4.0

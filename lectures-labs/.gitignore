@@ -1,0 +1,62 @@
+# random crap
+*~
+*.swp
+\#*\#
+.\#*
+
+# python crap
+*.pyc
+__pycache__/
+
+evaluations/*.pdf
+
+# Dataset files and folders
+ml-100k
+ml-100k.zip
+MNIST_data/
+images_resize
+labs/05_conv_nets_2/VOCdevkit/
+labs/05_conv_nets_2/VOCtrainval_06-Nov-2007.tar
+labs/05_conv_nets_2/voc_representaions.h5
+labs/05_conv_nets_2/voc_representations.h5
+glove100*
+simple_seq2seq_pretrained.h5
+simple_seq2seq_partially_pretrained.h5
+
+# generated data
+results
+tsne.png
+simple_seq2seq_checkpoint.h5
+
+# editors crap
+.vscode
+.ipynb_checkpoints/
+
+# tf summary folders
+tensorflow_summaries
+
+# VS Code jupyter temp files
+kernel-*.json
+tags
+
+maskrcnn
+Mask_RCNN-master.zip
+mask_rcnn_coco.h5
+
+# offline one
+slides/02_backprop/index_offline.html
+
+# Fashion-MNIST
+t10k-images-idx3-ubyte.gz
+t10k-labels-idx1-ubyte.gz
+train-images-idx3-ubyte.gz
+train-labels-idx1-ubyte.gz
+
+labs/06_deep_nlp/bbc-fulltext.zip
+labs/06_deep_nlp/bbc/
+
+labs/09_triplet_loss/lfw-a.zip
+labs/09_triplet_loss/lfw-a/
+labs/09_triplet_loss/lfw-deepfunneled.tgz
+labs/09_triplet_loss/lfw/
+

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/kevinzakka/spatial-transformer-network
+	branch = master
+	commit = 375f99046383316b18edfb5c575dc390c4ee3193
+	parent = abb0ac1ed146df131a487cb4f82934b127aa620b
+	method = merge
+	cmdver = 0.4.0

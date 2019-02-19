@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/vdumoulin/conv_arithmetic
+	branch = master
+	commit = 92fb92784daef73d0640bb89a3767055ea6f0ba6
+	parent = a5b9ba21a46ec5207085fce006ecc788a04d33d3
+	method = merge
+	cmdver = 0.4.0

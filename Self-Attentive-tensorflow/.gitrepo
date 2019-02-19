@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/flrngel/Self-Attentive-tensorflow.git
+	branch = master
+	commit = 0a5a096ba6df6577070112b9c96636aa21ce3a25
+	parent = 3c2d8bc5c94e885c7822708cdb5f2c391698a698
+	method = merge
+	cmdver = 0.4.0

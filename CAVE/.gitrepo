@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/automl/CAVE.git
 	branch = master
-	commit = 73d77c2ffffe4c6c2e17d725436c2180bdddd8d2
+	commit = 1fd49f6e7b0a0689ffae406d533fc26b3803284a
 	parent = 7fde611a104fb2eecb90cb6fe2a18c2f12600b8f
 	method = merge
 	cmdver = 0.4.0

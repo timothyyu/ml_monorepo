@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/tspooner/rl_markets.git
+	branch = master
+	commit = 10330ee6d5d6f12601d05230f92e20465ae8310e
+	parent = da96496c8f639017825d69dbf4b3c35a6ac7614e
+	method = merge
+	cmdver = 0.4.0

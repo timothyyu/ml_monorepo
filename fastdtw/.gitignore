@@ -1,0 +1,11 @@
+__pycache__/
+.cache/
+.eggs/
+fastdtw.egg-info/
+.env/
+dist/
+build/
+.python-version
+*.pyc
+*.so
+*.html

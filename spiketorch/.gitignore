@@ -1,0 +1,30 @@
+# Python pickled object files.
+*.p
+
+# MNIST dataset.
+*-ubyte
+
+# Parameters, assignments, results, performances, logs.
+params/
+assignments/
+results/
+performances/
+logs/
+
+# PyCache (whatever that is!).
+spiketorch/__pycache__
+
+# Job reports (from HPC experiments).
+job_reports/
+
+# IPython notebook checkpoints.
+*.ipynb_checkpoints
+
+# Line profiling results.
+*.lprof
+
+# pytest cache.
+.pytest_cache/
+
+# pycache.
+*__pycache__/

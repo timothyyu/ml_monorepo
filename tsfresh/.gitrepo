@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/blue-yonder/tsfresh.git
 	branch = master
-	commit = 17c340715bc0cafb4d2b2b13b52e714303b1f671
-	parent = ab99f8d7f31c4f9a6194d7dadfd1ccec6939877c
+	commit = 7d52283054b06546dc85601b1855824d9e15e4c0
+	parent = e86681511f44b0d7108c19e3dcea4b7938fd3a7f
 	method = merge
 	cmdver = 0.4.0

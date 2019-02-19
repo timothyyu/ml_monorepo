@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/hyperopt/hyperopt-sklearn.git
+	branch = master
+	commit = 52a5522fae473bce0ea1de5f36bb84ed37990d02
+	parent = fbd5f9079ce34dea1c4d27f8b139f792e6baa17c
+	method = merge
+	cmdver = 0.4.0

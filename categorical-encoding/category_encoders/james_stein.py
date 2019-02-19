@@ -115,7 +115,7 @@ class JamesSteinEncoder(BaseEstimator, TransformerMixin):
     .. [3] Shrinkage Estimation of Log-odds Ratios for Comparing Mobility Tables, from
     https://journals.sagepub.com/doi/abs/10.1177/0081175015570097
 
-    .. [4] Stein’s paradox and group rationality, from
+    .. [4] Stein's paradox and group rationality, from
     www.philos.rug.nl/~romeyn/presentation/2017_romeijn_-_Paris_Stein.pdf
 
     .. [5] Stein's Paradox in Statistics, from
@@ -164,10 +164,7 @@ class JamesSteinEncoder(BaseEstimator, TransformerMixin):
 
         # Unite parameters into pandas types
         X = util.convert_input(X)
-        if isinstance(y, pd.DataFrame):
-            y = y.iloc[:,0]
-        else:
-            y = pd.Series(y, name='target', index=X.index)
+        y = util.convert_input_vector(y, X.index).astype(float)
 
         # The lengths must be equal
         if X.shape[0] != y.shape[0]:
@@ -261,7 +258,7 @@ class JamesSteinEncoder(BaseEstimator, TransformerMixin):
         if self._dim is None:
             raise ValueError('Must train encoder before it can be used to transform data.')
 
-        # Unite the input into pandas DataFrame
+        # Unite the input into pandas types
         X = util.convert_input(X)
 
         # Then make sure that it is the right size
@@ -270,10 +267,7 @@ class JamesSteinEncoder(BaseEstimator, TransformerMixin):
 
         # If we are encoding the training data, we have to check the target
         if y is not None:
-            if isinstance(y, pd.DataFrame):
-                y = y.iloc[:, 0]
-            else:
-                y = pd.Series(y, name='target', index=X.index)
+            y = util.convert_input_vector(y, X.index).astype(float)
             if X.shape[0] != y.shape[0]:
                 raise ValueError("The length of X is " + str(X.shape[0]) + " but length of y is " + str(y.shape[0]) + ".")
 
@@ -449,7 +443,7 @@ class JamesSteinEncoder(BaseEstimator, TransformerMixin):
         global_count = y.count()
 
         # Iterative estimation of mu and sigma as given on page 9.
-        # This problem is traditionally solved with Newton–Raphson method:
+        # This problem is traditionally solved with Newton-Raphson method:
         #   https://en.wikipedia.org/wiki/Newton%27s_method
         # But we just use sklearn minimizer.
         def get_best_sigma(sigma, mu_k, sigma_k, K):
@@ -542,7 +536,7 @@ class JamesSteinEncoder(BaseEstimator, TransformerMixin):
             # Calculate sum and count of the target for each unique value in the feature col
             stats = y.groupby(X[col]).agg(['mean', 'count'])
 
-            # See: Stein’s paradox and group rationality (Romeijn, 2017), page 14
+            # See: Stein's paradox and group rationality (Romeijn, 2017), page 14
             smoothing = stats['count'] / (stats['count'] + global_count)
 
             estimate = smoothing*(stats['mean']) + (1-smoothing)*prior

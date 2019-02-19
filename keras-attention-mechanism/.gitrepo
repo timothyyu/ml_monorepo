@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/philipperemy/keras-attention-mechanism.git
+	branch = master
+	commit = 5a07135bddd2511d681fb3280ab02ee103e3efb3
+	parent = 2436ccbc6487719f4463a199eaa95d1740d09647
+	method = merge
+	cmdver = 0.4.0

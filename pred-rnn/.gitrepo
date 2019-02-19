@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/ujjax/pred-rnn
+	branch = master
+	commit = 32510113b2d1596730d3c57135c57021729d2339
+	parent = 1f5ae77225b259cd6e9272d221bace9e44f2e8ba
+	method = merge
+	cmdver = 0.4.0

@@ -1,0 +1,9 @@
+2018-10-10 22:54:52.694 ERROR:[Common\Msgq\msgq.cpp,56][EliteQuant::CMsgqNanomsg::CMsgqNanomsg]Unable to connect to message queue: 55557,1
+2018-10-10 22:54:52.695 ERROR:[Common\Msgq\msgq.cpp,56][EliteQuant::CMsgqNanomsg::CMsgqNanomsg]Unable to connect to message queue: 55556,1
+2018-10-10 22:54:52.695 ERROR:[Common\Msgq\msgq.cpp,56][EliteQuant::CMsgqNanomsg::CMsgqNanomsg]Unable to connect to message queue: 55555,1
+2018-10-10 22:54:52.696 INFO:[Brokers\IB\ibbrokerage.cpp,96][EliteQuant::IBBrokerage::connectToBrokerage]F 127.0.0.1:7497 clientId:0.
+2018-10-10 22:54:52.697 ERROR:[Common\Msgq\msgq.cpp,56][EliteQuant::CMsgqNanomsg::CMsgqNanomsg]Unable to connect to message queue: 55558,1
+2018-10-10 22:54:52.707 INFO:[Services\Api\apiservice.cpp,44][EliteQuant::ApiServer::run]api server started.
+2018-10-10 22:54:52.708 INFO:[Brokers\IB\ibbrokerage.cpp,101][EliteQuant::IBBrokerage::connectToBrokerage]Connected to ib brokerage 127.0.0.1:7497 clientId:0
+2018-10-10 22:54:54.710 INFO:[Brokers\IB\ibbrokerage.cpp,96][EliteQuant::IBBrokerage::connectToBrokerage]F 127.0.0.1:7497 clientId:0.
+2018-10-10 22:54:54.712 INFO:[Brokers\IB\ibbrokerage.cpp,101][EliteQuant::IBBrokerage::connectToBrokerage]Connected to ib brokerage 127.0.0.1:7497 clientId:0

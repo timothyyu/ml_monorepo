@@ -1,0 +1,20 @@
+2018-01-26 20:21:06.513 INFO:[Brokers\Ctp\ctpdatafeed.cpp,62][EliteQuant::ctpdatafeed::connectToMarketDataFeed]Ctp datasource connecting...!
+2018-01-26 20:21:06.516 INFO:[Brokers\Ctp\ctpbrokerage.cpp,93][EliteQuant::ctpbrokerage::connectToBrokerage]Ctp brokerage connecting!
+2018-01-26 20:21:06.519 INFO:[Services\Api\apiservice.cpp,44][EliteQuant::ApiServer::run]api server started.
+2018-01-26 20:21:06.772 INFO:[Brokers\Ctp\ctpbrokerage.cpp,285][EliteQuant::ctpbrokerage::OnFrontConnected]Ctp broker connected; Continue to login.
+2018-01-26 20:21:06.774 INFO:[Brokers\Ctp\ctpdatafeed.cpp,199][EliteQuant::ctpdatafeed::OnFrontConnected]Ctp data server is connected.
+2018-01-26 20:21:13.514 INFO:[Brokers\Ctp\ctpdatafeed.cpp,168][EliteQuant::ctpdatafeed::requestUserLogin]Ctp data server logging in....
+2018-01-26 20:21:13.764 ERROR:[Brokers\Ctp\ctpbrokerage.cpp,357][EliteQuant::ctpbrokerage::OnRspUserLogin]Ctp broker server user login failed: ErrorID=3, ErrorMsg=CTP:不合法的登录.
+2018-01-26 20:21:13.774 INFO:[Brokers\Ctp\ctpdatafeed.cpp,228][EliteQuant::ctpdatafeed::OnRspUserLogin]Ctp data server user logged in; TradingDay=20180129, LoginTime=, BrokerID=, UserID=.
+2018-01-26 20:21:14.042 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=IC1802.
+2018-01-26 20:21:14.301 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=IC1803.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=IF1803.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=al1802.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=al1803.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=cu1802.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=cu1803.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=i1805.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=y1805.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=v1805.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=sn1805.
+2018-01-26 20:21:14.302 INFO:[Brokers\Ctp\ctpdatafeed.cpp,253][EliteQuant::ctpdatafeed::OnRspSubMarketData]Ctp data server OnRspSubMarketData: InstrumentID=ru1805.

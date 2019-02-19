@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/mjuchli/ctc-executioner.git
+	branch = master
+	commit = d07a05f002b4ef99c04ad627c00b1214cc9bcdc0
+	parent = ea8eb2e732132779031afe6246961e119720baa5
+	method = merge
+	cmdver = 0.4.0

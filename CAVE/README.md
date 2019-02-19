@@ -112,5 +112,5 @@ and then you can use CAVE as usual, specifying the file_format as BOHB:
 cave --folders examples/bohb --file_format BOHB --output CAVE_BOHB_results
 ```
 There is an [example
-jupyter-notebook](https://github.com/automl/HpBandSter/blob/add_docu/hpbandster/examples/Workflow.ipynb) on how to use
+jupyter-notebook](https://github.com/automl/BOHBsCAVE/blob/master/notebook_mlp_on_digits.ipynb) on how to use
 CAVE with BOHB.

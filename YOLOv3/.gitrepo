@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/xiaochus/YOLOv3
+	branch = master
+	commit = db63e48f501a9019eb420f77dfc7fa6f44329270
+	parent = ecc114a0654e4ae1d891e6ae8bace8ebbe8233d2
+	method = merge
+	cmdver = 0.4.0

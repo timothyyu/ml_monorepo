@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/rtavenar/tslearn
+	branch = master
+	commit = 3a98bab64bd0e60ee5114c4eb46052bb70bad955
+	parent = 1dc17bab4a35976a6d8bd75e40b134e0eef40ff0
+	method = merge
+	cmdver = 0.4.0

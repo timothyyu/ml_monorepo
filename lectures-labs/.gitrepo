@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/m2dsupsdlclass/lectures-labs.git
+	branch = master
+	commit = 5329a21025a885e62007094cbed08027faa65002
+	parent = 1e5166206c65f38d13fdf46f56f09d7cd5fca1ea
+	method = merge
+	cmdver = 0.4.0

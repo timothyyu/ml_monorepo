@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/jjakimoto/finance_ml
 	branch = master
-	commit = 85d0f19cc8874e850ccabcb9daaec1f062d32ccd
-	parent = ffd1f175767e96605550bb264fc1904b7ab2dae3
+	commit = 5f0657e946656c63d451a5dd4003052f3d4c1b46
+	parent = 3a87eeb01c26db01593c7a782865a503376d111d
 	method = merge
 	cmdver = 0.4.0

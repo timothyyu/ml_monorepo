@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/alpacahq/example-hftish
+	branch = master
+	commit = b3196a3cdce9bca67d238cefa348816e28d4236d
+	parent = 696a7152c04d129757b952311bff7747f46e295f
+	method = merge
+	cmdver = 0.4.0

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/roomylee/awesome-relation-extraction.git
+	branch = master
+	commit = d5ac62478ed763a38dbe693a2ee78d76bd6217b7
+	parent = 298192454ee2b3192f97c53b8b1bb45bcf1d6f05
+	method = merge
+	cmdver = 0.4.0

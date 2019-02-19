@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/locustio/locust.git
+	branch = master
+	commit = 87a9aa1cb937c68e4456cafd23f3c42f25023931
+	parent = 72ecf2ba8c2f94a7878f4092b2ed5e5fef0488a2
+	method = merge
+	cmdver = 0.4.0

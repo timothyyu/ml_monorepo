@@ -1,0 +1,14 @@
+*.pyc
+locust.wpr
+locust.egg-info/**
+locustio.egg-info/**
+docs/_build/**
+mock.*.egg
+dist/**
+.idea/**
+*.iml
+*.ipr
+.vagrant
+build/
+.coverage
+.tox/

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/ysh329/deep-learning-model-convertor
+	branch = master
+	commit = 87097d51b5c0ed43f363e4c920aed0cae6611066
+	parent = e1418f40fee07af92d417229f7ae700f8df5cadd
+	method = merge
+	cmdver = 0.4.0

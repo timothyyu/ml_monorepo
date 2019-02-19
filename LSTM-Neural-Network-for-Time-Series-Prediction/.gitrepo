@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/jaungiers/LSTM-Neural-Network-for-Time-Series-Prediction.git
+	branch = master
+	commit = 1a99987e0d965170d56b0a8ca75ffa489e4873bd
+	parent = 589202aa156d35f9d1919a5f87d688142362da4c
+	method = merge
+	cmdver = 0.4.0

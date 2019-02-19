@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/peter-ch/MultiNEAT
+	branch = master
+	commit = f631e2f85c3173a279376987ab1572b5aae7adc3
+	parent = 4eeb50e692232e09d0ffac63cc7fa72b19fbc537
+	method = merge
+	cmdver = 0.4.0

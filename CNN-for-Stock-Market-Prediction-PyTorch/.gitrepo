@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/hardyqr/CNN-for-Stock-Market-Prediction-PyTorch.git
+	branch = master
+	commit = a65244f9b62f15fc247704237917bf4be8591068
+	parent = 66972180925d3321b5c76242751a94051a3a33aa
+	method = merge
+	cmdver = 0.4.0

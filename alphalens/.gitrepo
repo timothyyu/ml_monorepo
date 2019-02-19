@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/quantopian/alphalens
+	branch = master
+	commit = fddf51a659e3dd2dbfe316a15d861b25a10a5052
+	parent = 0ea6d3e1d817d0af85ee28f067f41a7be01aa0eb
+	method = merge
+	cmdver = 0.4.0

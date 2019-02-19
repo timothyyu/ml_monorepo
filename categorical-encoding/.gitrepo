@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/scikit-learn-contrib/categorical-encoding.git
 	branch = master
-	commit = ee691c6ce0eb4bb437934513d472fa05ae0b287f
+	commit = 7c9e3da24063efedb77a067f85f40645d9d23b04
 	parent = a25f84e91c1081e74637289720dca06c2f7d8499
 	method = merge
 	cmdver = 0.4.0

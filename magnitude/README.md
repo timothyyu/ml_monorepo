@@ -1,0 +1,580 @@
+<div align="center"><img src="https://gitlab.com/Plasticity/magnitude/raw/master/images/magnitude.png" alt="magnitude" height="50"></div>
+
+## <div align="center">Magnitude: a fast, simple vector embedding utility library<br /><br />[![pipeline status](https://gitlab.com/Plasticity/magnitude/badges/master/pipeline.svg)](https://gitlab.com/Plasticity/magnitude/commits/master)&nbsp;&nbsp;&nbsp;[![Build Status](https://travis-ci.org/plasticityai/magnitude.svg?branch=master)](https://travis-ci.org/plasticityai/magnitude)&nbsp;&nbsp;&nbsp;[![Build status](https://ci.appveyor.com/api/projects/status/72lwh2g7a9ddbnt2/branch/master?svg=true)](https://ci.appveyor.com/project/plasticity-admin/magnitude/branch/master)<br/>[![PyPI version](https://badge.fury.io/py/pymagnitude.svg)](https://pypi.python.org/pypi/pymagnitude/)&nbsp;&nbsp;&nbsp;[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://gitlab.com/Plasticity/magnitude/blob/master/LICENSE.txt)&nbsp;&nbsp;&nbsp;[![Python version](https://img.shields.io/pypi/pyversions/pymagnitude.svg)](https://pypi.python.org/pypi/pymagnitude/)&nbsp;&nbsp;&nbsp;&nbsp;[![DOI](https://zenodo.org/badge/122715432.svg)](https://zenodo.org/badge/latestdoi/122715432)&nbsp;&nbsp;&nbsp;&nbsp;[![arXiv](https://img.shields.io/badge/arXiv-1810.11190-%23B41A1A.svg)](https://arxiv.org/abs/1810.11190)</div>
+A feature-packed Python package and vector storage file format for utilizing vector embeddings in machine learning models in a fast, efficient, and simple manner developed by [Plasticity](https://www.plasticity.ai/). It is primarily intended to be a simpler / faster alternative to [Gensim](https://radimrehurek.com/gensim/), but can be used as a generic key-vector store for domains outside NLP. It offers unique features like [out-of-vocabulary lookups](#advanced-out-of-vocabulary-keys) and [streaming of large models over HTTP](#remote-streaming-over-http). Published in our paper at [EMNLP 2018](http://aclweb.org/anthology/D18-2021) and available on [arXiv](https://arxiv.org/abs/1810.11190).
+
+## Table of Contents
+- [Installation](#installation)
+- [Motivation](#motivation)
+- [Benchmarks and Features](#benchmarks-and-features)
+- [Pre-converted Magnitude Formats of Popular Embeddings Models](#pre-converted-magnitude-formats-of-popular-embeddings-models)
+- [Using the Library](#using-the-library)
+    * [Constructing a Magnitude Object](#constructing-a-magnitude-object)
+    * [Querying](#querying)
+    * [Basic Out-of-Vocabulary Keys](#basic-out-of-vocabulary-keys)
+    * [Advanced Out-of-Vocabulary Keys](#advanced-out-of-vocabulary-keys)
+        + [Handling Misspellings and Typos](#handling-misspellings-and-typos)
+    * [Concatenation of Multiple Models](#concatenation-of-multiple-models)
+    * [Additional Featurization (Parts of Speech, etc.)](#additional-featurization-parts-of-speech-etc)
+    * [Using Magnitude with a ML library](#using-magnitude-with-a-ml-library)
+        + [Keras](#keras)
+        + [PyTorch](#pytorch)
+        + [TFLearn](#tflearn)
+    * [Utils](#utils)
+- [Concurrency and Parallelism](#concurrency-and-parallelism)
+- [File Format and Converter](#file-format-and-converter)
+- [Remote Loading](#remote-loading)
+- [Remote Streaming over HTTP](#remote-streaming-over-http)
+- [Other Documentation](#other-documentation)
+- [Other Languages](#other-languages)
+- [Other Programming Languages](#other-programming-languages)
+- [Other Domains](#other-domains)
+- [Contributing](#contributing)
+- [Roadmap](#roadmap)
+- [Other Notable Projects](#other-notable-projects)
+- [Citing this Repository](#citing-this-repository)
+- [LICENSE and Attribution](#license-and-attribution)
+
+## Installation
+You can install this package with `pip`:
+```python
+pip install pymagnitude # Python 2.7
+pip3 install pymagnitude # Python 3
+```
+
+## Motivation
+Vector space embedding models have become increasingly common in machine learning and traditionally have been popular for natural language processing applications. A fast, lightweight tool to consume these large vector space embedding models efficiently is lacking.
+
+The Magnitude file format (`.magnitude`) for vector embeddings is intended to be a more efficient universal vector embedding format that allows for lazy-loading for faster cold starts in development, LRU memory caching for performance in production, multiple key queries, direct featurization to the inputs for a neural network, performant similiarity calculations, and other nice to have features for edge cases like handling out-of-vocabulary keys or misspelled keys and concatenating multiple vector models together. It also is intended to work with large vector models that may not fit in memory.
+
+It uses [SQLite](http://www.sqlite.org), a fast, popular embedded database, as its underlying data store. It uses indexes for fast key lookups as well as uses memory mapping, SIMD instructions, and spatial indexing for fast similarity search in the vector space off-disk with good memory performance even between multiple processes. Moreover, memory maps are cached between runs so even after closing a process, speed improvements are reaped.
+
+## Benchmarks and Features
+
+| **Metric**                                                                                                                                            | **Magnitude Light**   | **Magnitude Medium** | **Magnitude Heavy** | **Magnitude [Stream](#remote-streaming-over-http)**    |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------: | :------------------: | :-----------------: | :----------------------------------------------------: |
+| Initial load time                                                                                                                                     | **0.7210s**           | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | 7.7550s                                                |
+| Cold single key query                                                                                                                                 | **0.0001s**           | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | 1.6437s                                                |
+| Warm single key query <br /><sup>*(same key as cold query)*</sup>                                                                                     | **0.00004s**          | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | **0.0004s**                                            |
+| Cold multiple key query <br /><sup>*(n=25)*</sup>                                                                                                     | **0.0442s**           | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | 1.7753s                                                |
+| Warm multiple key query <br /><sup>*(n=25) (same keys as cold query)*</sup>                                                                           | **0.00004s**          | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | **0.0001s**                                            |
+| First `most_similar` search query <br /><sup>*(n=10) (worst case)*</sup>                                                                              | 247.05s               | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | -                                                      |
+| First `most_similar` search query <br /><sup>*(n=10) (average case) (w/ disk persistent cache)*</sup>                                                 | **1.8217s**           | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | -                                                      |
+| Subsequent `most_similar` search <br /><sup>*(n=10) (different key than first query)*</sup>                                                           | **0.2434s**           | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | -                                                      |
+| Warm subsequent `most_similar` search <br /><sup>*(n=10) (same key as first query)*</sup>                                                             | **0.00004s**          | **0.00004s**         | **0.00004s**        | -                                                      |
+| First `most_similar_approx` search query <br /><sup>*(n=10, effort=1.0) (worst case)*</sup>                                                           | N/A                   | N/A                  | **29.610s**         | -                                                      |
+| First `most_similar_approx` search query <br /><sup>*(n=10, effort=1.0) (average case) (w/ disk persistent cache)*</sup>                              | N/A                   | N/A                  | **0.9155s**         | -                                                      |
+| Subsequent `most_similar_approx` search <br /><sup>*(n=10, effort=1.0) (different key than first query)*</sup>                                        | N/A                   | N/A                  | **0.1873s**         | -                                                      |
+| Subsequent `most_similar_approx` search <br /><sup>*(n=10, effort=0.1) (different key than first query)*</sup>                                        | N/A                   | N/A                  | **0.0199s**         | -                                                      |
+| Warm subsequent `most_similar_approx` search <br /><sup>*(n=10, effort=1.0) (same key as first query)*</sup>                                          | N/A                   | N/A                  | **0.00004s**        | -                                                      |
+| File size                                                                                                                                             | 4.21GB                | 5.29GB               | 10.74GB             | **0.00GB**                                             |
+| Process memory (RAM) utilization                                                                                                                      | **18KB**              | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | 1.71MB                                                 |
+| Process memory (RAM) utilization after 100 key queries                                                                                                | **168KB**             | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> | 1.91MB                                                 |
+| Process memory (RAM) utilization after 100 key queries + similarity search                                                                            | **342KB**<sup>2</sup> | ━&nbsp;<sup>1</sup>  | ━&nbsp;<sup>1</sup> |                                                        |
+| Integrity checks and tests                                                                                                                            | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Universal format between word2vec (`.txt`, `.bin`), GloVe (`.txt`), fastText (`.vec`), and ELMo (`.hdf5`) with converter utility                      | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Simple, Pythonic interface                                                                                                                            | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Few dependencies                                                                                                                                      | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Support for larger than memory models                                                                                                                 | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Lazy loading whenever possible for speed and performance                                                                                              | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Optimized for `threading` and `multiprocessing`                                                                                                       | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Bulk and multiple key lookup with padding, truncation, placeholder, and featurization support                                                         | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Concatenting multiple vector models together                                                                                                          | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Basic out-of-vocabulary key lookup <br /><sup>(character n-gram feature hashing)</sup>                                                                | ✅                     | ✅                    | ✅                   | ✅                                                      |
+| Advanced out-of-vocabulary key lookup with support for misspellings <br /><sup>(character n-gram feature hashing to similar in-vocabulary keys)</sup> | ❌                     | ✅                    | ✅                   | ✅                                                      |
+| Approximate most similar search with an [annoy](#other-notable-projects) index                                                                        | ❌                     | ❌                    | ✅                   | ✅                                                      |
+| Built-in training for new models                                                                                                                      | ❌                     | ❌                    | ❌                   | ❌                                                      |
+
+
+
+<sup>1: *same value as previous column*</sup><br />
+<sup>2: *uses `mmap` to read from disk, so the OS will still allocate pages of memory when memory is available, but it can be shared between processes and isn't managed within each process for extremely large files which is a performance win*</sup><br/>
+<sup>\*: All [benchmarks](https://gitlab.com/Plasticity/magnitude/blob/master/tests/benchmark.py) were performed on the Google News pre-trained word vectors (`GoogleNews-vectors-negative300.bin`) with a MacBook Pro (Retina, 15-inch, Mid 2014) 2.2GHz quad-core Intel Core i7 @ 16GB RAM on SSD over an average of trials where feasible.</sup>
+
+## Pre-converted Magnitude Formats of Popular Embeddings Models
+
+Popular embedding models have been pre-converted to the `.magnitude` format for immmediate download and usage:
+
+| **Contributor**                                                         | **Data**                                                        | **Light**<br/><br/><sup>(basic support for out-of-vocabulary keys)</sup>                                                                                                                                                                                                                                                                                                | **Medium**<br/><i>(recommended)</i><br/><br/><sup>(advanced support for out-of-vocabulary keys)</sup>                                                                                                                                                                                                                                                                           | **Heavy**<br/><br/><sup>(advanced support for out-of-vocabulary keys and faster `most_similar_approx`)</sup>                                                                                                                                                                                                                                                                |
+| :---------------------------------------------------------------------: | :-------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:                         | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Google - [word2vec](https://code.google.com/archive/p/word2vec/)        | Google News 100B                                                | [300D](http://magnitude.plasticity.ai/word2vec/light/GoogleNews-vectors-negative300.magnitude)                                                                                                                                                                                                                                                                          | [300D](http://magnitude.plasticity.ai/word2vec/medium/GoogleNews-vectors-negative300.magnitude)                                                                                                                                                                                                                                                                                 | [300D](http://magnitude.plasticity.ai/word2vec/heavy/GoogleNews-vectors-negative300.magnitude)                                                                                                                                                                                                                                                                              |
+| Stanford - [GloVe](https://nlp.stanford.edu/projects/glove/)            | Wikipedia 2014 + Gigaword 5 6B                                  | [50D](http://magnitude.plasticity.ai/glove/light/glove.6B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/light/glove.6B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/light/glove.6B.200d.magnitude),&nbsp;[300D](http://magnitude.plasticity.ai/glove/light/glove.6B.300d.magnitude)                                             | [50D](http://magnitude.plasticity.ai/glove/medium/glove.6B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/medium/glove.6B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/medium/glove.6B.200d.magnitude),&nbsp;[300D](http://magnitude.plasticity.ai/glove/medium/glove.6B.300d.magnitude)                                                 | [50D](http://magnitude.plasticity.ai/glove/heavy/glove.6B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/heavy/glove.6B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/heavy/glove.6B.200d.magnitude),&nbsp;[300D](http://magnitude.plasticity.ai/glove/heavy/glove.6B.300d.magnitude)                                                 |
+| Stanford - [GloVe](https://nlp.stanford.edu/projects/glove/)            | Wikipedia 2014 + Gigaword 5 6B <br />(lemmatized by Plasticity) | [50D](http://magnitude.plasticity.ai/glove/light/glove-lemmatized.6B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/light/glove-lemmatized.6B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/light/glove-lemmatized.6B.200d.magnitude),&nbsp;[300D](http://magnitude.plasticity.ai/glove/light/glove-lemmatized.6B.300d.magnitude) | [50D](http://magnitude.plasticity.ai/glove/medium/glove-lemmatized.6B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/medium/glove-lemmatized.6B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/medium/glove-lemmatized.6B.200d.magnitude),&nbsp;[300D](http://magnitude.plasticity.ai/glove/medium/glove-lemmatized.6B.300d.magnitude)     | [50D](http://magnitude.plasticity.ai/glove/heavy/glove-lemmatized.6B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/heavy/glove-lemmatized.6B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/heavy/glove-lemmatized.6B.200d.magnitude),&nbsp;[300D](http://magnitude.plasticity.ai/glove/heavy/glove-lemmatized.6B.300d.magnitude)     |
+| Stanford - [GloVe](https://nlp.stanford.edu/projects/glove/)            | Common Crawl 840B                                               | [300D](http://magnitude.plasticity.ai/glove/light/glove.840B.300d.magnitude)                                                                                                                                                                                                                                                                                            | [300D](http://magnitude.plasticity.ai/glove/medium/glove.840B.300d.magnitude)                                                                                                                                                                                                                                                                                                   | [300D](http://magnitude.plasticity.ai/glove/heavy/glove.840B.300d.magnitude)                                                                                                                                                                                                                                                                                                |
+| Stanford - [GloVe](https://nlp.stanford.edu/projects/glove/)            | Twitter 27B                                                     | [25D](http://magnitude.plasticity.ai/glove/light/glove.twitter.27B.25d.magnitude),&nbsp;[50D](http://magnitude.plasticity.ai/glove/light/glove.twitter.27B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/light/glove.twitter.27B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/light/glove.twitter.27B.200d.magnitude)           | [25D](http://magnitude.plasticity.ai/glove/medium/glove.twitter.27B.25d.magnitude),&nbsp;[50D](http://magnitude.plasticity.ai/glove/medium/glove.twitter.27B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/medium/glove.twitter.27B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/medium/glove.twitter.27B.200d.magnitude)               | [25D](http://magnitude.plasticity.ai/glove/heavy/glove.twitter.27B.25d.magnitude),&nbsp;[50D](http://magnitude.plasticity.ai/glove/heavy/glove.twitter.27B.50d.magnitude),&nbsp;[100D](http://magnitude.plasticity.ai/glove/heavy/glove.twitter.27B.100d.magnitude),&nbsp;[200D](http://magnitude.plasticity.ai/glove/heavy/glove.twitter.27B.200d.magnitude)               |
+| Facebook - [fastText](https://fasttext.cc/docs/en/english-vectors.html) | English Wikipedia 2017 16B                                      | [300D](http://magnitude.plasticity.ai/fasttext/light/wiki-news-300d-1M.magnitude)                                                                                                                                                                                                                                                                                       | [300D](http://magnitude.plasticity.ai/fasttext/medium/wiki-news-300d-1M.magnitude)                                                                                                                                                                                                                                                                                              | [300D](http://magnitude.plasticity.ai/fasttext/heavy/wiki-news-300d-1M.magnitude)                                                                                                                                                                                                                                                                                           |
+| Facebook - [fastText](https://fasttext.cc/docs/en/english-vectors.html) | English Wikipedia 2017 + subword 16B                            | [300D](http://magnitude.plasticity.ai/fasttext/light/wiki-news-300d-1M-subword.magnitude)                                                                                                                                                                                                                                                                               | [300D](http://magnitude.plasticity.ai/fasttext/medium/wiki-news-300d-1M-subword.magnitude)                                                                                                                                                                                                                                                                                      | [300D](http://magnitude.plasticity.ai/fasttext/heavy/wiki-news-300d-1M-subword.magnitude)                                                                                                                                                                                                                                                                                   |
+| Facebook - [fastText](https://fasttext.cc/docs/en/english-vectors.html) | Common Crawl 600B                                               | [300D](http://magnitude.plasticity.ai/fasttext/light/crawl-300d-2M.magnitude)                                                                                                                                                                                                                                                                                           | [300D](http://magnitude.plasticity.ai/fasttext/medium/crawl-300d-2M.magnitude)                                                                                                                                                                                                                                                                                                  | [300D](http://magnitude.plasticity.ai/fasttext/heavy/crawl-300d-2M.magnitude)                                                                                                                                                                                                                                                                                               |
+| AI2 - [AllenNLP ELMo](https://allennlp.org/elmo)                        | [ELMo Models](ELMo.md)                                          | [ELMo Models](ELMo.md)                                                                                                                                                                                                                                                                                                                                                  | [ELMo Models](ELMo.md)                                                                                                                                                                                                                                                                                                                                                          | [ELMo Models](ELMo.md)                                                                                                                                                                                                                                                                                                                                                      |
+| Google - [BERT](https://github.com/google-research/bert)                | [Coming Soon...](#roadmap)                                      | [Coming Soon...](#roadmap)                                                                                                                                                                                                                                                                                                                                              | [Coming Soon...](#roadmap)                                                                                                                                                                                                                                                                                                                                                      | [Coming Soon...](#roadmap)                                                                                                                                                                                                                                                                                                                                                  |
+
+
+There are instructions [below](#file-format-and-converter) for converting any `.bin`, `.txt`, `.vec`, `.hdf5` file to a `.magnitude` file.
+
+## Using the Library
+
+### Constructing a Magnitude Object
+
+You can create a Magnitude object like so:
+```python
+from pymagnitude import *
+vectors = Magnitude("/path/to/vectors.magnitude")
+```
+
+If needed, and included for convenience, you can also open a `.bin`, `.txt`, `.vec`, `.hdf5` file directly with Magnitude. This is, however, less efficient and very slow for large models as it will convert the file to a `.magnitude` file on the first run into a temporary directory. The temporary directory is not guaranteed to persist and does not persist when your computer reboots. You should [pre-convert `.bin`, `.txt`, `.vec`, `.hdf5` files with `python -m pymagnitude.converter`](#file-format-and-converter) typically for faster speeds, but this feature is useful for one-off use-cases. A warning will be generated when instantiating a Magnitude object directly with a `.bin`, `.txt`, `.vec`, `.hdf5`. You can supress warnings by setting the  `supress_warnings` argument in the constructor to `True`.
+
+---------------
+
+* <sup>By default, lazy loading is enabled. You can pass in an optional `lazy_loading` argument to the constructor with the value `-1` to disable lazy-loading and pre-load all vectors into memory (a la Gensim), `0` (default) to enable lazy-loading with an unbounded in-memory LRU cache, or an integer greater than zero `X` to enable lazy-loading with an LRU cache that holds the `X` most recently used vectors in memory.</sup> 
+* <sup>If you want the data for the `most_similar` functions to be pre-loaded eagerly on initialization, set `eager` to `True`.</sup>
+* <sup>Note, even when `lazy_loading` is set to `-1` or `eager` is set to `True` data will be pre-loaded into memory in a background thread to prevent the constructor from blocking for a few minutes for large models. If you really want blocking behavior, you can pass `True` to the `blocking` argument.</sup>
+* <sup>By default, [unit-length normalized](https://en.wikipedia.org/wiki/Unit_vector) vectors are returned unless you are loading an ELMo model. Set the optional argument `normalized` to `False` if you wish to recieve the raw non-normalized vectors instead.</sup>
+* <sup>By default, NumPy arrays are returned for queries. Set the optional argument `use_numpy` to `False` if you wish to recieve Python lists instead.</sup>
+* <sup>By default, querying for keys is case-sensitive. Set the optional argument `case_insensitive` to `True` if you wish to perform case-insensitive searches.</sup>
+* <sup>Optionally, you can include the `pad_to_length` argument which will specify the length all examples should be padded to if passing in multple examples. Any examples that are longer than the pad length will be truncated.</sup>
+* <sup>Optionally, you can set the `truncate_left` argument to `True` if you want the beginning of the the list of keys in each example to be truncated instead of the end in case it is longer than `pad_to_length` when specified.</sup>
+* <sup>Optionally, you can set the `pad_left` argument to `True` if you want the padding to appear at the beginning versus the end (which is the default).</sup>
+* <sup>Optionally, you can pass in the `placeholders` argument, which will increase the dimensions of each vector by a `placeholders` amount, zero-padding those extra dimensions. This is useful, if you plan to add other values and information to the vectors and want the space for that pre-allocated in the vectors for efficiency.</sup>
+* <sup>Optionally, you can pass in the `language` argument with an [ISO 639-1 Language Code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), which, if you are using Magnitude for word vectors, will ensure the library respects stemming and other language-specific features for that language. The default is `en` for English. You can also pass in `None` if you are not using Magnitude for word vectors. </sup>
+* <sup>Optionally, you can pass in the `dtype` argument which will let you control the data type of the NumPy arrays returned by Magnitude.</sup>
+* <sup>Optionally, you can pass in the `devices` argument which will let you control the usage of GPUs when the underlying models supports GPU usage. This argument should be a list of integers, where each integer represents the GPU device number (`0`, `1`, etc.).</sup>
+* <sup>Optionally, you can pass in the `temp_dir` argument which will let you control the location of the temporary directory Magnitude will use.</sup>
+* <sup>Optionally, you can pass in the `log` argument which will have Magnitude log progress to standard error when slow operations are taking place.</sup>
+
+### Querying
+
+You can query the total number of vectors in the file like so:
+```python
+len(vectors)
+```
+
+---------------
+
+You can query the dimensions of the vectors like so: 
+```python
+vectors.dim
+```
+
+---------------
+
+You can check if a key is in the vocabulary like so: 
+```python
+"cat" in vectors
+```
+
+---------------
+
+You can iterate through all keys and vectors like so:
+```python
+for key, vector in vectors:
+  ...
+```
+
+---------------
+
+You can query for the vector of a key like so: 
+```python
+vectors.query("cat")
+```
+
+---------------
+
+You can index for the n-th key and vector like so:
+```python
+vectors[42]
+```
+
+---------------
+
+You can query for the vector of multiple keys like so: 
+```python
+vectors.query(["I", "read", "a", "book"])
+```
+A 2D array (keys by vectors) will be returned.
+
+---------------
+
+You can query for the vector of multiple examples like so: 
+```python
+vectors.query([["I", "read", "a", "book"], ["I", "read", "a", "magazine"]])
+```
+A 3D array (examples by keys by vectors) will be returned. If `pad_to_length` is not specified, and the size of each example is uneven, they will be padded to the length of the longest example.
+
+---------------
+
+You can index for the keys and vectors of multiple indices like so:
+```python
+vectors[:42] # slice notation
+vectors[42, 1337, 2001] # tuple notation
+```
+
+---------------
+
+You can query the distance of two or multiple keys like so:
+```python
+vectors.distance("cat", "dog")
+vectors.distance("cat", ["dog", "tiger"])
+```
+
+---------------
+
+You can query the similarity of two or multiple keys like so:
+```python
+vectors.similarity("cat", "dog")
+vectors.similarity("cat", ["dog", "tiger"])
+```
+
+---------------
+
+You can query for the most similar key out of a list of keys to a given key like so:
+```python
+vectors.most_similar_to_given("cat", ["dog", "television", "laptop"]) # dog
+```
+
+---------------
+
+You can query for which key doesn't match a list of keys to a given key like so:
+```python
+vectors.doesnt_match(["breakfast", "cereal", "dinner", "lunch"]) # cereal
+```
+
+---------------
+
+You can query for the most similar (nearest neighbors) keys like so: 
+```python
+vectors.most_similar("cat", topn = 100) # Most similar by key
+vectors.most_similar(vectors.query("cat"), topn = 100) # Most similar by vector
+```
+Optionally, you can pass a `min_similarity` argument to `most_similar`. Values from [-1.0-1.0] are valid.
+
+---------------
+
+You can also query for the most similar keys giving positive and negative examples (which, incidentally, solves analogies) like so: 
+```python
+vectors.most_similar(positive = ["woman", "king"], negative = ["man"]) # queen
+```
+
+---------------
+
+Similar to `vectors.most_similar`, a `vectors.most_similar_cosmul` function exists that uses the 3CosMul function from [Levy and Goldberg](http://www.aclweb.org/anthology/W14-1618):
+```python
+vectors.most_similar_cosmul(positive = ["woman", "king"], negative = ["man"]) # queen
+```
+
+---------------
+
+You can also query for the most similar keys using an approximate nearest neighbors index which is much faster, but doesn't guarantee the exact answer: 
+```python
+vectors.most_similar_approx("cat")
+vectors.most_similar_approx(positive = ["woman", "king"], negative = ["man"])
+```
+Optionally, you can pass an `effort` argument with values between [0.0-1.0] to the `most_similar_approx` function which will give you runtime trade-off. The default value for `effort` is 1.0 which will take the longest, but will give the most accurate result.
+
+---------------
+
+You can query for all keys closer to a key than another key is like so:
+```python
+vectors.closer_than("cat", "rabbit") # ["dog", ...]
+```
+
+---------------
+
+You can access all of the underlying vectors in the model in a large `numpy.memmap` array of size (`len(vectors) x vectors.emb_dim`) like so:
+
+```python
+vectors.get_vectors_mmap()
+```
+
+---------------
+
+You can clean up all associated resources, open files, and database connections like so:
+```python
+vectors.close()
+```
+
+### Basic Out-of-Vocabulary Keys
+
+For word vector representations, handling out-of-vocabulary keys is important to handling new words not in the trained model, handling mispellings and typos, and making models trained on the word vector representations more robust in general.
+
+Out-of-vocabulary keys are handled by assigning them a random vector value. However, the randomness is deterministic. So if the *same* out-of-vocabulary key is encountered twice, it will be assigned the same random vector value for the sake of being able to train on those out-of-vocabulary keys. Moreover, if two out-of-vocabulary keys share similar character n-grams ("uberx", "uberxl") they will placed close to each other even if they are both not in the vocabulary:
+
+```python
+vectors = Magnitude("/path/to/GoogleNews-vectors-negative300.magnitude")
+"uberx" in vectors # False
+"uberxl" in vectors # False
+vectors.query("uberx") # array([ 5.07109939e-02, -7.08248823e-02, -2.74812328e-02, ... ])
+vectors.query("uberxl") # array([ 0.04734962, -0.08237578, -0.0333479, -0.00229564, ... ])
+vectors.similarity("uberx", "uberxl") # 0.955000000200815
+```
+
+### Advanced Out-of-Vocabulary Keys
+
+If using a Magnitude file with advanced out-of-vocabulary support (Medium or Heavy), out-of-vocabulary keys will also be embedded close to similar keys (determined by string similarity) that *are in* the vocabulary:
+```python
+vectors = Magnitude("/path/to/GoogleNews-vectors-negative300.magnitude")
+"uberx" in vectors # False
+"uberification" in vectors # False
+"uber" in vectors # True
+vectors.similarity("uberx", "uber") # 0.7383483267618451
+vectors.similarity("uberification", "uber") # 0.745452837882727
+```
+
+#### Handling Misspellings and Typos
+This also makes Magnitude robust to a lot of spelling errors:
+```python
+vectors = Magnitude("/path/to/GoogleNews-vectors-negative300.magnitude")
+"missispi" in vectors # False
+vectors.similarity("missispi", "mississippi") # 0.35961736624824003
+"discrimnatory" in vectors # False
+vectors.similarity("discrimnatory", "discriminatory") # 0.8309152561753461
+"hiiiiiiiiii" in vectors # False
+vectors.similarity("hiiiiiiiiii", "hi") # 0.7069775034853861
+```
+
+Character n-grams are used to create this effect for out-of-vocabulary keys. The inspiration for this feature was taken from Facebook AI Research's [Enriching Word Vectors with Subword Information](https://arxiv.org/pdf/1607.04606.pdf), but instead of utilizing character n-grams at train time, character n-grams are used at inference so the effect can be somewhat replicated (but not perfectly replicated) in older models that were not trained with character n-grams like word2vec and GloVe.
+
+### Concatenation of Multiple Models
+Optionally, you can combine vectors from multiple models to feed stronger information into a machine learning model like so:
+```python
+from pymagnitude import *
+word2vec = Magnitude("/path/to/GoogleNews-vectors-negative300.magnitude")
+glove = Magnitude("/path/to/glove.6B.50d.magnitude")
+vectors = Magnitude(word2vec, glove) # concatenate word2vec with glove
+vectors.query("cat") # returns 350-dimensional NumPy array ('cat' from word2vec concatenated with 'cat' from glove)
+vectors.query(("cat", "cats")) # returns 350-dimensional NumPy array ('cat' from word2vec concatenated with 'cats' from glove)
+```
+
+You can concatenate more than two vector models, simply by passing more arguments to constructor.
+
+### Additional Featurization (Parts of Speech, etc.)
+You can automatically create vectors from additional features you may have such as parts of speech, syntax dependency information, or any other information using the `FeaturizerMagnitude` class:
+
+```python
+from pymagnitude import *
+pos_vectors = FeaturizerMagnitude(100, namespace = "PartsOfSpeech")
+pos_vectors.dim # 4 - number of dims automatically determined by Magnitude from 100
+pos_vectors.query("NN") # - array([ 0.08040417, -0.71705252,  0.61228951,  0.32322192]) 
+pos_vectors.query("JJ") # - array([-0.11681135,  0.10259253,  0.8841201 , -0.44063763])
+pos_vectors.query("NN") # - array([ 0.08040417, -0.71705252,  0.61228951,  0.32322192]) (deterministic hashing so the same value is returned every time for the same key)
+dependency_vectors = FeaturizerMagnitude(100, namespace = "SyntaxDependencies")
+dependency_vectors.dim # 4 - number of dims automatically determined by Magnitude from 100
+dependency_vectors.query("nsubj") # - array([-0.81043793,  0.55401352, -0.10838071,  0.15656626])
+dependency_vectors.query("prep") # - array([-0.30862918, -0.44487267, -0.0054573 , -0.84071788])
+```
+
+Magnitude will use the [feature hashing trick](https://en.wikipedia.org/wiki/Feature_hashing) internally to directly use the hash of the feature value to create a unique vector for that feature value.
+
+The first argument to `FeaturizerMagnitude` should be an approximate upper-bound on the number of values for the feature. Since there are < 100 [parts of speech tags](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html) and < 100 [syntax dependencies](http://universaldependencies.org/u/dep/all.html), we choose 100 for both in the example above. The value chosen will determine how many dimensions Magnitude will automatically assign to the particular the `FeaturizerMagnitude` object to reduce the chance of a hash collision. The `namespace` argument can be any string that describes your additional feature. It is optional, but highly recommended.
+
+You can then concatenate these features for use with a standard Magnitude object:
+```python
+from pymagnitude import *
+word2vec = Magnitude("/path/to/GoogleNews-vectors-negative300.magnitude")
+pos_vectors = FeaturizerMagnitude(100, namespace = "PartsOfSpeech")
+dependency_vectors = FeaturizerMagnitude(100, namespace = "SyntaxDependencies")
+vectors = Magnitude(word2vec, pos_vectors, dependency_vectors) # concatenate word2vec with pos and dependencies
+vectors.query([
+    ("I", "PRP", "nsubj"), 
+    ("saw", "VBD", "ROOT"), 
+    ("a", "DT", "det"), 
+    ("cat", "NN", "dobj"), 
+    (".",  ".", "punct")
+  ]) # array of size 5 x (300 + 4 + 4) or 5 x 308
+
+# Or get a unique vector for every 'buffalo' in:
+# "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo"
+# (https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo)
+vectors.query([
+    ("Buffalo", "JJ", "amod"), 
+    ("buffalo", "NNS", "nsubj"), 
+    ("Buffalo", "JJ", "amod"), 
+    ("buffalo", "NNS", "nsubj"), 
+    ("buffalo",  "VBP", "rcmod"),
+    ("buffalo",  "VB", "ROOT"),
+    ("Buffalo",  "JJ", "amod"),
+    ("buffalo",  "NNS", "dobj")
+  ]) # array of size 8 x (300 + 4 + 4) or 8 x 308
+
+```
+
+A machine learning model, given this output, now has access to parts of speech information and syntax dependency information instead of just word vector information. In this case, this additional information can give neural networks stronger signal for semantic information and reduce the need for training data.
+
+### Using Magnitude with a ML library
+Magnitude makes it very easy to quickly build and iterate on models that need to use vector representations by taking care of a lot of pre-processing code to convert a dataset of text (or keys) into vectors. Moreover, it can make these models more robust to [out-of-vocabulary words](#advanced-out-of-vocabulary-keys) and [misspellings](#handling-misspellings-and-typos).
+
+There is example code available using Magnitude to build an intent classification model for the [ATIS (Airline Travel Information Systems) dataset](https://catalog.ldc.upenn.edu/docs/LDC93S4B/corpus.html) ([Train](http://magnitude.plasticity.ai/data/atis/atis-intent-train.txt)/[Test](http://magnitude.plasticity.ai/data/atis/atis-intent-test.txt)), used for chatbots or conversational interfaces, in a few popular machine learning libraries below.
+
+#### Keras
+You can access a guide for using Magnitude with Keras (which supports TensorFlow, Theano, CNTK) at this [Google Colaboratory Python notebook](https://colab.research.google.com/drive/1lOcAhIffLW8XC6QsKzt5T_ZqPP4Y9eS4).
+
+#### PyTorch
+*The PyTorch guide is coming soon.*
+
+#### TFLearn
+*The TFLearn guide is coming soon.*
+
+### Utils
+
+You can use the `MagnitudeUtils` class for convenient access to functions that may be useful when creating machine learning models.
+
+You can import MagnitudeUtils like so:
+```python
+  from pymagnitude import MagnitudeUtils
+```
+
+You can download a Magnitude model from a remote source like so:
+```python
+  vecs = Magnitude(MagnitudeUtils.download_model('word2vec/heavy/GoogleNews-vectors-negative300'))
+```
+
+By default, `download_model` will download files from `http://magnitude.plasticity.ai` to a `~/.magnitude` folder created automatically. If the file has already been downloaded, it will not be downloaded again. You can change the directory of the local download folder using the optional `download_dir` argument. You can change the domain from which models will be downloaded with the optional `remote_path` argument.
+
+You can create a batch generator for `X` and `y` data with `batchify`, like so:
+```python
+  X = [.3, .2, .7, .8, .1]
+  y = [0, 0, 1, 1, 0]
+  batch_gen = MagnitudeUtils.batchify(X, y, 2)
+  for X_batch, y_batch in batch_gen:
+    print(X_batch, y_batch)
+  # Returns:
+  # 1st loop: X_batch = [.3, .2], y_batch = [0, 0]
+  # 2nd loop: X_batch = [.7, .8], y_batch = [1, 1]
+  # 3rd loop: X_batch = [.1], y_batch = [0]
+  # next loop: repeats infinitely...
+```
+
+You can encode class labels to integers and back with `class_encoding`, like so:
+```python
+  add_class, class_to_int, int_to_class = MagnitudeUtils.class_encoding()
+  add_class("cat") # Returns: 0
+  add_class("dog") # Returns: 1
+  add_class("cat") # Returns: 0
+  class_to_int("dog") # Returns: 1
+  class_to_int("cat") # Returns: 0
+  int_to_class(1) # Returns: "dog"
+  int_to_class(0) # Returns: "cat"
+```
+
+You can convert categorical data with class integers to one-hot NumPy arrays with `to_categorical`, like so:
+```python
+  y = [1, 5, 2]
+  MagnitudeUtils.to_categorical(y, num_classes = 6) # num_classes is optional
+  # Returns: 
+  # array([[0., 1., 0., 0., 0., 0.] 
+  #       [0., 0., 0., 0., 0., 1.] 
+  #       [0., 0., 1., 0., 0., 0.]])
+```
+
+You can convert from one-hot NumPy arrays back to a 1D NumPy array of class integers with `from_categorical`, like so:
+```python
+  y_c = [[0., 1., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 1.]]
+  MagnitudeUtils.from_categorical(y_c)
+  # Returns: 
+  # array([1., 5.])
+```
+
+## Concurrency and Parallelism
+The library is thread safe (it uses a different connection to the underlying store per thread), is read-only, and it never writes to the file. Because of the light-memory usage, you can also run it in multiple processes (or use `multiprocessing`) with different address spaces without having to duplicate the data in-memory like with other libraries and without having to create a multi-process shared variable since data is read off-disk and each process keeps its own LRU memory cache. For heavier functions, like `most_similar` a shared memory mapped file is created to share memory between processes.
+
+## File Format and Converter
+The Magnitude package uses the `.magnitude` file format instead of `.bin`, `.txt`, `.vec`, or `.hdf5` as with other vector models like word2vec, GloVe, fastText, and ELMo. There is an included command-line utility for converting word2vec, GloVe, fastText, and ELMo files to Magnitude files.
+
+You can convert them like so:
+```bash
+python -m pymagnitude.converter -i <PATH TO FILE TO BE CONVERTED> -o <OUTPUT PATH FOR MAGNITUDE FILE>
+```
+
+The input format will automatically be determined by the extension / the contents of the input file. You should only need to perform this conversion once for a model. After converting, the Magnitude file format is static and it will not be modified or written to make concurrent read access safe.
+
+The flags for  `pymagnitude.converter` are specified below:
+* You can pass in the `-h` flag for help and to list all flags.
+* You can use the `-p <PRECISION>` flag to specify the decimal precision to retain (selecting a lower number will create smaller files). The actual underlying values are stored as integers instead of floats so this is essentially [quantization](https://www.tensorflow.org/performance/quantization) for smaller model footprints.
+* You can add an approximate nearest neighbors index to the file (increases size) with the `-a` flag which will enable the use of the `most_similar_approx` function. The `-t <TREES>` flag controls the number of trees in the approximate neigherest neighbors index (higher is more accurate) when used in conjunction with the `-a` flag (if not supplied, the number of trees is automatically determined).
+* You can pass the `-s` flag to disable adding subword information to the file (which will make the file smaller), but disable advanced out-of-vocabulary key support.
+* If converting a model that has no vocabulary like ELMo, you can pass the `-v` flag along with the path to another Magnitude file you would like to take the vocabulary from.
+
+Optionally, you can bulk convert many files by passing an input folder and output folder instead of an input file and output file. All `.txt`, `.bin`, `.vec`, `.hdf5` files in the input folder will be converted to `.magnitude` files in the the output folder. The output folder must exist before a bulk conversion operation.
+
+## Remote Loading
+You can instruct Magnitude download and open a model from Magnitude's remote repository instead of a local file path. The file will automatically be downloaded locally on the first run to `~/.magnitude/` and subsequently skip the download if the file already exists locally.
+
+```python
+  vecs = Magnitude('http://magnitude.plasticity.ai/word2vec/heavy/GoogleNews-vectors-negative300.magnitude') # full url
+  vecs = Magnitude('word2vec/heavy/GoogleNews-vectors-negative300') # or, use the shorthand for the url
+```
+
+For more control over the remote download domain and local download directory, see how to use [`MagnitudeUtils.download_model`](#utils).
+
+## Remote Streaming over HTTP
+
+Magnitude models are generally large files (multiple GB) that take up a lot of disk space, even though the `.magnitude` format makes it fast to utilize the vectors. Magnitude has an option to stream these large files over HTTP. 
+This is explicitly different from the [remote loading feature](#remote-loading), in that the model doesn't even need to be downloaded at all. You can begin querying models immediately with no disk space used at all. 
+
+
+```python
+  vecs = Magnitude('http://magnitude.plasticity.ai/word2vec/heavy/GoogleNews-vectors-negative300.magnitude', stream=True) # full url
+  vecs = Magnitude('word2vec/heavy/GoogleNews-vectors-negative300', stream=True) # or, use the shorthand for the url
+
+  vecs.query("king") # Returns: the vector for "king" quickly, even with no local model file downloaded
+```
+
+You can play around with a demo of this in a [Google Colaboratory Python Notebook](https://colab.research.google.com/drive/1zkPhoNM1NvbTmEk9gr0Jnt8hONrca1Fv).
+
+This feature is extremely useful if your computing environment is resource constrainted (low RAM and low disk space), you want to experiment quickly with vectors without downloading and setting up large model files, or you are training a small model.
+While there is some added network latency since the data is being streamed, Magnitude will still use an in-memory cache as specified by the [`lazy_loading`](#constructing-a-magnitude-object) constructor parameter. Since languages generally have a [Zipf-ian distribution](https://en.wikipedia.org/wiki/Zipf%27s_law), the network latency should largely not be an issue after the cache is warmed after being queried a small number of times.
+
+They will be queried directly off a static HTTP web server using [HTTP Range Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests) headers. All Magnitude methods support streaming, however, `most_similar` and `most_similar_approx`
+may be slow as they are not optimized for streaming [yet](#roadmap). You can see how this streaming mode [performs currently in the benchmarks](#benchmarks-and-features), however, it will get faster as we [optimize it in the future](#roadmap)!
+
+## Other Documentation
+Other documentation is not available at this time. See the source file directly (it is well commented) if you need more information about a method's arguments or want to see all supported features.
+
+## Other Languages
+Currently, we only provide English word vector models on this page pre-converted to the `.magnitude` format. You can, however, still use Magnitude with word vectors of other languages. Facebook has trained their [fastText vectors for many different languages](https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md). You can down the `.vec` file for any language you want and then convert it to `.magnitude` with the [converter](#file-format-and-converter).
+
+## Other Programming Languages
+Currently, reading Magnitude files is only supported in Python, since it has become the de-facto language for machine learning. This is sufficient for most use cases. Extending the file format to other languages shouldn't be difficult as SQLite has a native C implementation and has bindings in most languages. The file format itself and the protocol for reading and searching is also fairly straightforward upon reading the source code of this repository.
+
+## Other Domains
+Currently, natural language processing is the most popular domain that uses pre-trained vector embedding models for word vector representations. There are, however, other domains like computer vision that have started using pre-trained vector embedding models like [Deep1B](https://github.com/arbabenko/GNOIMI) for image representation. This library intends to stay agnostic to various domains and instead provides a generic key-vector store and interface that is useful for all domains.
+
+## Contributing
+The main repository for this project can be found on [GitLab](https://gitlab.com/Plasticity/magnitude). The [GitHub repository](https://github.com/plasticityai/magnitude) is only a mirror. Pull requests for more tests, better error-checking, bug fixes, performance improvements, or documentation or adding additional utilties / functionalities are welcome on [GitLab](https://gitlab.com/Plasticity/magnitude).
+
+You can contact us at [opensource@plasticity.ai](mailto:opensource@plasticity.ai).
+
+## Roadmap
+
+* Speed optimizations on remote streaming and exposing stream cache configuration options
+* Make `most_similar_approx` optimized for streaming
+* In addition to the "Light", "Medium", and "Heavy" flavors, add a "Ludicrous" flavor that will be of an even larger file size but removes the constraint of the initially slow `most_similar` lookups.
+* Add Google BERT support
+* Support fastText `.bin` format
+
+## Other Notable Projects
+* [spotify/annoy](https://github.com/spotify/annoy) - Powers the approximate nearest neighbors algorithm behind `most_similar_approx` in Magnitude using random-projection trees and hierarchical 2-means. Thanks to author [Erik Bernhardsson](https://github.com/erikbern) for helping out with some of the integration details between Magnitude and Annoy.
+
+## Citing this Repository
+
+If you'd like to [cite our paper at EMNLP 2018](http://aclweb.org/anthology/D18-2021), you can use the following BibTeX citation:
+```latex
+@inproceedings{patel2018magnitude,
+  title={Magnitude: A Fast, Efficient Universal Vector Embedding Utility Package},
+  author={Patel, Ajay and Sands, Alexander and Callison-Burch, Chris and Apidianaki, Marianna},
+  booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations},
+  pages={120--126},
+  year={2018}
+}
+```
+or follow the [Google Scholar link](https://scholar.google.com/scholar?cluster=5916903042122216495&hl=en&as_sdt=0,5) for other ways to cite the paper.
+
+If you'd like to cite this repository you can use the following DOI badge: &nbsp;[![DOI](https://zenodo.org/badge/122715432.svg)](https://zenodo.org/badge/latestdoi/122715432)
+
+Clicking on the badge will lead to a page that will help you generate proper BibTeX citations, JSON-LD citations, and other citations.
+
+## LICENSE and Attribution
+
+This repository is licensed under the license found [here](LICENSE.txt).
+
+“[Seismic](https://thenounproject.com/ziman.jan/collection/weather/?i=1518266)” icon by JohnnyZi from the [Noun Project](https://thenounproject.com).

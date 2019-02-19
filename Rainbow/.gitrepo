@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/Kaixhin/Rainbow.git
 	branch = master
-	commit = 41b781f4ad6e8219443d23eded1a62bab3afd8c9
-	parent = a5be0e0206291273cfc73fc3d8b543b9662cc0c0
+	commit = 9194e40da102015b75afb18888dad5caa1c53b7e
+	parent = a6f793cc254d652a9048c8df5c0e440b4f46142a
 	method = merge
 	cmdver = 0.4.0

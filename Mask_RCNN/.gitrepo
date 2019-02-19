@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/matterport/Mask_RCNN.git
 	branch = master
-	commit = b29b32c7e402254595ae6819cd9ebaa0ddddde8e
-	parent = b0c3f0d81984c49fa09f58b2d44ca554dbaa2b0e
+	commit = 4f440de25a0fbb3f7c8998c5490163699ba5aa19
+	parent = 4e72c72cc22a72fff0e2941f1fb98c910b9a34e7
 	method = merge
 	cmdver = 0.4.0

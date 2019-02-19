@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/slaypni/fastdtw.git
+	branch = master
+	commit = 4825483e68fb2a7da3f825775a9f42ca3c65abbd
+	parent = e4b59082dc2ab00c7ac050edd8b38ad73240b359
+	method = merge
+	cmdver = 0.4.0

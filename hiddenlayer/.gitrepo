@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/waleedka/hiddenlayer.git
 	branch = master
-	commit = bd0d36a475279353a3a093a3954752f04288283a
-	parent = 83bd8f1e63fecb093c5f2b5fd1cc54a3f8af1a4d
+	commit = 294f8732b271cbdd6310c55bdf5ce855cbf61c75
+	parent = d1aa68e266c520212dd76afadcb2b41aecfe5639
 	method = merge
 	cmdver = 0.4.0

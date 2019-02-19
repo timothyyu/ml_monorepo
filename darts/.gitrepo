@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/quark0/darts
+	branch = master
+	commit = f276dd346a09ae3160f8e3aca5c7b193fda1da37
+	parent = 1ed1238bb17c0727442d6030081009c1e94019ba
+	method = merge
+	cmdver = 0.4.0

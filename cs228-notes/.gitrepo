@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/ermongroup/cs228-notes.git
 	branch = master
-	commit = 8c46ca5b0676e55634063c15c15f354eb1206540
-	parent = e07b10d5a53df566d379793c77dc577d77bf88d3
+	commit = 76d5270da9226fe7b4e1d8492a168324a5c571d8
+	parent = cf98b5005790160463d6d3997da0bd2219c729c3
 	method = merge
 	cmdver = 0.4.0

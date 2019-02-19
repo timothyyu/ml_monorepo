@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/ematvey/pybacktest
+	branch = master
+	commit = a54975a6d76a2f823d034e551644efe02212d9ee
+	parent = c7326f09716c918358aede47be42ef3e31b794c3
+	method = merge
+	cmdver = 0.4.0

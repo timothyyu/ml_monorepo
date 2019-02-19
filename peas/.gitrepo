@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/noio/peas
+	branch = master
+	commit = 4c2503388644cc5ca58c501e6c773d53a883538b
+	parent = 8a08fef1b2261b0574821033780ab24b9f56fef1
+	method = merge
+	cmdver = 0.4.0

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/bfolkens/py-market-profile.git
+	branch = master
+	commit = 4f70804bf217ac3ce33d5257708245c6c9712330
+	parent = ebf6753459f9a05c1a8a45bfaaf98c371931d840
+	method = merge
+	cmdver = 0.4.0

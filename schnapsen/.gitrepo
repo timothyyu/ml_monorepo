@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/intelligent-systems-course/schnapsen.git
+	branch = master
+	commit = ad2297e0c6daa7a48d5b9d34908b8fda261b1048
+	parent = 9b4117ee3f861c246bb95eb1465d4b8aa12023bb
+	method = merge
+	cmdver = 0.4.0

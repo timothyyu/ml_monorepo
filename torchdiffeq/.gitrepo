@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/rtqichen/torchdiffeq
 	branch = master
-	commit = e0bcbbd1869a1718257a14a2756a2ce5de00e90e
-	parent = 7f993c0af6223d8374a0e6bbb38918364dbe1223
+	commit = 7b350a7f70c2687cf7ce83de6e5cf4a04f05eb3a
+	parent = 3ef944dd84fd6cfea8c487c1edd73be9b523679f
 	method = merge
 	cmdver = 0.4.0

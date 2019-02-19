@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/plasticityai/magnitude
+	branch = master
+	commit = aec98628b5547773ca8c4114ec6d1ad51e21b230
+	parent = fa5e4c7cd3c8855a72109e81f324edf2e80c3f7a
+	method = merge
+	cmdver = 0.4.0

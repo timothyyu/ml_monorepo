@@ -1,0 +1,36 @@
+# Test files
+w2v.magnitude
+elmo.magnitude
+
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+/build/
+/dist/
+MANIFEST
+
+# Python egg metadata, regenerated from source files by setuptools.
+/pymagnitude-*
+/*.egg-info
+/*.egg
+/.eggs/
+
+# Third Party Folders
+/pymagnitude/third_party/_apsw/src/sqlite3.h
+
+# Third Party Build Folders
+/pymagnitude/third_party/**/build
+/pymagnitude/third_party/internal/**/*
+/pymagnitude/third_party/internal/*
+!/pymagnitude/third_party/internal/__init__.py
+
+# Wheel Folder
+/pymagnitude/req_wheels/**/*
+/pymagnitude/req_wheels/*
+!/pymagnitude/req_wheels/.gitkeep
+
+# Weird files
+
+.DS_Store
+**/.DS_Store

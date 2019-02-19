@@ -1,0 +1,77 @@
+#------------------ System Setting --------------#
+accounts:    # accounts active for trading
+  #- 107957
+  - DU15092
+msgq: nanomsg           # nanomsg kafka, zmq
+log_dir: d:/workspace/elitequant_python/log
+data_dir: d:/workspace/elitequant_python/data
+#------------------ End of System ---------------#
+
+#-------------- Interactive Brokers -------------#
+DU15092:
+  broker: IB                 # IB CTP SINA, GOOGLE, PAPER
+  api: IB
+  port: 7497
+  base_currency: USD
+  tickers:
+    - SPY STK SMART
+    - AAPL STK SMART
+    - AMZN STK SMART
+    - TSLA STK SMART
+    - GOOGL STK SMART
+    - ESH8 FUT GLOBEX 50
+    - ESM8 FUT GLOBEX 50
+    - EUR.USD CASH IDEALPRO
+
+DU15146:
+  broker: IB
+  api: IB
+  port: 7498          # Two IB accounts should have different ports
+  base_currency: USD
+  tickers:
+# ----------------- End of IB  ------------------#
+
+#----------------- Ctp --------------------------#
+107957:
+  broker: 9999
+  api: CTP
+  password: your_simnow_pass
+  auth_code: NA             # NA or actual auth code
+  user_prod_info: NA        # NA or actual user info
+  md_address: tcp://180.168.146.187:10010
+  td_address: tcp://180.168.146.187:10001
+  base_currency: CNY
+  tickers:
+    - IC1802
+    - IC1803
+    - IF1803
+    - al1802
+    - al1803
+    - cu1802
+    - cu1803
+    - i1805
+    - y1805
+    - v1805
+    - sn1805
+    - ru1805
+
+your_simnow_account2:
+  broker: 9999
+  api: CTP
+  password: your_simnow_pass2
+  auth_code: NA             # NA or actual auth code
+  user_prod_info: NA        # NA or actual user info
+  md_address: tcp://180.168.146.187:10010
+  td_address: tcp://180.168.146.187:10000
+  base_currency: CNY
+  tickers:
+    - IC1712
+    - IC1801
+    - IC1803
+    - IF1712
+    - IF1801
+    - al1712
+    - al1801
+    - cu1712
+    - cu1801
+# ---------------- End of CTP  ------------------#

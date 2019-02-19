@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/abcabhishek/PyLimitOrderBook.git
+	branch = master
+	commit = 120bb03f9989bb1e471d59e0b4ede6203c05ec96
+	parent = 77c2686ad24bb887c274234a1a26c28f34d126f4
+	method = merge
+	cmdver = 0.4.0

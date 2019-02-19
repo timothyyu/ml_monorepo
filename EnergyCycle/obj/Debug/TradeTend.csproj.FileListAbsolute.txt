@@ -1,0 +1,20 @@
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\bin\Debug\TradeTend.exe.config
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\bin\Debug\TradeTend.exe
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\bin\Debug\TradeTend.pdb
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\bin\Debug\CryptoCompare.dll
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\bin\Debug\Newtonsoft.Json.dll
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\bin\Debug\Newtonsoft.Json.xml
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\obj\Debug\TradeTend.csprojResolveAssemblyReference.cache
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\obj\Debug\TradeTend.csproj.CoreCompileInputs.cache
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\obj\Debug\TradeTend.exe
+c:\users\labai\documents\visual studio 2017\Projects\TradeTend\TradeTend\obj\Debug\TradeTend.pdb
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\obj\Debug\TradeTend.csprojResolveAssemblyReference.cache
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\obj\Debug\TradeTend.csproj.CoreCompileInputs.cache
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\obj\Debug\TradeTend.exe
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\obj\Debug\TradeTend.pdb
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\bin\Debug\TradeTend.exe.config
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\bin\Debug\TradeTend.exe
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\bin\Debug\TradeTend.pdb
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\bin\Debug\CryptoCompare.dll
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\bin\Debug\Newtonsoft.Json.dll
+D:\Users\mlabaied\Desktop\rep\n28-divergence\TradeTend\TradeTend\bin\Debug\Newtonsoft.Json.xml

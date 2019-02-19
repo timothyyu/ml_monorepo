@@ -70,7 +70,8 @@ def extract_features(timeseries_container, default_fc_parameters=None,
 
     :param kind_to_fc_parameters: mapping from kind names to objects of the same type as the ones for
             default_fc_parameters. If you put a kind as a key here, the fc_parameters
-            object (which is the value), will be used instead of the default_fc_parameters.
+            object (which is the value), will be used instead of the default_fc_parameters. This means that kinds, for
+            which kind_of_fc_parameters doe not have any entries, will be ignored by the feature selection.
     :type kind_to_fc_parameters: dict
 
     :param column_id: The name of the id column to group by.
@@ -137,8 +138,10 @@ def extract_features(timeseries_container, default_fc_parameters=None,
                                                                         column_value=column_value)
 
     # Use the standard setting if the user did not supply ones himself.
-    if default_fc_parameters is None:
+    if default_fc_parameters is None and kind_to_fc_parameters is None:
         default_fc_parameters = ComprehensiveFCParameters()
+    elif default_fc_parameters is None and kind_to_fc_parameters is not None:
+        default_fc_parameters = {}
 
     # If requested, do profiling (advanced feature)
     if profile:
@@ -222,7 +225,7 @@ def generate_data_chunk_format(df, column_id, column_kind, column_value):
                 df[column_id].nunique(), df[column_kind].nunique(), df[[column_id, column_kind]].nunique().prod(), MAX_VALUES_GROUPBY)
         )
         raise ValueError("Number of ids/kinds are too high. Please reduce your data size and run feature extraction again.")
-    data_in_chunks = [x + (y,) for x, y in df.groupby([column_id, column_kind])[column_value]]
+    data_in_chunks = [x + (y,) for x, y in df.set_index(column_id, drop=False).rename_axis(None).groupby([column_id, column_kind], as_index=True)[column_value]]
     return data_in_chunks
 
 

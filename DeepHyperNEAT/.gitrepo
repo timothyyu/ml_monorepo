@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/flxsosa/DeepHyperNEAT
+	branch = master
+	commit = 01636762473c71ab19825a756cd26e70d7928afc
+	parent = 4491e19af59eb336b324398dba99696b4de30fb4
+	method = merge
+	cmdver = 0.4.0

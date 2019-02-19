@@ -1,0 +1,11 @@
+.git
+.pytest_cache
+__pycache__
+.cache
+.ipynb_checkpoints
+.tox
+*.egg-*
+*.pyc
+dist/
+examples/google.txt
+.eggs

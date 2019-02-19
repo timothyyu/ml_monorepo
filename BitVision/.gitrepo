@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/shobrook/BitVision
+	branch = master
+	commit = 6345fcaa83e2d94fe4d0aa30ee0a569587696a3e
+	parent = 879249c70e0e5585aba5d3113a8c412d884c206d
+	method = merge
+	cmdver = 0.4.0

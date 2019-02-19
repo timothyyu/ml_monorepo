@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/GokuMohandas/practicalAI
 	branch = master
-	commit = 9b0b6a7d13af1880075b5a07ed6eeff5bcf75e08
-	parent = fa6d3ffe45a720f2592855c9d009cbc0c047ee45
+	commit = add4bd386425bdb2f86738b8793097d96dd2776e
+	parent = 96c8949803a8b46521e8f0ab1ac5ade646c931f7
 	method = merge
 	cmdver = 0.4.0

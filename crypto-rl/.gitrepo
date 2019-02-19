@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/RedBanies3ofThem/crypto-rl
+	branch = arctic-streaming-ticks-full
+	commit = 36ac8c8e3653bb64c5b5b0fb79617ae1e4760ee0
+	parent = 83a1ebe2538e9523a6c9c94f2fe06bdf6242ed42
+	method = merge
+	cmdver = 0.4.0

@@ -1,0 +1,9 @@
+requests
+python-crontab
+moment
+bs4
+textblob
+pandas
+scipy
+realtime-talib
+sklearn

@@ -1,0 +1,8 @@
+2018-01-03 07:10:56.330 INFO:[Brokers\IB\ibbrokerage.cpp,121][EliteQuant::IBBrokerage::connectToBrokerage]Connecting to 127.0.0.1:7497 clientId:0.
+2018-01-03 07:10:56.330 INFO:[Services\Api\apiservice.cpp,44][EliteQuant::ApiServer::run]api server started.
+2018-01-03 07:10:57.367 ERROR:[Brokers\IB\ibbrokerage.cpp,637][EliteQuant::IBBrokerage::error]id=-1,eCode=502,msg:Couldn't connect to TWS.  Confirm that "Enable ActiveX and Socket Clients" is enabled on the TWS "Configure->API" menu..
+2018-01-03 07:10:57.367 ERROR:[Brokers\IB\ibbrokerage.cpp,138][EliteQuant::IBBrokerage::connectToBrokerage]Cannot connect to 127.0.0.1:7497 clientId:0
+2018-01-03 07:11:02.374 INFO:[Brokers\IB\ibbrokerage.cpp,121][EliteQuant::IBBrokerage::connectToBrokerage]Connecting to 127.0.0.1:7497 clientId:0.
+2018-01-03 07:11:03.390 ERROR:[Brokers\IB\ibbrokerage.cpp,637][EliteQuant::IBBrokerage::error]id=-1,eCode=502,msg:Couldn't connect to TWS.  Confirm that "Enable ActiveX and Socket Clients" is enabled on the TWS "Configure->API" menu..
+2018-01-03 07:11:03.390 ERROR:[Brokers\IB\ibbrokerage.cpp,138][EliteQuant::IBBrokerage::connectToBrokerage]Cannot connect to 127.0.0.1:7497 clientId:0
+2018-01-03 07:11:08.403 INFO:[Brokers\IB\ibbrokerage.cpp,121][EliteQuant::IBBrokerage::connectToBrokerage]Connecting to 127.0.0.1:7497 clientId:0.

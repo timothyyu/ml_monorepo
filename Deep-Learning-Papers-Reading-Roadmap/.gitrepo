@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap.git
+	branch = master
+	commit = 98e3b45f2a03eff7c09b6fc603862466e0e2e56b
+	parent = 9095c102acb9a9c2b12e62e9a3d3586b9857e718
+	method = merge
+	cmdver = 0.4.0

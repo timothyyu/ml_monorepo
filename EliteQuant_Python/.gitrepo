@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/EliteQuant/EliteQuant_Python
+	branch = master
+	commit = 28ed64d742d9f010836d4070cd26bab78d9623d0
+	parent = 02e4363854fb949914e3a4838ef37904f1893ba2
+	method = merge
+	cmdver = 0.4.0

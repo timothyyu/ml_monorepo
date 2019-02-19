@@ -1,0 +1,16 @@
+strategy: BuyAndHoldStrategy
+cash: 100000.00
+symbols:
+  - SPX Index
+root_multiplier:
+benchmark: SPX Index           # or leave it empty
+start_date: 2006-01-01
+end_date: 2018-08-30
+params:
+datasource: local   # local, multi_local, quandl, tushare
+hist_dir: d:/workspace/elitequant_python/hist/
+output_dir: d:/workspace/elitequant_python/out/
+fvp_file:          # FUT_VAL_PT, for example stocks = 1; CLA Comdty is 1000
+#---- used by optimization engine ----------#
+batch_tag:
+params_list:

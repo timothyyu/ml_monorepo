@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/titu1994/keras-neural-alu
+	branch = master
+	commit = 330851c51b921df7fe575d11c5464a92483c1552
+	parent = bb8e904904544f35b7b2d0857178966513b2e775
+	method = merge
+	cmdver = 0.4.0

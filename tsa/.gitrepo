@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/thalesians/tsa.git
+	branch = master
+	commit = bb2d0470da6ac24802b706096afaf9669032fe68
+	parent = 9a11e95c0e3b08278d146a294a95b53163e0acd1
+	method = merge
+	cmdver = 0.4.0

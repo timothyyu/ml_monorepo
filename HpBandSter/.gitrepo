@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/automl/HpBandSter
+	branch = master
+	commit = 116b0c4ed9f22d349a9a2a93a853ecc1ca1c004e
+	parent = c8c1636daccba5424fc82644bf28a917100e16bb
+	method = merge
+	cmdver = 0.4.0

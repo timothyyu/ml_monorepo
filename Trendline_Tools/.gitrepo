@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/nife8975/Trendline_Tools
+	branch = master
+	commit = 930e8c459e3debc559f44633a9c327432ac0324f
+	parent = 13c90d5772e4b19b401df936da79d9419bdcd55b
+	method = merge
+	cmdver = 0.4.0

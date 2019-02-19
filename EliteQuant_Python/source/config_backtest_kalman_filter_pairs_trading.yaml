@@ -1,0 +1,18 @@
+strategy: KalmanFilterPairsTradingStrategy
+cash: 50000.00
+symbols:
+  - EWA US Equity         # list
+  - EWC US Equity
+root_multiplier:
+benchmark:            # or leave it empty
+start_date: 2016-01-01
+end_date: 2018-05-01
+params:
+  lookback_window: 50
+datasource: multi_local   # local, multi_local, quandl, tushare
+hist_dir: d:/workspace/elitequant_python/hist/
+output_dir: d:/workspace/elitequant_python/out/
+fvp_file:           # FUT_VAL_PT, for example stocks = 1; CLA Comdty is 1000
+#---- used by optimization engine ----------#
+batch_tag:
+params_list:
